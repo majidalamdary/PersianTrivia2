@@ -1,4 +1,3 @@
-123
 package com.sputa.persiantrivia;
 
 import android.content.BroadcastReceiver;
