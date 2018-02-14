@@ -1,4 +1,3 @@
-1111
 package com.sputa.persiantrivia;
 
 import android.content.Context;
