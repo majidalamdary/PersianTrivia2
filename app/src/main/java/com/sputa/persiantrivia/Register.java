@@ -1,3 +1,4 @@
+123
 package com.sputa.persiantrivia;
 
 import android.content.BroadcastReceiver;
@@ -55,6 +56,8 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
     public    RelativeLayout lay_wait;
     int       screenHeight = 0;
     boolean   is_registering = true;
+
+
 
     public   ImageView img_circle1;
     public   MyAsyncTask mm;
