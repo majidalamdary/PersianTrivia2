@@ -51,7 +51,7 @@ public class friend_list extends AppCompatActivity {
     ListView lv;
     Context context;
 
-
+    int test;
 
     ArrayList prgmName;
 
