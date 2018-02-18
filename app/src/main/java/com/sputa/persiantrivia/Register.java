@@ -82,31 +82,11 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
 
 
         if (hasFocus && !userTouchedView) {
-            EditText tt;
-            tt=(EditText) v;
-            //Toast.makeText(Register.this, , Toast.LENGTH_SHORT).show();
-            String
-                    v_id=getResources().getResourceEntryName(tt.getId());
-            if(v_id.equals("txt_uname"))
-            {
-                lbl_hint.setText("لطفا برای نام کاربری از حروف انگلیسی و اعداد استفاده کنید");
-            }
-            if(v_id.equals("txt_pass"))
-            {
-                lbl_hint.setText("لطفا برای رمز عبور از حروف انگلیسی و اعداد استفاده کنید");
-            }
+
 
         }
         else if(!hasFocus) {
-            userTouchedView = false;
-            EditText tt;
-            tt=(EditText) v;
-            String
-                    v_id=getResources().getResourceEntryName(tt.getId());
-            if(v_id.equals("txt_uname") || v_id.equals("txt_pass"))
-            {
-                lbl_hint.setText("");
-            }
+
         }
     }
 
@@ -122,7 +102,7 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
         String homeScore = settings1.getString("homeScore", "");
        // Toast.makeText(getBaseContext(),homeScore,Toast.LENGTH_SHORT).show();
 
-        lbl_hint = (TextView) findViewById(R.id.lbl_hint);
+
 
         if(!homeScore.equals(""))
         {
@@ -204,25 +184,25 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
         {
             //lay_uname_pic.setLayoutParams(new TableLayout.LayoutParams(AbsListView.LayoutParams.WRAP_CONTENT, AbsListView.LayoutParams.WRAP_CONTENT, 0.5f));
             LinearLayout.LayoutParams loparams = (LinearLayout.LayoutParams) lay_uname_pic.getLayoutParams();
-            loparams.weight = 1.5f;
+ //           loparams.weight = 1.5f;
             lay_uname_pic.setLayoutParams(loparams);
             lay_pass_pic.setLayoutParams(loparams);
             lay_register_fields.setVisibility(View.VISIBLE);
-            lbl_register.setText("ورود");
+            lbl_register.setText("از اینجا وارد شوید");
             lbl_already_register.setText("آیا قبلا عضو شده اید؟");
-            lbl_login.setText("ثبت نام");
+            lbl_login.setText("برو بریم");
             is_registering = true;
         }
         else
         {
             LinearLayout.LayoutParams loparams = (LinearLayout.LayoutParams) lay_uname_pic.getLayoutParams();
-            loparams.weight = 2f;
+ //           loparams.weight = 2f;
             lay_uname_pic.setLayoutParams(loparams);
             lay_pass_pic.setLayoutParams(loparams);
             lay_register_fields.setVisibility(View.GONE);
-            lbl_register.setText("ثبت نام");
+            lbl_register.setText("از اینجا ثبت نام کنید");
             lbl_already_register.setText("آیا قبلا عضو نشده اید؟");
-            lbl_login.setText("برید کنار اومدم");
+            lbl_login.setText("برو بریم");
             is_registering = false;
         }
     }
@@ -346,6 +326,37 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
         lbl_title.setTypeface(tf);
         lbl_title.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
 
+
+        TextView lbl_username = (TextView) findViewById(R.id.lbl_username);
+        lbl_username.setTypeface(tf);
+        lbl_username.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+
+        TextView lbl_pass = (TextView) findViewById(R.id.lbl_pass);
+        lbl_pass.setTypeface(tf);
+        lbl_pass.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+
+        TextView lbl_mobile = (TextView) findViewById(R.id.lbl_mobile);
+        lbl_mobile.setTypeface(tf);
+        lbl_mobile.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+
+        TextView lbl_jensiyat = (TextView) findViewById(R.id.lbl_jensiyat);
+        lbl_jensiyat.setTypeface(tf);
+        lbl_jensiyat.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.049));
+
+        TextView txt_user_hint = (TextView) findViewById(R.id.txt_user_hint);
+        txt_user_hint.setTypeface(tf);
+        txt_user_hint.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.021));
+
+        TextView txt_pass_hint = (TextView) findViewById(R.id.txt_pass_hint);
+        txt_pass_hint.setTypeface(tf);
+        txt_pass_hint.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.021));
+
+
+        TextView lbl_title_new = (TextView) findViewById(R.id.lbl_title_new);
+        lbl_title_new.setTypeface(tf);
+        lbl_title_new.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+
         EditText txt_uname = (EditText) findViewById(R.id.txt_uname);
         txt_uname.setTypeface(tf);
         txt_uname.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
@@ -377,7 +388,7 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
 
         LinearLayout laybtn_login = (LinearLayout) findViewById(R.id.laybtn_login);
         //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_laybtn_login = new LinearLayout.LayoutParams((int)(screenWidth*0.3),(int)(screenHeight*0.053));
+        LinearLayout.LayoutParams lp_laybtn_login = new LinearLayout.LayoutParams((int)(screenWidth*0.3),(int)(screenHeight*0.083));
         laybtn_login.setLayoutParams(lp_laybtn_login);
 
 
@@ -396,10 +407,6 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
         TextView lbl_message = (TextView) findViewById(R.id.lbl_message);
         lbl_message.setTypeface(tf);
         lbl_message.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
-
-        TextView lbl_hint = (TextView) findViewById(R.id.lbl_hint);
-        lbl_hint.setTypeface(tf);
-        lbl_hint.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
 
 
     }

@@ -14,22 +14,28 @@
         android:background="#049ccd">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".05"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0px"
+            android:layout_weight=".6"
             android:gravity="center"
-            android:layout_weight=".8">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0px"
-                android:layout_height="match_parent"
-                android:layout_weight="1"></LinearLayout>
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0px"
                 android:layout_height="match_parent"
-                android:layout_weight="1.5"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight=".7"
                 android:orientation="vertical">
 
                 <ImageView
@@ -44,10 +50,26 @@
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lbl_title_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="رقیب کُش"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -70,61 +92,61 @@
                 android:background="@drawable/transparent_layout">
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:gravity="center"
                     android:layout_height="0px"
-                    android:layout_weight=".5" >
+                    android:layout_weight=".3"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="آیا قبلا عضو شده اید؟ "
                         android:id="@+id/lbl_already_registered"
-                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="آیا قبلا عضو شده اید؟ "
+                        android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#000000"
-                        android:layout_marginLeft="10dp" />
+                        android:textSize="20dp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text= "ورود"
                         android:id="@+id/lbl_register"
-                        android:textSize="20dp"
-                        android:textColor="#001aff"
-                        android:clickable="true"
-                        android:onClick="clk_register" />
-
-                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="ورود"
-                        android:id="@+id/lbl_forgot_pass"
-                        android:textSize="20dp"
-                        android:textColor="#001aff"
                         android:clickable="true"
                         android:onClick="clk_register"
+                        android:text="از اینجا وارد شوید"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="#001aff"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/lbl_forgot_pass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:onClick="clk_register"
+                        android:text="ورود"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="#001aff"
+                        android:textSize="20dp"
                         android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="0px"
+                    android:layout_weight=".3"
                     android:gravity="center"
-                    android:layout_weight=".5">
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/lbl_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="ورود به بازی"
-                        android:id="@+id/lbl_title"
-                        android:textSize="20dp"
-                        android:textColor="#000000" />
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -132,6 +154,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="0px"
                     android:layout_weight="1">
+
+
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -142,26 +166,26 @@
                         android:layout_marginRight="10dp">
 
                         <LinearLayout
-                            android:orientation="horizontal"
+                            android:id="@+id/lay_uname_pic"
                             android:layout_width="0px"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
-                            android:background="#ffffff"
-                            android:id="@+id/lay_uname_pic">
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/textView6"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/lbl_username"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="نام کاربری :" />
+                                android:text="نام کاربری :"
+                                android:textColor="@android:color/black" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="0px"
                             android:layout_height="match_parent"
                             android:layout_weight="5"
-                            android:background="#ffffff"
                             android:orientation="horizontal">
 
                             <EditText
@@ -169,10 +193,43 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:background="@drawable/rounded_edittext"
                                 android:singleLine="true"
                                 android:textColor="#000000" />
                         </LinearLayout>
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.2"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:orientation="horizontal"></LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txt_user_hint"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:text="نام کاربری باید از حروف انگلیسی و اعداد باشد"
+                                android:textColor="?attr/colorButtonNormal"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -184,212 +241,262 @@
                         android:layout_marginRight="10dp">
 
                         <LinearLayout
-                            android:orientation="horizontal"
+                            android:id="@+id/lay_pass_pic"
                             android:layout_width="0px"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
-                            android:background="#ffffff"
-                            android:id="@+id/lay_pass_pic">
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
+                            <TextView
+                                android:id="@+id/lbl_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="رمز عبور :"
+                                android:textColor="@android:color/black" />
                         </LinearLayout>
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="0px"
                             android:layout_height="match_parent"
-                            android:layout_weight="9"
-                            android:background="#ffffff">
+                            android:layout_weight="5"
+                            android:orientation="horizontal">
 
                             <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
                                 android:id="@+id/txt_pass"
-                                android:layout_weight="1"
-                                android:layoutDirection="rtl"
-                                android:gravity="right"
+                                android:layout_width="match_parent"
                                 android:inputType="textPassword"
-                                android:textColor="#000000"
-                                android:hint="رمز عبور" />
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/rounded_edittext"
+                                android:singleLine="true"
+                                android:textColor="#000000" />
                         </LinearLayout>
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.2"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:orientation="horizontal"></LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txt_pass_hint"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:text="نام کاربری باید از حروف انگلیسی و اعداد باشد"
+                                android:textColor="?attr/colorButtonNormal"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="vertical"
+                    android:id="@+id/lay_register_field"
                     android:layout_width="match_parent"
                     android:layout_height="0px"
-                    android:layout_weight="1"
-                    android:visibility="visible"
                     android:layout_marginTop="5dp"
-                    android:id="@+id/lay_register_field">
+                    android:layout_weight="0.8"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="0px"
-                        android:layout_weight="1"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp" >
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="0px"
                             android:layout_height="match_parent"
-                            android:layout_weight="1.5"
-                            android:background="#ffffff" >
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
+                            <TextView
+                                android:id="@+id/lbl_mobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="موبایل :"
+                                android:textColor="@android:color/black" />
                         </LinearLayout>
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="0px"
                             android:layout_height="match_parent"
-                            android:layout_weight="9"
-                            android:background="#ffffff" >
+                            android:layout_weight="5"
+                            android:orientation="horizontal">
 
                             <EditText
+                                android:id="@+id/txt_mobile"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:singleLine="true"
-                                android:id="@+id/txt_mobile"
                                 android:layout_weight="1"
+                                android:background="@drawable/rounded_edittext"
+                                android:inputType="number"
+                                android:singleLine="true"
                                 android:textColor="#000000"
-                                android:visibility="visible"
-                                android:hint="شماره موبایل"
-                                android:inputType="number" />
+                                android:visibility="visible" />
                         </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="0px"
-                        android:layout_weight="1"
-                        android:layout_marginTop="5dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp" >
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="0px"
                             android:layout_height="match_parent"
-                            android:layout_weight="1.5"
-                            android:background="#ffffff" >
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
+                            <TextView
+                                android:id="@+id/lbl_jensiyat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="جنسیت :"
+                                android:textColor="@android:color/black" />
                         </LinearLayout>
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="0px"
                             android:layout_height="match_parent"
-                            android:layout_weight="9"
-                            android:background="#ffffff" >
-<RadioGroup
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                            android:layout_weight="5"
+                            android:background="@drawable/rounded_edittext"
+                            android:orientation="horizontal">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+                            <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="پسر"
-                android:id="@+id/rdb_boy"
-                android:checked="true"
-                android:clickable="true"
-                android:onClick="clk_boy" />
-        </LinearLayout>
-
-        <LinearLayout
-                                    android:orientation="horizontal"
-                                    android:layout_width="0px"
+                                <LinearLayout
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1">
+                                    android:orientation="horizontal">
 
-                                    <RadioButton
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="دختر"
-                                        android:id="@+id/rdb_girl"
-                                        android:clickable="true"
-                                        android:onClick="clk_girl" />
+                                    <LinearLayout
+                                        android:layout_width="0px"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:orientation="horizontal">
+
+                                        <RadioButton
+                                            android:id="@+id/rdb_boy"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:checked="true"
+                                            android:clickable="true"
+                                            android:onClick="clk_boy"
+                                            android:text="پسر" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0px"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:orientation="horizontal">
+
+                                        <RadioButton
+                                            android:id="@+id/rdb_girl"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:onClick="clk_girl"
+                                            android:text="دختر" />
+                                    </LinearLayout>
                                 </LinearLayout>
-                </LinearLayout>
-            </RadioGroup>
+                            </RadioGroup>
 
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="0px"
-                    android:layout_weight="1">
+                    android:layout_weight=".7"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="0px"
-                        android:gravity="center"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal"
                         android:weightSum="1">
 
                         <LinearLayout
-                            android:orientation="horizontal"
+                            android:id="@+id/laybtn_login"
                             android:layout_width="90dp"
                             android:layout_height="36dp"
                             android:background="@drawable/green_btn"
-                            android:onClick="clk_login"
                             android:clickable="true"
                             android:gravity="center"
-                            android:id="@+id/laybtn_login">
+                            android:onClick="clk_login"
+                            android:orientation="horizontal">
 
                             <TextView
                                 android:id="@+id/lbl_login"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="right"
-                                android:text="ثبت نام"
-                                android:textColor="#ffffff"
-         />
+                                android:text="برو بریم"
+                                android:textColor="#ffffff" />
                         </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="0px"
-                        android:gravity="center"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal"
                         android:weightSum="1">
 
                         <LinearLayout
-                            android:orientation="horizontal"
+                            android:id="@+id/laybtn_exit"
                             android:layout_width="90dp"
                             android:layout_height="36dp"
+                            android:layout_gravity="center_vertical"
                             android:background="@drawable/green_btn"
-                            android:onClick="clk_exit"
                             android:clickable="true"
                             android:gravity="center"
-                            android:id="@+id/laybtn_exit"
-                            android:layout_gravity="center_vertical">
+                            android:onClick="clk_exit"
+                            android:orientation="horizontal">
 
                             <TextView
                                 android:id="@+id/lbl_exit"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="right"
-                                android:text="خارج میشم"
+                                android:text="الان نه"
                                 android:textColor="#ffffff" />
                         </LinearLayout>
                     </LinearLayout>
@@ -405,42 +512,27 @@
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight=".5">
+            android:layout_weight=".3"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_gravity="center"
                     android:id="@+id/lbl_message"
-                    android:textColor="#ff0000"
-                    android:textSize="20dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_gravity="center"
-                    android:id="@+id/lbl_hint"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="#ff0000"
                     android:textSize="20dp" />
             </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
