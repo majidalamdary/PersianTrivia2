@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lay_main"
-        android:background="@drawable/bg">
+        android:background="#049ccd">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -27,20 +27,20 @@
                 android:layout_weight="1"></LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
-                android:layout_weight="4">
+                android:layout_weight="1.5"
+                android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/imageView5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/imageView5"
-                    android:layout_gravity="center_horizontal"
                     android:layout_alignParentBottom="true"
-                    android:layout_toRightOf="@+id/lay_main"
+                    android:layout_gravity="center_horizontal"
                     android:layout_toEndOf="@+id/lay_main"
-                    android:background="@drawable/logo" />
+                    android:layout_toRightOf="@+id/lay_main"
+                    android:background="@drawable/logo_new" />
             </LinearLayout>
 
             <LinearLayout
@@ -149,28 +149,28 @@
                             android:background="#ffffff"
                             android:id="@+id/lay_uname_pic">
 
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/username"></LinearLayout>
+                            <TextView
+                                android:id="@+id/textView6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="نام کاربری :" />
                         </LinearLayout>
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="0px"
                             android:layout_height="match_parent"
-                            android:layout_weight="9"
-                            android:background="#ffffff">
+                            android:layout_weight="5"
+                            android:background="#ffffff"
+                            android:orientation="horizontal">
 
                             <EditText
+                                android:id="@+id/txt_uname"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:singleLine="true"
-                                android:id="@+id/txt_uname"
                                 android:layout_weight="1"
-                                android:textColor="#000000"
-                                android:hint="نام کاربری" />
+                                android:singleLine="true"
+                                android:textColor="#000000" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -191,11 +191,6 @@
                             android:background="#ffffff"
                             android:id="@+id/lay_pass_pic">
 
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/pass"></LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
@@ -243,11 +238,6 @@
                             android:layout_weight="1.5"
                             android:background="#ffffff" >
 
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/mobile" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -286,11 +276,6 @@
                             android:layout_weight="1.5"
                             android:background="#ffffff" >
 
-                            <LinearLayout
-                                android:orientation="horizontal"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/gender" />
                         </LinearLayout>
 
                         <LinearLayout

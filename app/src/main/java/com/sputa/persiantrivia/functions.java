@@ -103,7 +103,7 @@ public class functions  extends AppCompatActivity {
         }
         return false;
     }
-    public  boolean xcheck_need_permission()
+    public  boolean check_need_permission()
     {
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1) {
             return true;
@@ -111,7 +111,6 @@ public class functions  extends AppCompatActivity {
         else {
             return  false;
         }
-
     }
     public boolean checkIfAlreadyhavePermission(String perm, Context mcontext) {
         int result = ContextCompat.checkSelfPermission(mcontext, perm);
@@ -121,8 +120,4 @@ public class functions  extends AppCompatActivity {
             return false;
         }
     }
-
-
-
-
-}
+    }
