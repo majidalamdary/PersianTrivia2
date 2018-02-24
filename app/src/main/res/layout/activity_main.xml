@@ -42,7 +42,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
+                        <ImageView
+                            android:id="@+id/imageView15"
+                            android:layout_width="67dp"
+                            android:layout_height="16dp"
+                            app:srcCompat="@drawable/coin_new"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="27dp" />
+
                         <RelativeLayout
+                            android:id="@+id/relativeLayout14"
                             android:layout_width="54dp"
                             android:layout_height="22dp"
                             android:background="@drawable/blue_btn_new"

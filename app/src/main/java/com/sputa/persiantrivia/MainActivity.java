@@ -354,22 +354,6 @@ public class MainActivity extends AppCompatActivity {
         //////////////////////////////////////////////////////////////////////
 
 
-        int
-                icon_space = Integer.valueOf(screenWidth / 5);
-
-        LinearLayout.LayoutParams tab_icon_param = new LinearLayout.LayoutParams((int)(screenHeight*0.08),(int)(screenHeight*0.08));
-        tab_icon_param.setMargins((int)((icon_space-(int)(screenHeight*0.083))),(int)(screenHeight*0.01),(int)(screenHeight*0.08),0);
-
-        ImageView img_home = (ImageView) findViewById(R.id.img_home);
-        img_home.setLayoutParams(tab_icon_param);
-
-        tab_icon_param.setMargins((int) ((icon_space - (int) (screenHeight * 0.083))), (int) (screenHeight * 0.01), 0, 0);
-        ImageView img_statistics = (ImageView) findViewById(R.id.img_statistic);
-        img_statistics.setLayoutParams(tab_icon_param);
-
-
-
-
 
 
 
