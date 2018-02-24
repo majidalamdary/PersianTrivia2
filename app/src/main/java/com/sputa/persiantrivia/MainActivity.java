@@ -177,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
         lay_main = (LinearLayout) findViewById(R.id.lay_main);
 
 
-        txt_request_noti = (TextView) findViewById(R.id.txt_notification);
 
         set_content();
 
@@ -354,10 +353,6 @@ public class MainActivity extends AppCompatActivity {
         //////////////////////////////////////////////////////////////////////TAB BAR
         //////////////////////////////////////////////////////////////////////
 
-        lay_tabBar = (LinearLayout) findViewById(R.id.lay_tabBar);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)(screenHeight*0.1));
-        lay_tabBar.setLayoutParams(params2);
 
         int
                 icon_space = Integer.valueOf(screenWidth / 5);
@@ -376,20 +371,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        LinearLayout lay_bar_under_tabBar = (LinearLayout) findViewById(R.id.lay_under_tab);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_lay_bar_under_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)(screenHeight*0.003));
-        lay_bar_under_tabBar.setLayoutParams(lp_lay_bar_under_tabBar);
 
 
-        int
-                tab_num = 0;
 
-        LinearLayout.LayoutParams under_tab_icon_param = new LinearLayout.LayoutParams((int)(screenHeight*0.12),(int)(screenHeight*0.003));
-        under_tab_icon_param.setMargins(0,0,(int)(icon_space)*(tab_num)-(int)(screenHeight*0.02),0);
 
-        ImageView img_under_tab = (ImageView) findViewById(R.id.img_under_tab);
-        img_under_tab.setLayoutParams(under_tab_icon_param);
 
 
 
@@ -406,75 +391,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////// Top button bar
-        //////////////////////////////////////////////////////////////////////
-
-        LinearLayout lay_top_button = (LinearLayout) findViewById(R.id.lay_top_button);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_lay_top_button = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-        lp_lay_top_button.setMargins(0, (int) (screenHeight * 0.02), 0, 0);
-        lay_top_button.setLayoutParams(lp_lay_top_button);
-
-        int
-                make_zero = 0;
-        int
-                img_coin_width = (int)(screenWidth * .36);
-        int
-                img_coin_height = (int)(screenWidth * .12);
-
-        LinearLayout.LayoutParams lp_img_coin = new LinearLayout.LayoutParams(img_coin_width,img_coin_height);
-        lp_img_coin.setMargins(0, 0, (int) (screenWidth * .05), 0);
-
-        ImageView img_coin = (ImageView) findViewById(R.id.btn_coin);
-        img_coin.setLayoutParams(lp_img_coin);
-
-        make_zero -= (img_coin_width+(int)(screenWidth * .05));
-
-        TextView txt_coin_count = (TextView) findViewById(R.id.txt_coin_count);
-        txt_coin_count.setTypeface(tf);
-        txt_coin_count.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.072));
-
-
-        LinearLayout.LayoutParams lp_txt_coint_count = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-        lp_txt_coint_count.setMargins(0, 0, make_zero + (int) (screenWidth * .05) + img_coin_width - (int) (screenWidth * .02) - fun.get_text_with(txt_coin_count), 0);
-        txt_coin_count.setLayoutParams(lp_txt_coint_count);
-
-//        make_zero -=  (int) (screenWidth * .02) ;
-//
-//        txt_request_noti.setTypeface(tf);
-//        txt_request_noti.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
-//
-//
-//        LinearLayout.LayoutParams lp_txt_request_noti = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-//        lp_txt_request_noti.setMargins(0,  -1* (int) (screenWidth * .05), -1* (int) (screenWidth * .05) ,0);
-//        txt_request_noti.setLayoutParams(lp_txt_request_noti);
-////
-
-
-
-        make_zero -=  (int) (screenWidth * .02) ;
-
-        LinearLayout.LayoutParams lp_img_find_friend = new LinearLayout.LayoutParams(img_coin_width,img_coin_height);
-        lp_img_find_friend.setMargins(0, 0,make_zero+(screenWidth-img_coin_width)-(int) (screenWidth * .05) ,20);
-
-        ImageView img_find_friend = (ImageView) findViewById(R.id.btn_find_friend);
-        img_find_friend.setLayoutParams(lp_img_find_friend);
-
-        ////////////////////////////////////////////////////////////////////// End of
-        ////////////////////////////////////////////////////////////////////// Top button bar
-        //////////////////////////////////////////////////////////////////////
-
 
         //////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////// Profile Place
         //////////////////////////////////////////////////////////////////////
 
-        LinearLayout lay_profile = (LinearLayout) findViewById(R.id.lay_profile);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_lay_profile = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenWidth * .23));
-        lp_lay_profile.setMargins(0, (int) (screenHeight * 0.02), 0, 0);
-        lay_profile.setLayoutParams(lp_lay_profile);
+
 
         int
                 img_circle_width = (int)(screenWidth * .2);
@@ -539,28 +461,17 @@ public class MainActivity extends AppCompatActivity {
         ////////////////////////////////////////////////////////////////////// New Game
         //////////////////////////////////////////////////////////////////////
 
-        LinearLayout lay_line = (LinearLayout) findViewById(R.id.lay_line);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_lay_line = (LinearLayout.LayoutParams) lay_line.getLayoutParams();
-        lp_lay_line.setMargins(0, (int) (screenHeight * 0.01), 0, 0);
-        lay_line.setLayoutParams(lp_lay_line);
 
 
-        LinearLayout lay_new_game = (LinearLayout) findViewById(R.id.lay_new_game);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_lay_new_game = (LinearLayout.LayoutParams) lay_new_game.getLayoutParams();
-        lp_lay_new_game.setMargins(0, (int) (screenHeight * 0.02), 0, 0);
-        lp_lay_new_game.height = (int)(screenHeight*.08);
-        lay_new_game.setLayoutParams(lp_lay_new_game);
+
+
 
         TextView txt_new_game = (TextView) findViewById(R.id.txt_new_game);
         txt_new_game.setTypeface(tf);
         txt_new_game.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.05));
 
 
-        TextView txt_new_game_coin_count = (TextView) findViewById(R.id.txt_new_game_coin_count);
-        txt_new_game_coin_count.setTypeface(tf);
-        txt_new_game_coin_count.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.04));
+
 
 
 
@@ -580,14 +491,7 @@ public class MainActivity extends AppCompatActivity {
         //////////////////////////////////////////////////////////////////////
 
 //
-        LinearLayout lay_nobat_wait = (LinearLayout) findViewById(R.id.lay_nobat_wait);
 
-
-
-        LinearLayout.LayoutParams lp_lay_nobat_wait = (LinearLayout.LayoutParams) lay_nobat_wait.getLayoutParams();
-        lp_lay_nobat_wait.setMargins(0, (int) (screenHeight * 0.01), 0, 0);
-        lp_lay_nobat_wait.height = (int) (screenHeight*.405);
-        lay_nobat_wait.setLayoutParams(lp_lay_nobat_wait);
 
 
 
@@ -690,10 +594,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        RelativeLayout.LayoutParams lp_buttom_bar = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,(int)(screenHeight*.18));
 
-        LinearLayout lay_buttom_bar = (LinearLayout) findViewById(R.id.lay_buttom_bar);
-        lay_buttom_bar.setLayoutParams(lp_buttom_bar);
     }
 
     private void check_gcm()
@@ -1400,7 +1301,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView txt_point = (TextView) findViewById(R.id.txt_point);
         TextView txt_level = (TextView) findViewById(R.id.txt_level);
-        TextView txt_coin = (TextView) findViewById(R.id.txt_coin_count);
+
 
 
         TextView txt_nobat = (TextView) findViewById(R.id.lbl_your_turn);
@@ -1411,7 +1312,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         txt_point.setText(point_str);
-        txt_coin.setText(coin_str);
+
         txt_level.setText(level_str);
 
         txt_nobat.setText("نوبت شما ("+my_turn_str+")");
@@ -1508,11 +1409,8 @@ public class MainActivity extends AppCompatActivity {
 
                         lay_wait.setVisibility(View.GONE);
                         is_requested = false;
-                        TextView txt_coin_count = (TextView) findViewById(R.id.txt_coin_count);
-                        int
-                            coin_count = Integer.valueOf(txt_coin_count.getText().toString());
-                        coin_count+=100;
-                        txt_coin_count.setText(String.valueOf(coin_count));
+
+
 
                         show_msg("","100 سکه به سکه های شما افزوده شد","اوکی");
                     }

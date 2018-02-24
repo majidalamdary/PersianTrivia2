@@ -7,11 +7,11 @@
     tools:context="com.sputa.persiantrivia.Register">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/lay_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lay_main"
-        android:background="#049ccd">
+        android:background="#049ccd"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -73,23 +73,23 @@
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="2.5">
+            android:layout_weight="2.5"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="1"
+                android:orientation="horizontal"></LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="8"
-                android:background="@drawable/transparent_layout">
+                android:background="@drawable/transparent_layout"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -150,20 +150,19 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="0px"
-                    android:layout_weight="1">
-
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="0px"
-                        android:layout_weight="1"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
                         <LinearLayout
                             android:id="@+id/lay_uname_pic"
@@ -232,13 +231,13 @@
 
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="0px"
-                        android:layout_weight="1"
-                        android:layout_marginTop="5dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp">
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
                         <LinearLayout
                             android:id="@+id/lay_pass_pic"
@@ -266,10 +265,10 @@
                             <EditText
                                 android:id="@+id/txt_pass"
                                 android:layout_width="match_parent"
-                                android:inputType="textPassword"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:background="@drawable/rounded_edittext"
+                                android:inputType="textPassword"
                                 android:singleLine="true"
                                 android:textColor="#000000" />
                         </LinearLayout>
@@ -505,10 +504,10 @@
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="1"
+                android:orientation="horizontal"></LinearLayout>
         </LinearLayout>
 
         <LinearLayout
