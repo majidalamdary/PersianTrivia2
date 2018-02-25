@@ -53,6 +53,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.URI;
+import java.net.URLEncoder;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
@@ -343,7 +345,7 @@ public class MainActivity extends AppCompatActivity {
 
         ConstraintLayout.LayoutParams lp_lay_top_menu_right = (ConstraintLayout.LayoutParams) lay_top_menu_right.getLayoutParams();
         lp_lay_top_menu_right.width = (int)(screenWidth*0.24);
-        lp_lay_top_menu_right.height = (int)(screenHeight*0.07);
+        lp_lay_top_menu_right.height = (int)(screenHeight*0.05);
 
         //new ConstraintLayout.LayoutParams((int)(screenWidth*0.1),(int)(screenHeight*0.1));
         lay_top_menu_right.setLayoutParams(lp_lay_top_menu_right);
@@ -370,7 +372,7 @@ public class MainActivity extends AppCompatActivity {
 
         ConstraintLayout.LayoutParams lp_lay_top_menu_left1 = (ConstraintLayout.LayoutParams) lay_top_menu_left1.getLayoutParams();
         lp_lay_top_menu_left1.width = (int)(screenWidth*0.24);
-        lp_lay_top_menu_left1.height = (int)(screenHeight*0.07);
+        lp_lay_top_menu_left1.height = (int)(screenHeight*0.05);
         lay_top_menu_left1.setLayoutParams(lp_lay_top_menu_left1);
 
         ImageView img_bell = (ImageView) findViewById(R.id.img_bell);
@@ -653,7 +655,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!regId.equals(functions.reg_id)) {
                     mm = new MyAsyncTask();
                     is_requested = true;
-                    mm.url = (getResources().getString(R.string.site_url) + "register_gcm.php?param=register_gcm&uname=" + functions.u_name + "&reg_id=" + String.valueOf(regId));
+                    mm.url = (getResources().getString(R.string.site_url) + "register_gcm.php?param=register_gcm&uname=" + URLEncoder.encode(functions.u_name) + "&reg_id=" + String.valueOf(URLEncoder.encode(regId)));
                     mm.execute("");
                 }
 
@@ -710,7 +712,7 @@ public class MainActivity extends AppCompatActivity {
         x = 1;
         is_requested = true;
         mm = new MyAsyncTask();
-        last_requested_query=getResources().getString(R.string.site_url) + "get_user_info.php?param=get_user_main_info&list_type="+list_type+"&uname="+functions.u_name+"&rnd="+String.valueOf(new Random().nextInt());
+        last_requested_query=getResources().getString(R.string.site_url) + "get_user_info.php?param=get_user_main_info&list_type="+list_type+"&uname="+URLEncoder.encode(functions.u_name)+"&rnd="+String.valueOf(new Random().nextInt());
        // Toast.makeText(MainActivity.this, last_requested_query, Toast.LENGTH_SHORT).show();
         mm.url = (last_requested_query);
         mm.execute("");
@@ -1031,40 +1033,44 @@ public class MainActivity extends AppCompatActivity {
                 start=idstr.indexOf("id/");
         String
                 name=idstr.substring(start+3,idstr.length()-1);
-        ///Toast.makeText(MainActivity.this, name, Toast.LENGTH_SHORT).show();
-
-        LinearLayout lay_your_turn1 = (LinearLayout) findViewById(R.id.lay_your_turn1);
-        LinearLayout lay_your_turn2 = (LinearLayout) findViewById(R.id.lay_your_turn2);
-        LinearLayout lay_your_turn3 = (LinearLayout) findViewById(R.id.lay_your_turn3);
-
-        LinearLayout lay_rival_turn1 = (LinearLayout) findViewById(R.id.lay_rival_turn1);
-        LinearLayout lay_rival_turn2 = (LinearLayout) findViewById(R.id.lay_rival_turn2);
-        LinearLayout lay_rival_turn3 = (LinearLayout) findViewById(R.id.lay_rival_turn3);
-
-        LinearLayout lay_done_game1 = (LinearLayout) findViewById(R.id.lay_done_game1);
-        LinearLayout lay_done_game2 = (LinearLayout) findViewById(R.id.lay_done_game2);
-        LinearLayout lay_done_game3 = (LinearLayout) findViewById(R.id.lay_done_game3);
 
 
+        LinearLayout lay_under_your_turn = (LinearLayout) findViewById(R.id.lay_under_your_turn);
+        LinearLayout lay_under_done = (LinearLayout) findViewById(R.id.lay_under_done_game);
+        LinearLayout lay_under_rival_turn = (LinearLayout) findViewById(R.id.lay_under_rival_turn);
+//
+//        LinearLayout lay_rival_turn1 = (LinearLayout) findViewById(R.id.lay_rival_turn1);
+//        LinearLayout lay_rival_turn2 = (LinearLayout) findViewById(R.id.lay_rival_turn2);
+//        LinearLayout lay_rival_turn3 = (LinearLayout) findViewById(R.id.lay_rival_turn3);
+//
+//        LinearLayout lay_done_game1 = (LinearLayout) findViewById(R.id.lay_done_game1);
+//        LinearLayout lay_done_game2 = (LinearLayout) findViewById(R.id.lay_done_game2);
+//        LinearLayout lay_done_game3 = (LinearLayout) findViewById(R.id.lay_done_game3);
 
 
-        lay_your_turn3.setBackgroundColor(Color.WHITE);
-        lay_rival_turn3.setBackgroundColor(Color.WHITE);
-        lay_done_game3.setBackgroundColor(Color.WHITE);
 
-        lay_your_turn2.setBackgroundColor(Color.BLACK);
-        lay_rival_turn2.setBackgroundColor(Color.BLACK);
-        lay_done_game2.setBackgroundColor(Color.BLACK);
 
-        lay_your_turn1.setBackgroundColor(Color.parseColor("#89c6b4"));
-        lay_rival_turn1.setBackgroundColor(Color.parseColor("#89c6b4"));
-        lay_done_game1.setBackgroundColor(Color.parseColor("#89c6b4"));
 
+
+//        lay_your_turn3.setBackgroundColor(Color.WHITE);
+//        lay_rival_turn3.setBackgroundColor(Color.WHITE);
+//        lay_done_game3.setBackgroundColor(Color.WHITE);
+//
+//        lay_your_turn2.setBackgroundColor(Color.BLACK);
+//        lay_rival_turn2.setBackgroundColor(Color.BLACK);
+//        lay_done_game2.setBackgroundColor(Color.BLACK);
+//
+//        lay_your_turn1.setBackgroundColor(Color.parseColor("#89c6b4"));
+//        lay_rival_turn1.setBackgroundColor(Color.parseColor("#89c6b4"));
+//        lay_done_game1.setBackgroundColor(Color.parseColor("#89c6b4"));
+//
         if(name.equals("lay_your_turn"))
         {
-            lay_your_turn3.setBackgroundColor(Color.BLACK);
-            lay_your_turn2.setBackgroundColor(Color.WHITE);
-            lay_your_turn1.setBackgroundColor(Color.parseColor("#7cb3a2"));
+            lay_under_done.setBackgroundColor((Color.TRANSPARENT));
+            lay_under_your_turn.setBackgroundColor(Color.parseColor("#8ee2fa"));
+            lay_under_rival_turn.setBackgroundColor((Color.TRANSPARENT));
+
+
             if(!list_type.equals("turn"))
             {
                 list_type = "turn";
@@ -1075,9 +1081,10 @@ public class MainActivity extends AppCompatActivity {
         }
         if(name.equals("lay_rival_turn"))
         {
-            lay_rival_turn3.setBackgroundColor(Color.BLACK);
-            lay_rival_turn2.setBackgroundColor(Color.WHITE);
-            lay_rival_turn1.setBackgroundColor(Color.parseColor("#7cb3a2"));
+            lay_under_done.setBackgroundColor((Color.TRANSPARENT));
+            lay_under_your_turn.setBackgroundColor((Color.TRANSPARENT));
+            lay_under_rival_turn.setBackgroundColor(Color.parseColor("#8ee2fa"));
+
             if(!list_type.equals("wait"))
             {
                 list_type = "wait";
@@ -1087,21 +1094,22 @@ public class MainActivity extends AppCompatActivity {
         }
         if(name.equals("lay_done_game"))
         {
+            lay_under_done.setBackgroundColor(Color.parseColor("#8ee2fa"));
+            lay_under_your_turn.setBackgroundColor((Color.TRANSPARENT));
+            lay_under_rival_turn.setBackgroundColor((Color.TRANSPARENT));
             if(!list_type.equals("done"))
             {
                 list_type = "done";
                 get_user_info();
             }
 
-            lay_done_game3.setBackgroundColor(Color.BLACK);
-            lay_done_game2.setBackgroundColor(Color.WHITE);
-            lay_done_game1.setBackgroundColor(Color.parseColor("#7cb3a2"));
+
         }
-
-
-
-
-
+//
+//
+//
+//
+//
     }
 
     public void clk_question_factory(View view) {
@@ -1278,16 +1286,16 @@ public class MainActivity extends AppCompatActivity {
         }
         final ImageView image = (ImageView) findViewById(R.id.img_avatar);
 
-        if(functions.gender.equals("boy"))
+       // if(functions.gender.equals("boy"))
         {
-            image.setBackground(getResources().getDrawable(R.drawable.profile_mail));
+            image.setBackground(getResources().getDrawable(R.drawable.profile1));
 
         }
-        else
-        {
-            image.setBackground(getResources().getDrawable(R.drawable.profile_female));
-
-        }
+//        else
+//        {
+//            image.setBackground(getResources().getDrawable(R.drawable.profile_female));
+//
+//        }
         functions.avatar_name = fun.u_name+"_"+avatar_id+".jpg";
 
 

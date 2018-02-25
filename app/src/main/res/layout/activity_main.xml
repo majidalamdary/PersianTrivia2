@@ -21,7 +21,7 @@
             android:id="@+id/lay_tabBar"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.1"
+            android:layout_weight="1.2"
 
             android:background="#0c78a7"
             android:gravity="right"
@@ -149,7 +149,7 @@
             android:id="@+id/lay_profile"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_weight="4.5"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -171,6 +171,8 @@
                     android:id="@+id/img_avatar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="clk_logout"
                     android:src="@drawable/profile1" />
             </RelativeLayout>
 
@@ -233,7 +235,7 @@
             android:id="@+id/lay_line"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".03"
+            android:layout_weight="0"
             android:background="@android:color/white"
             android:orientation="vertical"></LinearLayout>
 
@@ -294,6 +296,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
                             android:gravity="right"
                             android:text="بازی جدید"
                             android:textColor="#ffffff" />
@@ -315,13 +319,13 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
-            android:layout_weight="5"
+            android:layout_weight="5.5"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1.5"
+                android:layout_weight="2"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -340,9 +344,9 @@
                         android:id="@+id/lbl_done_game"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+
                         android:text="تمام شده (3)"
-                        android:textColor="#000000" />
+                        android:textColor="@android:color/white" />
 
                 </LinearLayout>
 
@@ -362,9 +366,8 @@
                         android:id="@+id/lbl_rival_turn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:text="نوبت حریف (0)"
-                        android:textColor="#000000" />
+                        android:textColor="@android:color/white" />
 
                 </LinearLayout>
 
@@ -373,7 +376,6 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="."
                     android:clickable="true"
                     android:gravity="center"
                     android:onClick="clk_lay_game_lists"
@@ -385,11 +387,57 @@
                         android:id="@+id/lbl_your_turn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:text="نوبت شما (3)"
-                        android:textColor="#000000" />
+                        android:textColor="@android:color/white" />
 
                 </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_under_nobat"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/lay_under_done_game"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="clk_lay_game_lists"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_under_rival_turn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#8ee2fa"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="clk_lay_game_lists"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_under_your_turn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#8ee2fa"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="clk_lay_game_lists"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -420,92 +468,120 @@
             <LinearLayout
                 android:id="@+id/lay_buttom_bar"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:background="@color/TabBackground"
+                android:background="#0c78a7"
                 android:orientation="horizontal"
-                android:paddingTop="5dp">
+                android:padding="5dp">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="0.7"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/img_music"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/music"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/more_blue"
                         android:clickable="true"
                         android:onClick="stop_music" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/imageButton2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/gift"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/sound_on_blue"
                         android:clickable="true"
                         android:onClick="clk_gift" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/imageButton3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/heart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/shopping_blue"
                         android:clickable="true"
                         android:onClick="clk_love" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView14"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/qf1"
+                        android:id="@+id/imageButton31"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ranking_blue"
                         android:clickable="true"
-                        android:onClick="clk_question_factory" />
+                        android:onClick="clk_love" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageButton5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/telegram"
+                        android:id="@+id/imageButton34"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/home_white"
                         android:clickable="true"
-                        android:onClick="clk_telegram" />
+                        android:onClick="clk_love" />
                 </LinearLayout>
             </LinearLayout>
         </RelativeLayout>

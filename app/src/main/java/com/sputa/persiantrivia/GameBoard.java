@@ -780,10 +780,34 @@ public class GameBoard extends AppCompatActivity {
             txt_ans2.setText(ans2[question_num]);
             txt_ans3.setText(ans3[question_num]);
             txt_ans4.setText(ans4[question_num]);
-            txt_ans1_others.setText(String.valueOf(Integer.valueOf(ans1_others[question_num])*100));
-            txt_ans2_others.setText(String.valueOf(Integer.valueOf(ans2_others[question_num])*100));
-            txt_ans3_others.setText(String.valueOf(Integer.valueOf(ans3_others[question_num])*100));
-            txt_ans4_others.setText(String.valueOf(Integer.valueOf(ans4_others[question_num])*100));
+            try {
+                txt_ans1_others.setText(String.valueOf(Integer.valueOf(ans1_others[question_num]) * 100));
+            }catch (Exception e2)
+            {
+                txt_ans1_others.setText("0");
+
+            }
+            try {
+                txt_ans2_others.setText(String.valueOf(Integer.valueOf(ans2_others[question_num]) * 100));
+            }catch (Exception e2)
+            {
+                txt_ans2_others.setText("0");
+
+            }
+            try {
+                txt_ans3_others.setText(String.valueOf(Integer.valueOf(ans3_others[question_num]) * 100));
+            }catch (Exception e2)
+            {
+                txt_ans3_others.setText("0");
+
+            }
+            try {
+                txt_ans4_others.setText(String.valueOf(Integer.valueOf(ans4_others[question_num]) * 100));
+            }catch (Exception e2)
+            {
+                txt_ans4_others.setText("0");
+
+            }
 
             progress_bar = 1;
         }
@@ -1235,10 +1259,35 @@ public class GameBoard extends AppCompatActivity {
                         txt_ans2.setText(ans2[question_num]);
                         txt_ans3.setText(ans3[question_num]);
                         txt_ans4.setText(ans4[question_num]);
-                        txt_ans1_others.setText(String.valueOf(Integer.valueOf(ans1_others[question_num])*100));
-                        txt_ans2_others.setText(String.valueOf(Integer.valueOf(ans2_others[question_num])*100));
-                        txt_ans3_others.setText(String.valueOf(Integer.valueOf(ans3_others[question_num])*100));
-                        txt_ans4_others.setText(String.valueOf(Integer.valueOf(ans4_others[question_num])*100));
+                        try {
+                            txt_ans1_others.setText(String.valueOf(Integer.valueOf(ans1_others[question_num]) * 100));
+                        }catch (Exception e2)
+                        {
+                            txt_ans1_others.setText("0");
+
+                        }
+                        try {
+                            txt_ans2_others.setText(String.valueOf(Integer.valueOf(ans2_others[question_num]) * 100));
+                        }catch (Exception e2)
+                        {
+                            txt_ans2_others.setText("0");
+
+                        }
+                        try {
+                            txt_ans3_others.setText(String.valueOf(Integer.valueOf(ans3_others[question_num]) * 100));
+                        }catch (Exception e2)
+                        {
+                            txt_ans3_others.setText("0");
+
+                        }
+                        try {
+                            txt_ans4_others.setText(String.valueOf(Integer.valueOf(ans4_others[question_num]) * 100));
+                        }catch (Exception e2)
+                        {
+                            txt_ans4_others.setText("0");
+
+                        }
+
 
 
                     //txt_question.setText(output_str);

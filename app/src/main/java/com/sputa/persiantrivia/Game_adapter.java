@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -129,7 +130,6 @@ public class Game_adapter extends BaseAdapter{
         txt_level.setText(user_level[position]);
 
 
-
         ImageView image1 = (ImageView) rowView.findViewById(R.id.img_avatar);
 
         if(user_gender[position].equals("1"))
@@ -181,32 +181,32 @@ public class Game_adapter extends BaseAdapter{
 
 
         lbl_rival_name.setTypeface(tf);
-        lbl_rival_name.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.03));
+    //    lbl_rival_name.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.03));
 
 
         tv.setTypeface(tf);
-        tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.041));
+      //  tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.031));
 
 
         txt_level.setTypeface(tf);
-        txt_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.025));
+      //  txt_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.025));
 
 
         txt_desc.setTypeface(tf);
-        txt_desc.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.025));
+      //  txt_desc.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.025));
 
         LinearLayout lay_main = (LinearLayout) rowView.findViewById(R.id.lay_main);
          if(List_type.equals("wait"))
         {
-            lay_main.setBackground(rowView.getResources().getDrawable(R.drawable.light_yellow_btn));
+            lay_main.setBackgroundColor(Color.parseColor("#8ee2fa"));
         }
         else  if(List_type.equals("turn"))
          {
-             lay_main.setBackground(rowView.getResources().getDrawable(R.drawable.green_light_btn));
+             lay_main.setBackgroundColor(Color.parseColor("#8ee2fa"));
          }
          else  if(List_type.equals("done"))
          {
-             lay_main.setBackground(rowView.getResources().getDrawable(R.drawable.light_grey_btn));
+             lay_main.setBackgroundColor(Color.parseColor("#8ee2fa"));
          }
 
 
