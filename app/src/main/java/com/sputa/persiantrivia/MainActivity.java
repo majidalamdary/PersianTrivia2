@@ -1,20 +1,16 @@
 package com.sputa.persiantrivia;
 
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.database.sqlite.SQLiteDatabase;
@@ -25,9 +21,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.NotificationManagerCompat;
-import android.support.v4.view.ViewPager;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatCheckBox;
@@ -35,7 +29,6 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -43,7 +36,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,21 +56,10 @@ import java.lang.reflect.Method;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
-import com.google.android.gcm.GCMRegistrar;
 import com.squareup.picasso.Picasso;
 
-import ir.adad.client.Adad;
-
 import static com.sputa.persiantrivia.CommonUtilities.DISPLAY_MESSAGE_ACTION;
-import static com.sputa.persiantrivia.CommonUtilities.SENDER_ID;
-import static com.sputa.persiantrivia.CommonUtilities.DISPLAY_MESSAGE_ACTION;
-import static com.sputa.persiantrivia.CommonUtilities.EXTRA_MESSAGE;
 import static com.sputa.persiantrivia.CommonUtilities.SENDER_ID;
 
 public class MainActivity extends AppCompatActivity {
@@ -358,6 +339,51 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    RelativeLayout lay_top_menu_right= (RelativeLayout) findViewById(R.id.lay_top_menu_right);
+
+        ConstraintLayout.LayoutParams lp_lay_top_menu_right = (ConstraintLayout.LayoutParams) lay_top_menu_right.getLayoutParams();
+        lp_lay_top_menu_right.width = (int)(screenWidth*0.24);
+        lp_lay_top_menu_right.height = (int)(screenHeight*0.07);
+
+        //new ConstraintLayout.LayoutParams((int)(screenWidth*0.1),(int)(screenHeight*0.1));
+        lay_top_menu_right.setLayoutParams(lp_lay_top_menu_right);
+
+        ImageView img_coin = (ImageView) findViewById(R.id.img_coin);
+        ConstraintLayout.LayoutParams lp_default = (ConstraintLayout.LayoutParams) img_coin.getLayoutParams();
+        lp_default.width = (int)(screenWidth*0.08);
+        lp_default.height = (int)(screenHeight*0.09);
+        img_coin.setLayoutParams(lp_default);
+
+        ImageView img_add_coin = (ImageView) findViewById(R.id.img_add_coin);
+        ConstraintLayout.LayoutParams lp_default1 = (ConstraintLayout.LayoutParams) img_add_coin.getLayoutParams();
+        lp_default1.width = (int)(screenWidth*0.04);
+        lp_default1.height = (int)(screenHeight*0.04);
+        img_add_coin.setLayoutParams(lp_default1);
+
+
+        TextView txt_coin = (TextView) findViewById(R.id.txt_coin);
+        txt_coin.setTypeface(tf);
+        txt_coin.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.05));
+
+
+        RelativeLayout lay_top_menu_left1= (RelativeLayout) findViewById(R.id.lay_top_menu_left);
+
+        ConstraintLayout.LayoutParams lp_lay_top_menu_left1 = (ConstraintLayout.LayoutParams) lay_top_menu_left1.getLayoutParams();
+        lp_lay_top_menu_left1.width = (int)(screenWidth*0.24);
+        lp_lay_top_menu_left1.height = (int)(screenHeight*0.07);
+        lay_top_menu_left1.setLayoutParams(lp_lay_top_menu_left1);
+
+        ImageView img_bell = (ImageView) findViewById(R.id.img_bell);
+        ConstraintLayout.LayoutParams lp_default3 = (ConstraintLayout.LayoutParams) img_bell.getLayoutParams();
+        lp_default3.width = (int)(screenWidth*0.08);
+        lp_default3.height = (int)(screenHeight*0.09);
+        img_bell.setLayoutParams(lp_default3);
+
+
+
+        TextView txt_notification = (TextView) findViewById(R.id.txt_notification);
+        txt_notification.setTypeface(tf);
+        txt_notification.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.05));
 
 
 
@@ -389,45 +415,34 @@ public class MainActivity extends AppCompatActivity {
         int
                 one_in_three_screen = (int)(screenWidth/3);
 
-        LinearLayout.LayoutParams lp_img_circle_level = new LinearLayout.LayoutParams(img_circle_width,img_circle_height);
-        lp_img_circle_level.setMargins(0, 0, (int)((one_in_three_screen-img_circle_width)/2), 0);
-
-        ImageView img_circle_level = (ImageView) findViewById(R.id.img_level);
-        img_circle_level.setLayoutParams(lp_img_circle_level);
 
         TextView txt_level = (TextView) findViewById(R.id.txt_level);
         txt_level.setTypeface(tf);
-        txt_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
-
-
-        LinearLayout.LayoutParams lp_txt_level = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-        lp_txt_level.setMargins(0, (int)(img_circle_height/2)-(int)(img_circle_height*.07), -((int)(img_circle_width/2))-(int)(fun.get_text_with(txt_level)/2), 0);
-        txt_level.setLayoutParams(lp_txt_level);
+        txt_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.05));
 
 
 
-        LinearLayout.LayoutParams lp_img_circle_point = new LinearLayout.LayoutParams(img_circle_width,img_circle_height);
-        lp_img_circle_point.setMargins(0, 0, (int) ((one_in_three_screen - img_circle_width) / 2), 0);
 
-        ImageView img_circle_point = (ImageView) findViewById(R.id.img_point);
-        img_circle_point.setLayoutParams(lp_img_circle_point);
+
 
         TextView txt_point = (TextView) findViewById(R.id.txt_point);
         txt_point.setTypeface(tf);
-        txt_point.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
+        txt_point.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.05));
+
+        TextView txt_profile_name = (TextView) findViewById(R.id.txt_profile_name);
+        txt_profile_name.setTypeface(tf);
+        txt_profile_name.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.05));
 
 
-        LinearLayout.LayoutParams lp_txt_point = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-        lp_txt_point.setMargins(0, (int) (img_circle_height / 2) - (int) (img_circle_height * .07), -((int) (img_circle_width / 2)) - (int) (fun.get_text_with(txt_point) / 2), 0);
-        txt_point.setLayoutParams(lp_txt_point);
+
 
 
         int
-                img_avatar_width = (int)(screenWidth * .17);
+                img_avatar_width = (int)(screenWidth * .21);
         int
-                img_avatar_height = (int)(screenWidth * .17);
+                img_avatar_height = (int)(screenWidth * .21);
 
-        LinearLayout.LayoutParams lp_img_avatar = new LinearLayout.LayoutParams(img_avatar_width,img_avatar_height);
+        RelativeLayout.LayoutParams lp_img_avatar = new RelativeLayout.LayoutParams(img_avatar_width,img_avatar_height);
         //lp_img_avatar.setMargins(0, 0, (int)((one_in_three_screen-img_circle_width)/2), 0);
 
         ImageView img_avatar = (ImageView) findViewById(R.id.img_avatar);
@@ -447,8 +462,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        ImageView img_new_game = (ImageView) findViewById(R.id.img_new_game);
+        LinearLayout.LayoutParams lp1 = new LinearLayout.LayoutParams((int)(screenWidth*0.07),(int)(screenHeight*0.07));
+        //lp_img_avatar.setMargins(0, 0, (int)((one_in_three_screen-img_circle_width)/2), 0);
 
 
+        img_new_game.setLayoutParams(lp1);
 
         TextView txt_new_game = (TextView) findViewById(R.id.txt_new_game);
         txt_new_game.setTypeface(tf);
@@ -1295,9 +1314,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        txt_point.setText(point_str);
+        txt_point.setText("امتیاز "+point_str);
 
-        txt_level.setText(level_str);
+        txt_level.setText("سطح "+level_str);
 
         txt_nobat.setText("نوبت شما ("+my_turn_str+")");
         txt_wait.setText("نوبت رقیب ("+not_my_turn_str+")");

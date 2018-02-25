@@ -21,9 +21,9 @@
             android:id="@+id/lay_tabBar"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.5"
+            android:layout_weight="1.1"
 
-            android:background="@color/TabBackground"
+            android:background="#0c78a7"
             android:gravity="right"
             android:orientation="horizontal">
 
@@ -40,27 +40,57 @@
 
                     <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layoutDirection="ltr">
 
-                        <ImageView
-                            android:id="@+id/imageView15"
-                            android:layout_width="67dp"
-                            android:layout_height="16dp"
-                            app:srcCompat="@drawable/coin_new"
-                            tools:layout_editor_absoluteX="16dp"
-                            tools:layout_editor_absoluteY="27dp" />
 
                         <RelativeLayout
-                            android:id="@+id/relativeLayout14"
-                            android:layout_width="54dp"
-                            android:layout_height="22dp"
+                            android:id="@+id/lay_top_menu_right"
+                            android:layout_width="81dp"
+                            android:layout_height="33dp"
                             android:background="@drawable/blue_btn_new"
+                            android:gravity="center"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
+                            <TextView
+                                android:id="@+id/txt_coin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:textColor="@android:color/white" />
                         </RelativeLayout>
+
+
+                        <ImageView
+                            android:id="@+id/img_coin"
+                            android:layout_width="36dp"
+                            android:layout_height="17dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/coin_new"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/lay_top_menu_right"
+                            app:layout_constraintStart_toStartOf="@+id/lay_top_menu_right"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+
+
+                            android:id="@+id/img_add_coin"
+                            android:layout_width="25dp"
+                            android:layout_height="29dp"
+                            android:src="@drawable/add"
+                            app:layout_constraintBottom_toBottomOf="@id/lay_top_menu_right"
+                            app:layout_constraintEnd_toStartOf="@+id/lay_top_menu_right"
+                            app:layout_constraintHorizontal_bias="0.545"
+                            app:layout_constraintStart_toStartOf="@+id/lay_top_menu_right"
+                            app:layout_constraintTop_toBottomOf="@+id/lay_top_menu_right" />
+
                     </android.support.constraint.ConstraintLayout>
                 </LinearLayout>
 
@@ -72,7 +102,43 @@
 
                     <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layoutDirection="ltr">
+
+
+                        <RelativeLayout
+                            android:id="@+id/lay_top_menu_left"
+                            android:layout_width="81dp"
+                            android:layout_height="33dp"
+                            android:background="@drawable/blue_btn_new"
+                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/txt_notification"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:textColor="@android:color/white" />
+                        </RelativeLayout>
+
+
+                        <ImageView
+                            android:id="@+id/img_bell"
+                            android:layout_width="36dp"
+                            android:layout_height="17dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/alarm"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/lay_top_menu_left"
+                            app:layout_constraintStart_toStartOf="@+id/lay_top_menu_left"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                     </android.support.constraint.ConstraintLayout>
                 </LinearLayout>
@@ -83,84 +149,84 @@
             android:id="@+id/lay_profile"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3"
-            android:background="@drawable/bar"
-            android:orientation="horizontal">
+            android:layout_weight="4"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:clickable="true"
+                android:layout_height="0dp"
+                android:layout_weight=".3"
+                android:orientation="horizontal">
 
-                android:onClick="clk_statistics"
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/img_level"
+                    android:id="@+id/img_avatar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/textView"
+                    android:src="@drawable/profile1" />
+            </RelativeLayout>
 
-                    android:background="@drawable/circle_level" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kameh"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:gravity="center"
+
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/txt_level"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="25"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="سطح 2"
                     android:textColor="@android:color/white" />
-            </LinearLayout>
+            </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
                 android:gravity="center"
+
                 android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/white"
-                    android:orientation="vertical"
-                    android:padding="3dp">
-
-                    <ImageView
-                        android:id="@+id/img_avatar"
-                        android:layout_width="65dp"
-                        android:layout_height="65dp"
-                        android:layout_gravity="center_vertical"
-                        android:background="@drawable/rambod"
-                        android:clickable="true"
-                        android:onClick="clk_logout" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:onClick="clk_statistics"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/img_point"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/circle_point" />
 
                 <TextView
                     android:id="@+id/txt_point"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="25"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="امتیاز 10"
                     android:textColor="@android:color/white" />
+            </RelativeLayout>
 
-            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".3"
+                android:orientation="horizontal"></RelativeLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -191,7 +257,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight=".3"
-                android:background="@drawable/white_btn"
+                android:background="@drawable/dark_green_btn"
 
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -200,24 +266,28 @@
                     android:id="@+id/lay_btn_new_game"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="3dp"
                     android:layout_weight="0.3"
-                    android:background="@drawable/green_btn"
 
+                    android:background="@drawable/green_btn"
                     android:clickable="true"
                     android:gravity="center"
                     android:onClick="clk_new_game"
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1.3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/img_new_game"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/plus_white" />
 
                         <TextView
                             android:id="@+id/txt_new_game"
@@ -225,24 +295,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:gravity="right"
-                            android:text="بازی جدید  شروع کن"
-                            android:textColor="#ffffff" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/txt_new_game_coin_count"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:gravity="right"
-                            android:text="50 سکه"
+                            android:text="بازی جدید"
                             android:textColor="#ffffff" />
                     </LinearLayout>
 
@@ -284,32 +337,14 @@
                     android:paddingLeft="1dp"
                     android:paddingTop="1dp">
 
-                    <LinearLayout
-                        android:id="@+id/lay_done_game2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#000000"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingBottom="1dp"
-                        android:paddingRight="1dp">
+                    <TextView
+                        android:id="@+id/lbl_done_game"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="تمام شده (3)"
+                        android:textColor="#000000" />
 
-                        <LinearLayout
-                            android:id="@+id/lay_done_game1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="#89c6b4"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/lbl_done_game"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="تمام شده (3)"
-                                android:textColor="#000000" />
-                        </LinearLayout>
-                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -325,32 +360,14 @@
                     android:paddingLeft="1dp"
                     android:paddingTop="1dp">
 
-                    <LinearLayout
-                        android:id="@+id/lay_rival_turn2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#000000"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingBottom="1dp"
-                        android:paddingRight="1dp">
+                    <TextView
+                        android:id="@+id/lbl_rival_turn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="نوبت حریف (0)"
+                        android:textColor="#000000" />
 
-                        <LinearLayout
-                            android:id="@+id/lay_rival_turn1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="#89c6b4"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/lbl_rival_turn"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="نوبت حریف (0)"
-                                android:textColor="#000000" />
-                        </LinearLayout>
-                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -358,7 +375,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#000000"
+                    android:background="#ffffff"
                     android:clickable="true"
                     android:gravity="center"
                     android:onClick="clk_lay_game_lists"
@@ -366,32 +383,14 @@
                     android:paddingLeft="1dp"
                     android:paddingTop="1dp">
 
-                    <LinearLayout
-                        android:id="@+id/lay_your_turn2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#ffffff"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingBottom="1dp"
-                        android:paddingRight="1dp">
+                    <TextView
+                        android:id="@+id/lbl_your_turn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="نوبت شما (3)"
+                        android:textColor="#000000" />
 
-                        <LinearLayout
-                            android:id="@+id/lay_your_turn1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="#7cb3a2"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/lbl_your_turn"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="نوبت شما (3)"
-                                android:textColor="#000000" />
-                        </LinearLayout>
-                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
@@ -418,7 +417,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1.2">
 
             <LinearLayout
                 android:id="@+id/lay_buttom_bar"
