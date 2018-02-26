@@ -36,6 +36,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:clickable="true"
+                    android:onClick="clk_stotr"
                     android:orientation="horizontal">
 
                     <android.support.constraint.ConstraintLayout
@@ -98,6 +100,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:clickable="true"
+                    android:onClick="clk_request_game"
                     android:orientation="horizontal">
 
                     <android.support.constraint.ConstraintLayout
@@ -484,12 +488,11 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/img_music"
+                        android:id="@+id/image1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/more_blue"
-                        android:clickable="true"
-                        android:onClick="stop_music" />
+                        android:clickable="true" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -507,12 +510,12 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageButton2"
+                        android:id="@+id/img_music"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/sound_on_blue"
                         android:clickable="true"
-                        android:onClick="clk_gift" />
+                        android:onClick="stop_music" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -535,7 +538,7 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/shopping_blue"
                         android:clickable="true"
-                        android:onClick="clk_love" />
+                        android:onClick="clk_stotr" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -558,7 +561,7 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/ranking_blue"
                         android:clickable="true"
-                        android:onClick="clk_love" />
+                        android:onClick="clk_statistics" />
                 </LinearLayout>
 
                 <LinearLayout

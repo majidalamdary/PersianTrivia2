@@ -1011,14 +1011,14 @@ public class MainActivity extends AppCompatActivity {
             player.pause();
             music_playing=false;
             ImageView img_music = (ImageView) findViewById(R.id.img_music);
-            img_music.setBackground(getResources().getDrawable(R.drawable.music_not));
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_off_blue));
         }
         else
         {
             player.start();
             music_playing=true;
             ImageView img_music = (ImageView) findViewById(R.id.img_music);
-            img_music.setBackground(getResources().getDrawable(R.drawable.music));
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_on_blue));
         }
 
     }
