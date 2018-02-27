@@ -167,22 +167,33 @@ public class SelectRival extends AppCompatActivity {
 
     private void set_content()
     {
-        LinearLayout.LayoutParams lp_img_chance_rival = new LinearLayout.LayoutParams((int)(screenWidth*0.62),(int)(screenHeight*0.1));
-        //tab_icon_param.setMargins((int)(((int)(screenHeight*0.083))),(int)(screenHeight*0.01),(int)(screenHeight*0.08),0);
-        ImageView img_btn_chance_rival = (ImageView) findViewById(R.id.img_chance_rival);
-        img_btn_chance_rival.setLayoutParams(lp_img_chance_rival);
-        ImageView img_btn_lookup_name = (ImageView) findViewById(R.id.img_lookup_name);
-        img_btn_lookup_name.setLayoutParams(lp_img_chance_rival);
-        ImageView img_btn_with_friend = (ImageView) findViewById(R.id.img_with_friends);
-        img_btn_with_friend.setLayoutParams(lp_img_chance_rival);
-        ImageView img_btn_look_around = (ImageView) findViewById(R.id.img_look_around);
-        img_btn_look_around.setLayoutParams(lp_img_chance_rival);
-        ImageView img_btn_shake_it= (ImageView) findViewById(R.id.img_shake_it);
-        img_btn_shake_it.setLayoutParams(lp_img_chance_rival);
+//        LinearLayout.LayoutParams lp_img_chance_rival = new LinearLayout.LayoutParams((int)(screenWidth*0.62),(int)(screenHeight*0.1));
+//        //tab_icon_param.setMargins((int)(((int)(screenHeight*0.083))),(int)(screenHeight*0.01),(int)(screenHeight*0.08),0);
+//        ImageView img_btn_chance_rival = (ImageView) findViewById(R.id.img_chance_rival);
+//        img_btn_chance_rival.setLayoutParams(lp_img_chance_rival);
+//        ImageView img_btn_lookup_name = (ImageView) findViewById(R.id.img_lookup_name);
+//        img_btn_lookup_name.setLayoutParams(lp_img_chance_rival);
+//        ImageView img_btn_with_friend = (ImageView) findViewById(R.id.img_with_friends);
+//        img_btn_with_friend.setLayoutParams(lp_img_chance_rival);
+//        ImageView img_btn_look_around = (ImageView) findViewById(R.id.img_look_around);
+//        img_btn_look_around.setLayoutParams(lp_img_chance_rival);
+//        ImageView img_btn_shake_it= (ImageView) findViewById(R.id.img_shake_it);
+//        img_btn_shake_it.setLayoutParams(lp_img_chance_rival);
 
         TextView txt_level = (TextView) findViewById(R.id.lbl_start_game);
         txt_level.setTypeface(tf);
-        txt_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
+
+        TextView txt_chanced_rival = (TextView) findViewById(R.id.txt_chanced_rival);
+        txt_chanced_rival.setTypeface(tf);
+        TextView txt_search_name = (TextView) findViewById(R.id.txt_search_name);
+        txt_search_name.setTypeface(tf);
+        TextView txt_look_around = (TextView) findViewById(R.id.txt_look_around);
+        txt_look_around.setTypeface(tf);
+        TextView txt_shaked = (TextView) findViewById(R.id.txt_shaked);
+        txt_shaked.setTypeface(tf);
+
+
+
 
     }
     @Override
@@ -367,6 +378,10 @@ public class SelectRival extends AppCompatActivity {
 
 
 
+    }
+
+    public void clk_back(View view) {
+        finish();
     }
 
 

@@ -361,7 +361,7 @@ public class LookAround extends AppCompatActivity {
 
         TextView txt_level = (TextView) findViewById(R.id.lbl_start_game);
         txt_level.setTypeface(tf);
-        txt_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
+     //   txt_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
 
 
 

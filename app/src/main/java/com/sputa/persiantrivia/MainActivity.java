@@ -1312,13 +1312,14 @@ public class MainActivity extends AppCompatActivity {
 
         TextView txt_point = (TextView) findViewById(R.id.txt_point);
         TextView txt_level = (TextView) findViewById(R.id.txt_level);
+        TextView txt_profile_name = (TextView) findViewById(R.id.txt_profile_name);
 
 
 
         TextView txt_nobat = (TextView) findViewById(R.id.lbl_your_turn);
         TextView txt_wait = (TextView) findViewById(R.id.lbl_rival_turn);
         TextView txt_done = (TextView) findViewById(R.id.lbl_done_game);
-
+        txt_profile_name.setText(fun.u_name);
 
 
 

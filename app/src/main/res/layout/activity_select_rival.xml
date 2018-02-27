@@ -1,189 +1,363 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+android:layoutDirection="rtl"
     tools:context="com.sputa.persiantrivia.SelectRival">
 
 
     <LinearLayout
-        android:background="@drawable/bg"
-        android:orientation="vertical"
+        android:id="@+id/lay_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1"
-        android:id="@+id/lay_main">
+        android:background="#049ccd"
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
-                android:background="#65A1C6">
+                android:background="#0c78a7"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="3">
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/imageView6"
-                        android:background="@drawable/return1" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="0dp"
-                    android:gravity="center"
                     android:layout_height="match_parent"
-                    android:layout_weight="8">
+                    android:layout_weight="8"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/lbl_start_game"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:text="بازی جدید"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="انتخاب رقیب"
-                        android:id="@+id/lbl_start_game"
-                        android:textColor="#ffffff" />
+                        android:textColor="#ffffff"
+                        android:textSize="21sp" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="3"></LinearLayout>
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView16"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:clickable="true"
+                        android:onClick="clk_back"
+                        android:background="@drawable/left_arrow" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
+                android:id="@+id/main_lay"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="9"
-                android:id="@+id/main_lay">
+                android:orientation="vertical">
+
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/lay_chance_rival"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_weight="2">
+                    android:layout_height="70dp"
+                    android:background="#d7d6d6"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:onClick="clk_random_rival"
+                    android:paddingBottom="5dp">
 
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:background="#ffffff"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView17"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:src="@drawable/crowd_users" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center_vertical|start"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp">
+
+                            <TextView
+                                android:id="@+id/txt_chanced_rival"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="حریف شانسی"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView18"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/left_arrow_grey" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:orientation="vertical"></LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lay_shaked"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="#d7d6d6"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:onClick="clk_search_name"
+                    android:paddingBottom="5dp">
 
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="2.4"
-                        android:background="@drawable/hold_opponent"></LinearLayout>
+                        android:background="#ffffff"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView17111"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:src="@drawable/magnifier" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center_vertical|start"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp">
+
+                            <TextView
+                                android:id="@+id/txt_search_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="جستجوی نام"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView18116"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/left_arrow_grey" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:orientation="vertical"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_look_around11"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="#d7d6d6"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:onClick="btn_look_around"
+                    android:paddingBottom="5dp">
 
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:background="#ffffff"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView1711"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:src="@drawable/theatre_binoculars" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center_vertical|start"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp">
+
+                            <TextView
+                                android:id="@+id/txt_look_around"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="اطراف من"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView1811"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/left_arrow_grey" />
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:id="@+id/lay_chance_rival">
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="600px"
-                        android:layout_height="100px"
-                        android:id="@+id/img_chance_rival"
-                        android:background="@drawable/btn_chance_rival"
-                        android:clickable="true"
-                        android:onClick="clk_random_rival" />
-                </LinearLayout>
+                    android:layout_height="5dp"
+                    android:orientation="vertical"></LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/lay_look_around"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="70dp"
+                    android:background="#d7d6d6"
                     android:gravity="center"
-                    android:layout_weight="1">
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:onClick="clk_shake"
+                    android:paddingBottom="5dp">
 
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="600px"
-                        android:layout_height="100px"
-                        android:id="@+id/img_lookup_name"
-                        android:background="@drawable/btn_lookup_name"
-                        android:clickable="true"
-                        android:onClick="clk_search_name" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ffffff"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView17121"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:src="@drawable/phone_ringing" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center_vertical|start"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp">
+
+                            <TextView
+                                android:id="@+id/txt_shaked"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="تکون بده"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView11811"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/left_arrow_grey" />
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:visibility="gone">
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="600px"
-                        android:layout_height="100px"
-                        android:id="@+id/img_with_friends"
-                        android:background="@drawable/btn_with_friends"
-                        android:clickable="true"
-                        android:onClick="clk_friend_list" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="600px"
-                        android:layout_height="100px"
-                        android:id="@+id/img_look_around"
-                        android:background="@drawable/btn_look_around"
-                        android:clickable="true"
-                        android:onClick="btn_look_around" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:layout_width="600px"
-                        android:layout_height="100px"
-                        android:id="@+id/img_shake_it"
-                        android:background="@drawable/btn_shake_it"
-                        android:clickable="true"
-                        android:onClick="clk_shake" />
-                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

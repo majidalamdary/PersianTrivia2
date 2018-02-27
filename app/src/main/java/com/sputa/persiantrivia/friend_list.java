@@ -322,36 +322,32 @@ public class friend_list extends AppCompatActivity {
     }
     private void set_content()
     {
-        LinearLayout laybtn_login = (LinearLayout) findViewById(R.id.top_lay);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_laybtn_login = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)(screenHeight*0.08));
-        laybtn_login.setLayoutParams(lp_laybtn_login);
-
-        LinearLayout lay_search = (LinearLayout) findViewById(R.id.search_lay);
-        lay_search.setLayoutParams(lp_laybtn_login);
+//        LinearLayout laybtn_login = (LinearLayout) findViewById(R.id.top_lay);
+//        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
+//        LinearLayout.LayoutParams lp_laybtn_login = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)(screenHeight*0.12));
+//        laybtn_login.setLayoutParams(lp_laybtn_login);
+//
+//        LinearLayout lay_search = (LinearLayout) findViewById(R.id.search_lay);
+//        lay_search.setLayoutParams(lp_laybtn_login);
 
 
 
 
         TextView txt_level = (TextView) findViewById(R.id.lbl_start_game);
         txt_level.setTypeface(tf);
-        txt_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
 
 
         TextView txt_friend_name = (TextView) findViewById(R.id.lbl_friend_name);
         txt_friend_name.setTypeface(tf);
-        txt_friend_name.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
 
 
         TextView txt_default = (TextView) findViewById(R.id.txt_default);
         txt_default.setTypeface(tf);
-        txt_default.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.045));
 
 
 
         EditText txt_search = (EditText) findViewById(R.id.txt_search);
         txt_search.setTypeface(tf);
-        txt_search.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
 
 
     }

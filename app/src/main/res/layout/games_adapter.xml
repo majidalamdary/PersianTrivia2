@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:background="@drawable/green_light_btn"
+                android:background="#8ee2fa"
                 android:orientation="horizontal">
 
                 <RelativeLayout
