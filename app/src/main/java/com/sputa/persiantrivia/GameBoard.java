@@ -344,15 +344,15 @@ public class GameBoard extends AppCompatActivity {
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-        LinearLayout lay_speaker= (LinearLayout) findViewById(R.id.lay_speaker);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_lay_speaker = new LinearLayout.LayoutParams((int)(screenHeight*0.15),(int)(screenHeight*0.042));
-        lay_speaker.setLayoutParams(lp_lay_speaker);
-
-        LinearLayout lay_coin= (LinearLayout) findViewById(R.id.lay_coin);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_lay_coin = new LinearLayout.LayoutParams((int)(screenHeight*0.15),(int)(screenHeight*0.042));
-        lay_coin.setLayoutParams(lp_lay_coin);
+//        LinearLayout lay_speaker= (LinearLayout) findViewById(R.id.lay_speaker);
+//        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
+//        LinearLayout.LayoutParams lp_lay_speaker = new LinearLayout.LayoutParams((int)(screenHeight*0.15),(int)(screenHeight*0.042));
+//        lay_speaker.setLayoutParams(lp_lay_speaker);
+//
+//        LinearLayout lay_coin= (LinearLayout) findViewById(R.id.lay_coin);
+//        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
+//        LinearLayout.LayoutParams lp_lay_coin = new LinearLayout.LayoutParams((int)(screenHeight*0.15),(int)(screenHeight*0.042));
+//        lay_coin.setLayoutParams(lp_lay_coin);
 
 
 
@@ -361,17 +361,17 @@ public class GameBoard extends AppCompatActivity {
         txt_coin_count.setTypeface(tf);
         txt_coin_count.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
 
-        TextView txt_mute = (TextView) findViewById(R.id.txt_mute);
-        txt_mute.setTypeface(tf);
-        txt_mute.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+//        TextView txt_mute = (TextView) findViewById(R.id.txt_mute);
+//        txt_mute.setTypeface(tf);
+//        txt_mute.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
 
         TextView txt_question_num = (TextView) findViewById(R.id.txt_question_num);
         txt_question_num.setTypeface(tf);
         txt_question_num.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.059));
 
-        TextView txt_question_num1 = (TextView) findViewById(R.id.txt_question_num1);
-        txt_question_num1.setTypeface(tf);
-        txt_question_num1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.059));
+//        TextView txt_question_num1 = (TextView) findViewById(R.id.txt_question_num1);
+//        txt_question_num1.setTypeface(tf);
+//        txt_question_num1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.059));
 
 
         TextView lbl_question_num = (TextView) findViewById(R.id.lbl_question_num);
@@ -384,24 +384,24 @@ public class GameBoard extends AppCompatActivity {
 
 
 
-
+//
 //
 //        TextView txt_point = (TextView) findViewById(R.id.txt_point);
 //        txt_point.setTypeface(tf);
 //        txt_point.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.059));
 //
+//
 
 
-
-        LinearLayout lay_speaker1= (LinearLayout) findViewById(R.id.lay_speaker1);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_lay_speaker1 = new LinearLayout.LayoutParams((int)(screenHeight*0.15),(int)(screenHeight*0.042));
-        lay_speaker1.setLayoutParams(lp_lay_speaker1);
-
-        LinearLayout lay_coin1= (LinearLayout) findViewById(R.id.lay_coin1);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_lay_coin1 = new LinearLayout.LayoutParams((int)(screenHeight*0.15),(int)(screenHeight*0.042));
-        lay_coin1.setLayoutParams(lp_lay_coin1);
+//        LinearLayout lay_speaker1= (LinearLayout) findViewById(R.id.lay_speaker1);
+//        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
+//        LinearLayout.LayoutParams lp_lay_speaker1 = new LinearLayout.LayoutParams((int)(screenHeight*0.15),(int)(screenHeight*0.042));
+//        lay_speaker1.setLayoutParams(lp_lay_speaker1);
+//
+//        LinearLayout lay_coin1= (LinearLayout) findViewById(R.id.lay_coin1);
+//        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
+//        LinearLayout.LayoutParams lp_lay_coin1 = new LinearLayout.LayoutParams((int)(screenHeight*0.15),(int)(screenHeight*0.042));
+//        lay_coin1.setLayoutParams(lp_lay_coin1);
 
         TextView txt_coin_count1 = (TextView) findViewById(R.id.txt_coin_count1);
         txt_coin_count1.setTypeface(tf);
@@ -591,23 +591,23 @@ public class GameBoard extends AppCompatActivity {
     public void clk_mute(View v)
     {
 
-        if(MainActivity.music_playing) {
-            TextView tv = (TextView) findViewById(R.id.txt_mute);
-            tv.setText("پخش ");
-            TextView tv1 = (TextView) findViewById(R.id.txt_mute1);
-            tv1.setText("پخش ");
-            MainActivity.music_playing=false;
-            MainActivity.player.pause();
-        }
-        else
-        {
-            MainActivity.music_playing=true;
-            TextView tv = (TextView) findViewById(R.id.txt_mute);
-            tv.setText("بی صدا");
-            TextView tv1 = (TextView) findViewById(R.id.txt_mute1);
-            tv1.setText("بی صدا");
-            MainActivity.player.start();
-        }
+//        if(MainActivity.music_playing) {
+//            TextView tv = (TextView) findViewById(R.id.txt_mute);
+//            tv.setText("پخش ");
+//            TextView tv1 = (TextView) findViewById(R.id.txt_mute1);
+//            tv1.setText("پخش ");
+//            MainActivity.music_playing=false;
+//            MainActivity.player.pause();
+//        }
+//        else
+//        {
+//            MainActivity.music_playing=true;
+//            TextView tv = (TextView) findViewById(R.id.txt_mute);
+//            tv.setText("بی صدا");
+//            TextView tv1 = (TextView) findViewById(R.id.txt_mute1);
+//            tv1.setText("بی صدا");
+//            MainActivity.player.start();
+//        }
 
 
 
@@ -766,10 +766,10 @@ public class GameBoard extends AppCompatActivity {
 
 
             question_num++;
-            TextView txt_question_num= (TextView) findViewById(R.id.txt_question_num);
-            txt_question_num.setText(String.valueOf(question_num));
-            TextView txt_question_num1= (TextView) findViewById(R.id.txt_question_num1);
-            txt_question_num1.setText(String.valueOf(question_num));
+//            TextView txt_question_num= (TextView) findViewById(R.id.txt_question_num);
+//            txt_question_num.setText(String.valueOf(question_num));
+//            TextView txt_question_num1= (TextView) findViewById(R.id.txt_question_num1);
+//            txt_question_num1.setText(String.valueOf(question_num));
             already_answered = 0;
 //            already_two_removed = 0;
 //            already_get_extra_time = 0;
@@ -1291,10 +1291,10 @@ public class GameBoard extends AppCompatActivity {
 
 
                     //txt_question.setText(output_str);
-                    TextView txt_question_num= (TextView) findViewById(R.id.txt_question_num);
-                    txt_question_num.setText(String.valueOf(question_num));
-                    TextView txt_question_num1= (TextView) findViewById(R.id.txt_question_num1);
-                    txt_question_num1.setText(String.valueOf(question_num));
+//                    TextView txt_question_num= (TextView) findViewById(R.id.txt_question_num);
+//                    txt_question_num.setText(String.valueOf(question_num));
+//                    TextView txt_question_num1= (TextView) findViewById(R.id.txt_question_num1);
+//                    txt_question_num1.setText(String.valueOf(question_num));
                     lay_wait.setVisibility(View.GONE);
                     LinearLayout lay_main = (LinearLayout) findViewById(R.id.lay_main);
                     LinearLayout lay_mbetween = (LinearLayout) findViewById(R.id.lay_between);

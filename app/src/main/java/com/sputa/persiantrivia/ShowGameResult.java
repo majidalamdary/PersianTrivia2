@@ -390,23 +390,23 @@ public class ShowGameResult extends AppCompatActivity {
     public void clk_mute(View v)
     {
 
-        if(MainActivity.music_playing) {
-            TextView tv = (TextView) findViewById(R.id.txt_mute);
-            tv.setText("پخش ");
-            TextView tv1 = (TextView) findViewById(R.id.txt_mute1);
-            tv1.setText("پخش ");
-            MainActivity.music_playing=false;
-            MainActivity.player.pause();
-        }
-        else
-        {
-            MainActivity.music_playing=true;
-            TextView tv = (TextView) findViewById(R.id.txt_mute);
-            tv.setText("بی صدا");
-            TextView tv1 = (TextView) findViewById(R.id.txt_mute1);
-            tv1.setText("بی صدا");
-            MainActivity.player.start();
-        }
+//        if(MainActivity.music_playing) {
+//            TextView tv = (TextView) findViewById(R.id.txt_mute);
+//            tv.setText("پخش ");
+//            TextView tv1 = (TextView) findViewById(R.id.txt_mute1);
+//            tv1.setText("پخش ");
+//            MainActivity.music_playing=false;
+//            MainActivity.player.pause();
+//        }
+//        else
+//        {
+//            MainActivity.music_playing=true;
+//            TextView tv = (TextView) findViewById(R.id.txt_mute);
+//            tv.setText("بی صدا");
+//            TextView tv1 = (TextView) findViewById(R.id.txt_mute1);
+//            tv1.setText("بی صدا");
+//            MainActivity.player.start();
+//        }
 
 
 

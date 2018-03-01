@@ -20,7 +20,7 @@
             android:id="@+id/lay_header"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".8"
+            android:layout_weight="1"
             android:background="#ffffff"
             android:orientation="horizontal">
 
@@ -97,7 +97,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".5">
+            android:layout_weight=".6">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -177,7 +177,7 @@
             android:id="@+id/lay_coin_speaker"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".5"
+            android:layout_weight=".8"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -277,8 +277,7 @@
             android:orientation="horizontal"
             android:paddingBottom="10dp"
             android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="10dp">
+            android:paddingRight="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -658,7 +657,7 @@
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/people_says"
+                                android:background="@drawable/chat"
                                 android:gravity="right" />
 
                             <ImageView
@@ -666,7 +665,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/coin_tak"
+                                android:background="@drawable/coin_new"
                                 android:gravity="right" />
 
                             <TextView
@@ -716,15 +715,17 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:background="#FF1C21"
+                android:background="@drawable/btn_dark_purple"
                 android:clickable="false"
                 android:nestedScrollingEnabled="false"
                 android:onClick="clk_remove"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="5dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_purple">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -745,7 +746,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="35dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/bomb"
+                                android:background="@drawable/magic_wand"
                                 android:gravity="right" />
 
                             <ImageView
@@ -753,7 +754,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="21dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/coin_tak"
+                                android:background="@drawable/coin_new"
                                 android:gravity="right" />
 
                             <TextView
@@ -804,14 +805,16 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:background="#FF1C21"
+                android:background="@drawable/btn_dark_orange"
                 android:clickable="true"
                 android:onClick="clk_extra_time"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="5dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/btn_orange"
                     android:clickable="false"
                     android:onClick="clk_extra_time">
 
@@ -834,7 +837,7 @@
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/extra_time"
+                                android:background="@drawable/race_chronometer"
                                 android:gravity="right" />
 
                             <ImageView
@@ -842,7 +845,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="21dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/coin_tak"
+                                android:background="@drawable/coin_new"
                                 android:gravity="right" />
 
                             <TextView
@@ -892,14 +895,16 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:background="#FF1C21"
+                android:background="@drawable/btn_dark_abi"
                 android:clickable="true"
                 android:onClick="clk_second_chance"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="5dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_abi">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -919,7 +924,7 @@
                                 android:id="@+id/img_second_chance"
                                 android:layout_width="45dp"
                                 android:layout_height="45dp"
-                                android:background="@drawable/second_chance"
+                                android:background="@drawable/new_refresh"
                                 android:gravity="right" />
 
                             <ImageView
@@ -927,7 +932,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="21dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/coin_tak"
+                                android:background="@drawable/coin_new"
                                 android:gravity="right" />
 
                             <TextView
