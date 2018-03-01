@@ -339,6 +339,31 @@ public class GameBoard extends AppCompatActivity {
         txt_subject1.setTypeface(tf);
         txt_subject1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.039));
 
+
+
+        int
+                img_profile_pic_size = (int)(screenHeight*.098);
+
+
+        LinearLayout.LayoutParams lp_img_profile_pic_size = new LinearLayout.LayoutParams(img_profile_pic_size,img_profile_pic_size);
+
+        ImageView img_user_profile_pic = (ImageView) findViewById(R.id.img_user_pic);
+        img_user_profile_pic.setLayoutParams(lp_img_profile_pic_size);
+        ImageView img_user_profile_pic1 = (ImageView) findViewById(R.id.img_user_pic1);
+        img_user_profile_pic1.setLayoutParams(lp_img_profile_pic_size);
+
+
+
+        ImageView img_rival_pic = (ImageView) findViewById(R.id.img_rival_pic);
+        img_rival_pic.setLayoutParams(lp_img_profile_pic_size);
+        ImageView img_rival_pic1 = (ImageView) findViewById(R.id.img_rival_pic1);
+        img_rival_pic1.setLayoutParams(lp_img_profile_pic_size);
+
+        //        LinearLayout lay_speaker= (LinearLayout) findViewById(R.id.lay_speaker);
+//        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
+//        LinearLayout.LayoutParams lp_lay_speaker = new LinearLayout.LayoutParams((int)(screenHeight*0.15),(int)(screenHeight*0.042));
+//        lay_speaker.setLayoutParams(lp_lay_speaker);
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -359,7 +384,7 @@ public class GameBoard extends AppCompatActivity {
 
         TextView txt_coin_count = (TextView) findViewById(R.id.txt_coin_count);
         txt_coin_count.setTypeface(tf);
-        txt_coin_count.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+        txt_coin_count.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
 
 //        TextView txt_mute = (TextView) findViewById(R.id.txt_mute);
 //        txt_mute.setTypeface(tf);
@@ -369,18 +394,18 @@ public class GameBoard extends AppCompatActivity {
         txt_question_num.setTypeface(tf);
         txt_question_num.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.059));
 
-//        TextView txt_question_num1 = (TextView) findViewById(R.id.txt_question_num1);
-//        txt_question_num1.setTypeface(tf);
-//        txt_question_num1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.059));
+        TextView txt_question_num1 = (TextView) findViewById(R.id.txt_question_num1);
+        txt_question_num1.setTypeface(tf);
+        txt_question_num1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.059));
 
 
-        TextView lbl_question_num = (TextView) findViewById(R.id.lbl_question_num);
-        lbl_question_num.setTypeface(tf);
-        lbl_question_num.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.059));
+//        TextView lbl_question_num = (TextView) findViewById(R.id.lbl_question_num);
+//        lbl_question_num.setTypeface(tf);
+//        lbl_question_num.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.059));
 
-        TextView lbl_question_num1 = (TextView) findViewById(R.id.lbl_question_num1);
-        lbl_question_num1.setTypeface(tf);
-        lbl_question_num1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.059));
+//        TextView lbl_question_num1 = (TextView) findViewById(R.id.lbl_question_num);
+//        lbl_question_num1.setTypeface(tf);
+//        lbl_question_num1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.059));
 
 
 
@@ -407,9 +432,9 @@ public class GameBoard extends AppCompatActivity {
         txt_coin_count1.setTypeface(tf);
         txt_coin_count1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
 
-        TextView txt_mute1 = (TextView) findViewById(R.id.txt_mute1);
-        txt_mute1.setTypeface(tf);
-        txt_mute1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+//        TextView txt_mute1 = (TextView) findViewById(R.id.txt_mute1);
+//        txt_mute1.setTypeface(tf);
+//        txt_mute1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
 
 //        TextView txt_point1 = (TextView) findViewById(R.id.txt_point1);
 //        txt_point1.setTypeface(tf);
@@ -484,7 +509,7 @@ public class GameBoard extends AppCompatActivity {
 
 
         int
-                img_coin_width_height = (int)(screenHeight*.045);
+                img_coin_width_height = (int)(screenHeight*.032);
 
 
         LinearLayout.LayoutParams lp_img_coin = new LinearLayout.LayoutParams(img_coin_width_height,img_coin_width_height);
@@ -502,36 +527,36 @@ public class GameBoard extends AppCompatActivity {
 
         TextView txt_remove_cost = (TextView) findViewById(R.id.txt_remove_cost);
         txt_remove_cost.setTypeface(tf);
-        txt_remove_cost.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.039));
+        txt_remove_cost.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.034));
 
         TextView txt_people_cost = (TextView) findViewById(R.id.txt_people_cost);
         txt_people_cost.setTypeface(tf);
-        txt_people_cost.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.039));
+        txt_people_cost.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.034));
 
         TextView txt_extra_timr_cost = (TextView) findViewById(R.id.txt_extra_timr_cost);
         txt_extra_timr_cost.setTypeface(tf);
-        txt_extra_timr_cost.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.039));
+        txt_extra_timr_cost.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.034));
 
         TextView txt_second_chance_cost = (TextView) findViewById(R.id.txt_second_chance_cost);
         txt_second_chance_cost.setTypeface(tf);
-        txt_second_chance_cost.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.039));
+        txt_second_chance_cost.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.034));
 
 
-        LinearLayout.LayoutParams lp_img_people = new LinearLayout.LayoutParams((int) (screenWidth * 0.079),(int) (screenWidth * 0.079));
+        LinearLayout.LayoutParams lp_img_people = new LinearLayout.LayoutParams((int) (screenWidth * 0.069),(int) (screenWidth * 0.054));
         ImageView img_people = (ImageView) findViewById(R.id.img_people);
         img_people.setLayoutParams(lp_img_people);
 
-        LinearLayout.LayoutParams lp_img_bomb = new LinearLayout.LayoutParams((int) (screenWidth * 0.079),(int) (screenWidth * 0.079));
+        LinearLayout.LayoutParams lp_img_bomb = new LinearLayout.LayoutParams((int) (screenWidth * 0.069),(int) (screenWidth * 0.069));
         ImageView img_bomb = (ImageView) findViewById(R.id.img_bomb);
         img_bomb.setLayoutParams(lp_img_bomb);
 
 
-        LinearLayout.LayoutParams lp_img_extra_time = new LinearLayout.LayoutParams((int) (screenWidth * 0.079),(int) (screenWidth * 0.079));
+        LinearLayout.LayoutParams lp_img_extra_time = new LinearLayout.LayoutParams((int) (screenWidth * 0.069),(int) (screenWidth * 0.069));
         ImageView img_extra_time = (ImageView) findViewById(R.id.img_extra_time);
         img_extra_time.setLayoutParams(lp_img_extra_time);
 
 
-        LinearLayout.LayoutParams lp_img_second_chance = new LinearLayout.LayoutParams((int) (screenWidth * 0.079),(int) (screenWidth * 0.079));
+        LinearLayout.LayoutParams lp_img_second_chance = new LinearLayout.LayoutParams((int) (screenWidth * 0.069),(int) (screenWidth * 0.054));
         ImageView img_second_chance = (ImageView) findViewById(R.id.img_second_chance);
         img_second_chance.setLayoutParams(lp_img_second_chance);
 
@@ -539,46 +564,51 @@ public class GameBoard extends AppCompatActivity {
 
         TextView txt_people = (TextView) findViewById(R.id.txt_people);
         txt_people.setTypeface(tf);
-        txt_people.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.041));
+        txt_people.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.03));
 
         TextView txt_remove = (TextView) findViewById(R.id.txt_remove);
         txt_remove.setTypeface(tf);
-        txt_remove.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.039));
+        txt_remove.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.03));
 
         TextView txt_extra_time = (TextView) findViewById(R.id.txt_extra_time);
         txt_extra_time.setTypeface(tf);
-        txt_extra_time.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.041));
+        txt_extra_time.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.03));
 
         TextView txt_second_chance = (TextView) findViewById(R.id.txt_second_chance);
         txt_second_chance.setTypeface(tf);
-        txt_second_chance.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.041));
+        txt_second_chance.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.03));
 
 
-        TextView txt_make_angry = (TextView) findViewById(R.id.txt_make_angry);
-        txt_make_angry.setTypeface(tf);
-        txt_make_angry.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.049));
-
-        TextView txt_send_laughing_image = (TextView) findViewById(R.id.txt_send_laughing_image);
-        txt_send_laughing_image.setTypeface(tf);
-        txt_send_laughing_image.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
 
 
-        TextView txt_send_laughing_sound = (TextView) findViewById(R.id.txt_send_laughing_sound);
-        txt_send_laughing_sound.setTypeface(tf);
-        txt_send_laughing_sound.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
 
 
-        TextView txt_dislike = (TextView) findViewById(R.id.txt_dislike);
-        txt_dislike.setTypeface(tf);
-        txt_dislike.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
 
-        TextView txt_like = (TextView) findViewById(R.id.txt_like);
-        txt_like.setTypeface(tf);
-        txt_like.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
-
-        TextView txt_continue = (TextView) findViewById(R.id.txt_continue);
-        txt_continue.setTypeface(tf);
-        txt_continue.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+//        TextView txt_make_angry = (TextView) findViewById(R.id.txt_make_angry);
+//        txt_make_angry.setTypeface(tf);
+//        txt_make_angry.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.049));
+//
+//        TextView txt_send_laughing_image = (TextView) findViewById(R.id.txt_send_laughing_image);
+//        txt_send_laughing_image.setTypeface(tf);
+//        txt_send_laughing_image.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+//
+//
+//        TextView txt_send_laughing_sound = (TextView) findViewById(R.id.txt_send_laughing_sound);
+//        txt_send_laughing_sound.setTypeface(tf);
+//        txt_send_laughing_sound.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+//
+//
+//        TextView txt_dislike = (TextView) findViewById(R.id.txt_dislike);
+//        txt_dislike.setTypeface(tf);
+//        txt_dislike.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+//
+//        TextView txt_like = (TextView) findViewById(R.id.txt_like);
+//        txt_like.setTypeface(tf);
+//        txt_like.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+//
+//        TextView txt_continue = (TextView) findViewById(R.id.txt_continue);
+//        txt_continue.setTypeface(tf);
+//        txt_continue.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
 
 
 
@@ -591,23 +621,16 @@ public class GameBoard extends AppCompatActivity {
     public void clk_mute(View v)
     {
 
-//        if(MainActivity.music_playing) {
-//            TextView tv = (TextView) findViewById(R.id.txt_mute);
-//            tv.setText("پخش ");
-//            TextView tv1 = (TextView) findViewById(R.id.txt_mute1);
-//            tv1.setText("پخش ");
-//            MainActivity.music_playing=false;
-//            MainActivity.player.pause();
-//        }
-//        else
-//        {
-//            MainActivity.music_playing=true;
-//            TextView tv = (TextView) findViewById(R.id.txt_mute);
-//            tv.setText("بی صدا");
-//            TextView tv1 = (TextView) findViewById(R.id.txt_mute1);
-//            tv1.setText("بی صدا");
-//            MainActivity.player.start();
-//        }
+        if(MainActivity.music_playing) {
+
+            MainActivity.music_playing=false;
+            MainActivity.player.pause();
+        }
+        else
+        {
+            MainActivity.music_playing=true;
+            MainActivity.player.start();
+        }
 
 
 
@@ -749,10 +772,11 @@ public class GameBoard extends AppCompatActivity {
             LinearLayout lay2_father = (LinearLayout) findViewById(R.id.lay_ans2_father);
             LinearLayout lay3_father = (LinearLayout) findViewById(R.id.lay_ans3_father);
             LinearLayout lay4_father = (LinearLayout) findViewById(R.id.lay_ans4_father);
-            lay1.setBackground(getResources().getDrawable(R.drawable.blue_btn));
-            lay2.setBackground(getResources().getDrawable(R.drawable.blue_btn));
-            lay3.setBackground(getResources().getDrawable(R.drawable.blue_btn));
-            lay4.setBackground(getResources().getDrawable(R.drawable.blue_btn));
+
+            lay1.setBackground(getResources().getDrawable(R.drawable.btn_light_grey_full_rounded));
+            lay2.setBackground(getResources().getDrawable(R.drawable.btn_light_grey_full_rounded));
+            lay3.setBackground(getResources().getDrawable(R.drawable.btn_light_grey_full_rounded));
+            lay4.setBackground(getResources().getDrawable(R.drawable.btn_light_grey_full_rounded));
 
 
             lay1.setVisibility(View.VISIBLE);
@@ -766,8 +790,9 @@ public class GameBoard extends AppCompatActivity {
 
 
             question_num++;
-//            TextView txt_question_num= (TextView) findViewById(R.id.txt_question_num);
-//            txt_question_num.setText(String.valueOf(question_num));
+            TextView txt_question_num= (TextView) findViewById(R.id.txt_question_num);
+            txt_question_num.setText("سوال "+String.valueOf(question_num));
+
 //            TextView txt_question_num1= (TextView) findViewById(R.id.txt_question_num1);
 //            txt_question_num1.setText(String.valueOf(question_num));
             already_answered = 0;
@@ -1291,8 +1316,8 @@ public class GameBoard extends AppCompatActivity {
 
 
                     //txt_question.setText(output_str);
-//                    TextView txt_question_num= (TextView) findViewById(R.id.txt_question_num);
-//                    txt_question_num.setText(String.valueOf(question_num));
+                    TextView txt_question_num= (TextView) findViewById(R.id.txt_question_num);
+                    txt_question_num.setText("سوال "+String.valueOf(question_num));
 //                    TextView txt_question_num1= (TextView) findViewById(R.id.txt_question_num1);
 //                    txt_question_num1.setText(String.valueOf(question_num));
                     lay_wait.setVisibility(View.GONE);
@@ -1306,16 +1331,16 @@ public class GameBoard extends AppCompatActivity {
 
                         final ImageView image = (ImageView) findViewById(R.id.img_user_pic);
 
-                        if(functions.gender.equals("boy"))
+//                        if(functions.gender.equals("boy"))
                         {
-                            image.setBackground(getResources().getDrawable(R.drawable.profile_mail));
+                            image.setBackground(getResources().getDrawable(R.drawable.profile1));
 
                         }
-                        else
-                        {
-                            image.setBackground(getResources().getDrawable(R.drawable.profile_female));
-
-                        }
+//                        else
+//                        {
+//                            image.setBackground(getResources().getDrawable(R.drawable.profile_female));
+//
+//                        }
 
 
 
@@ -1330,16 +1355,16 @@ public class GameBoard extends AppCompatActivity {
 
                         final ImageView image1 = (ImageView) findViewById(R.id.img_rival_pic);
 
-                        if(rival_gender.equals("1"))
+//                        if(rival_gender.equals("1"))
                         {
-                            image1.setBackground(getResources().getDrawable(R.drawable.profile_mail));
+                            image1.setBackground(getResources().getDrawable(R.drawable.profile1));
 
                         }
-                        else
-                        {
-                            image1.setBackground(getResources().getDrawable(R.drawable.profile_female));
-
-                        }
+//                        else
+//                        {
+//                            image1.setBackground(getResources().getDrawable(R.drawable.profile_female));
+//
+//                        }
 
 
 
@@ -1352,16 +1377,16 @@ public class GameBoard extends AppCompatActivity {
 
                         final ImageView image2 = (ImageView) findViewById(R.id.img_user_pic1);
 
-                        if(functions.gender.equals("boy"))
+//                        if(functions.gender.equals("boy"))
                         {
-                            image2.setBackground(getResources().getDrawable(R.drawable.profile_mail));
+                            image2.setBackground(getResources().getDrawable(R.drawable.profile1));
 
                         }
-                        else
-                        {
-                            image2.setBackground(getResources().getDrawable(R.drawable.profile_female));
-
-                        }
+//                        else
+//                        {
+//                            image2.setBackground(getResources().getDrawable(R.drawable.profile_female));
+//
+//                        }
 
 
 
@@ -1376,16 +1401,16 @@ public class GameBoard extends AppCompatActivity {
 
                         final ImageView image21 = (ImageView) findViewById(R.id.img_rival_pic1);
 
-                        if(rival_gender.equals("1"))
+//                        if(rival_gender.equals("1"))
                         {
-                            image21.setBackground(getResources().getDrawable(R.drawable.profile_mail));
+                            image21.setBackground(getResources().getDrawable(R.drawable.profile1));
 
                         }
-                        else
-                        {
-                            image21.setBackground(getResources().getDrawable(R.drawable.profile_female));
-
-                        }
+//                        else
+//                        {
+//                            image21.setBackground(getResources().getDrawable(R.drawable.profile_female));
+//
+//                        }
 
 
 
