@@ -190,7 +190,7 @@
                 android:weightSum="1">
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/img_speaker"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
@@ -235,8 +235,8 @@
 
                 <LinearLayout
                     android:id="@+id/lay_coin"
-                    android:layout_width="30dp"
-                    android:layout_height="28dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="0.52"
                     android:gravity="center"
                     android:orientation="horizontal"
@@ -247,13 +247,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
                         android:gravity="center"
                         android:text="253"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#ffffff" />
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/img_coin"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
@@ -458,7 +460,7 @@
                                 android:gravity="center"
                                 android:textAlignment="center"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:textColor="#ffffff"
+                                android:textColor="@android:color/black"
                                 android:visibility="gone" />
                         </LinearLayout>
                     </LinearLayout>
@@ -1017,10 +1019,10 @@
         android:layout_height="match_parent"
         android:background="#049ccd"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <LinearLayout
-            android:id="@+id/lay_header"
+            android:id="@+id/lay_header1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -1237,9 +1239,9 @@
                 android:weightSum="1">
 
                 <LinearLayout
-                    android:id="@+id/lay_coin"
-                    android:layout_width="30dp"
-                    android:layout_height="28dp"
+                    android:id="@+id/lay_coin1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="0.52"
                     android:gravity="center"
                     android:orientation="horizontal"
@@ -1250,6 +1252,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
                         android:gravity="center"
                         android:text="253"
                         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -1332,12 +1336,115 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2.5"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".2"
+                android:orientation="horizontal"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_like"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/like_red"
+                        android:clickable="true"
+                        android:onClick="clk_continue_like" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/lay_btn_holder"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+
+                        android:background="@drawable/dark_green_btn"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:onClick="clk_continue"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/lay_btn_new_game"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="3dp"
+
+                            android:background="@drawable/green_btn"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:onClick="clk_continue"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txt_new_game"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:gravity="right"
+                                    android:text="ادامه بده"
+                                    android:textColor="#ffffff" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_dislike"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/dislike_white"
+                        android:clickable="true"
+                        android:onClick="clk_continue_dislike" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"></LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/lay_tail_button"
+            android:id="@+id/lay_tail_button1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -1346,11 +1453,11 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/lay_bar"
+            android:id="@+id/lay_bar1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".25"
-            android:background="0c78a7"
+            android:background="#0c78a7"
             android:orientation="horizontal"
             android:padding="1dp"
             android:visibility="visible">

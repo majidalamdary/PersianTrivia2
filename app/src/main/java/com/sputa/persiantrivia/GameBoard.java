@@ -379,12 +379,37 @@ public class GameBoard extends AppCompatActivity {
 //        LinearLayout.LayoutParams lp_lay_coin = new LinearLayout.LayoutParams((int)(screenHeight*0.15),(int)(screenHeight*0.042));
 //        lay_coin.setLayoutParams(lp_lay_coin);
 
+        LinearLayout.LayoutParams lp_img_coin1 = new LinearLayout.LayoutParams((int)(screenWidth*.078),(int)(screenHeight*.054));
+        ImageView img_coin = (ImageView) findViewById(R.id.img_coin);
+        img_coin.setLayoutParams(lp_img_coin1);
+        ImageView img_coin1 = (ImageView) findViewById(R.id.img_coin1);
+        img_coin1.setLayoutParams(lp_img_coin1);
 
+        LinearLayout.LayoutParams lp_img_speaker = new LinearLayout.LayoutParams((int)(screenWidth*.087),(int)(screenHeight*.051));
+        ImageView img_speaker = (ImageView) findViewById(R.id.img_speaker);
+        img_speaker.setLayoutParams(lp_img_speaker);
+        ImageView img_speaker1 = (ImageView) findViewById(R.id.img_speaker1);
+        img_speaker1.setLayoutParams(lp_img_speaker);
 
 
         TextView txt_coin_count = (TextView) findViewById(R.id.txt_coin_count);
         txt_coin_count.setTypeface(tf);
         txt_coin_count.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+        TextView txt_coin_count1 = (TextView) findViewById(R.id.txt_coin_count1);
+        txt_coin_count1.setTypeface(tf);
+        txt_coin_count1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+
+        LinearLayout.LayoutParams lp_img_like = new LinearLayout.LayoutParams((int)(screenWidth*.11),(int)(screenHeight*.065));
+        ImageView img_like = (ImageView) findViewById(R.id.img_like);
+        img_like.setLayoutParams(lp_img_like);
+        ImageView img_dislike = (ImageView) findViewById(R.id.img_dislike);
+        img_dislike.setLayoutParams(lp_img_like);
+
+        LinearLayout.LayoutParams lp_lay_btn_holder = new LinearLayout.LayoutParams((int)(screenWidth*.40),(int)(screenHeight*.075));
+        LinearLayout lay_btn_holder = (LinearLayout) findViewById(R.id.lay_btn_holder);
+        lay_btn_holder.setLayoutParams(lp_lay_btn_holder);
 
 //        TextView txt_mute = (TextView) findViewById(R.id.txt_mute);
 //        txt_mute.setTypeface(tf);
@@ -428,9 +453,7 @@ public class GameBoard extends AppCompatActivity {
 //        LinearLayout.LayoutParams lp_lay_coin1 = new LinearLayout.LayoutParams((int)(screenHeight*0.15),(int)(screenHeight*0.042));
 //        lay_coin1.setLayoutParams(lp_lay_coin1);
 
-        TextView txt_coin_count1 = (TextView) findViewById(R.id.txt_coin_count1);
-        txt_coin_count1.setTypeface(tf);
-        txt_coin_count1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+
 
 //        TextView txt_mute1 = (TextView) findViewById(R.id.txt_mute1);
 //        txt_mute1.setTypeface(tf);
@@ -447,12 +470,12 @@ public class GameBoard extends AppCompatActivity {
 
         TextView txt_question = (TextView) findViewById(R.id.txt_question);
         txt_question.setTypeface(tf);
-        txt_question.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_question.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
 
 
         TextView txt_question1 = (TextView) findViewById(R.id.txt_question1);
         txt_question1.setTypeface(tf);
-        txt_question1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_question1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -464,20 +487,20 @@ public class GameBoard extends AppCompatActivity {
 
         TextView txt_ans1 = (TextView) findViewById(R.id.txt_ans1);
         txt_ans1.setTypeface(tf);
-        txt_ans1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_ans1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
 
         TextView txt_ans2 = (TextView) findViewById(R.id.txt_ans2);
         txt_ans2.setTypeface(tf);
-        txt_ans2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_ans2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
 
 
         TextView txt_ans3 = (TextView) findViewById(R.id.txt_ans3);
         txt_ans3.setTypeface(tf);
-        txt_ans3.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_ans3.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
 
         TextView txt_ans4 = (TextView) findViewById(R.id.txt_ans4);
         txt_ans4.setTypeface(tf);
-        txt_ans4.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_ans4.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
 
 
 
@@ -625,11 +648,22 @@ public class GameBoard extends AppCompatActivity {
 
             MainActivity.music_playing=false;
             MainActivity.player.pause();
+            ImageView img_speaker = (ImageView) findViewById(R.id.img_speaker);
+            img_speaker.setBackground(getResources().getDrawable(R.drawable.sound_off));
+            ImageView img_speaker1 = (ImageView) findViewById(R.id.img_speaker1);
+            img_speaker1.setBackground(getResources().getDrawable(R.drawable.sound_off));
+
+
+
         }
         else
         {
             MainActivity.music_playing=true;
             MainActivity.player.start();
+            ImageView img_speaker = (ImageView) findViewById(R.id.img_speaker);
+            img_speaker.setBackground(getResources().getDrawable(R.drawable.sound_on));
+            ImageView img_speaker1 = (ImageView) findViewById(R.id.img_speaker1);
+            img_speaker1.setBackground(getResources().getDrawable(R.drawable.sound_on));
         }
 
 
@@ -792,6 +826,8 @@ public class GameBoard extends AppCompatActivity {
             question_num++;
             TextView txt_question_num= (TextView) findViewById(R.id.txt_question_num);
             txt_question_num.setText("سوال "+String.valueOf(question_num));
+            TextView txt_question_num1= (TextView) findViewById(R.id.txt_question_num1);
+            txt_question_num1.setText("سوال "+String.valueOf(question_num));
 
 //            TextView txt_question_num1= (TextView) findViewById(R.id.txt_question_num1);
 //            txt_question_num1.setText(String.valueOf(question_num));
@@ -806,32 +842,29 @@ public class GameBoard extends AppCompatActivity {
             txt_ans3.setText(ans3[question_num]);
             txt_ans4.setText(ans4[question_num]);
             try {
-                txt_ans1_others.setText(String.valueOf(Integer.valueOf(ans1_others[question_num]) * 100));
+                txt_ans1_others.setText(String.valueOf((int)(Double.valueOf(ans1_others[question_num]) * 100)));
             }catch (Exception e2)
             {
                 txt_ans1_others.setText("0");
 
             }
             try {
-                txt_ans2_others.setText(String.valueOf(Integer.valueOf(ans2_others[question_num]) * 100));
+                txt_ans2_others.setText(String.valueOf((int)(Double.valueOf(ans2_others[question_num]) * 100)));
             }catch (Exception e2)
             {
                 txt_ans2_others.setText("0");
-
             }
             try {
-                txt_ans3_others.setText(String.valueOf(Integer.valueOf(ans3_others[question_num]) * 100));
+                txt_ans3_others.setText(String.valueOf((int)(Double.valueOf(ans3_others[question_num]) * 100)));
             }catch (Exception e2)
             {
                 txt_ans3_others.setText("0");
-
             }
             try {
-                txt_ans4_others.setText(String.valueOf(Integer.valueOf(ans4_others[question_num]) * 100));
+                txt_ans4_others.setText(String.valueOf((int)(Double.valueOf(ans4_others[question_num]) * 100)));
             }catch (Exception e2)
             {
                 txt_ans4_others.setText("0");
-
             }
 
             progress_bar = 1;
@@ -1285,39 +1318,39 @@ public class GameBoard extends AppCompatActivity {
                         txt_ans3.setText(ans3[question_num]);
                         txt_ans4.setText(ans4[question_num]);
                         try {
-                            txt_ans1_others.setText(String.valueOf(Integer.valueOf(ans1_others[question_num]) * 100));
+                            txt_ans1_others.setText(String.valueOf((int)(Double.valueOf(ans1_others[question_num]) * 100)));
                         }catch (Exception e2)
                         {
-                            txt_ans1_others.setText("0");
+                           txt_ans1_others.setText("0");
 
                         }
                         try {
-                            txt_ans2_others.setText(String.valueOf(Integer.valueOf(ans2_others[question_num]) * 100));
+                            txt_ans2_others.setText(String.valueOf((int)(Double.valueOf(ans2_others[question_num]) * 100)));
                         }catch (Exception e2)
                         {
                             txt_ans2_others.setText("0");
-
                         }
                         try {
-                            txt_ans3_others.setText(String.valueOf(Integer.valueOf(ans3_others[question_num]) * 100));
+                            txt_ans3_others.setText(String.valueOf((int)(Double.valueOf(ans3_others[question_num]) * 100)));
                         }catch (Exception e2)
                         {
                             txt_ans3_others.setText("0");
-
                         }
                         try {
-                            txt_ans4_others.setText(String.valueOf(Integer.valueOf(ans4_others[question_num]) * 100));
+                            txt_ans4_others.setText(String.valueOf((int)(Double.valueOf(ans4_others[question_num]) * 100)));
                         }catch (Exception e2)
                         {
                             txt_ans4_others.setText("0");
-
                         }
 
 
 
                     //txt_question.setText(output_str);
-                    TextView txt_question_num= (TextView) findViewById(R.id.txt_question_num);
-                    txt_question_num.setText("سوال "+String.valueOf(question_num));
+                        TextView txt_question_num= (TextView) findViewById(R.id.txt_question_num);
+                        txt_question_num.setText("سوال "+String.valueOf(question_num));
+                        TextView txt_question_num1= (TextView) findViewById(R.id.txt_question_num1);
+                        txt_question_num1.setText("سوال "+String.valueOf(question_num));
+
 //                    TextView txt_question_num1= (TextView) findViewById(R.id.txt_question_num1);
 //                    txt_question_num1.setText(String.valueOf(question_num));
                     lay_wait.setVisibility(View.GONE);
