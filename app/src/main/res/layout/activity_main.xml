@@ -247,8 +247,8 @@
             android:id="@+id/lay_new_game"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1.2"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -262,7 +262,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight=".3"
+                android:layout_weight=".2"
                 android:background="@drawable/dark_green_btn"
 
                 android:gravity="center"
@@ -323,7 +323,7 @@
             android:id="@+id/lay_nobat_wait"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="2dp"
             android:layout_weight="5.5"
             android:orientation="vertical">
 
@@ -468,7 +468,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.2">
+            android:layout_weight="1.4">
 
             <LinearLayout
                 android:id="@+id/lay_buttom_bar"
@@ -499,7 +499,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.4"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -522,7 +522,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.4"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -545,7 +545,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.4"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -568,7 +568,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.4"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
