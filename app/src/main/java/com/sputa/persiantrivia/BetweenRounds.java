@@ -18,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -157,9 +158,27 @@ public class BetweenRounds extends AppCompatActivity {
         rival_round_id= new int[4];
 
 
+        int
+                img_profile_pic_size = (int)(screenHeight*.098);
+
+
+        LinearLayout.LayoutParams lp_img_profile_pic_size = new LinearLayout.LayoutParams(img_profile_pic_size,img_profile_pic_size);
+
+        ImageView img_user_profile_pic = (ImageView) findViewById(R.id.img_user_pic);
+        img_user_profile_pic.setLayoutParams(lp_img_profile_pic_size);
+
+
+
+
+        ImageView img_rival_pic = (ImageView) findViewById(R.id.img_rival_pic);
+        img_rival_pic.setLayoutParams(lp_img_profile_pic_size);
+
+        set_content();
+
         get_game_brief();
         if(MainActivity.music_playing)
             MainActivity.player.start();
+
 
 
 
@@ -254,6 +273,220 @@ public class BetweenRounds extends AppCompatActivity {
 
 
     }
+    private void set_content()
+    {
+
+
+
+        TextView txt_opponent_name = (TextView) findViewById(R.id.txt_opponent_name);
+        txt_opponent_name.setTypeface(tf);
+        txt_opponent_name.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+
+        TextView txt_your_name = (TextView) findViewById(R.id.txt_your_name);
+        txt_your_name.setTypeface(tf);
+        txt_your_name.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+
+        TextView txt_score= (TextView) findViewById(R.id.txt_score);
+        txt_score.setTypeface(tf);
+        txt_score.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.044));
+
+
+        TextView txt_num_mine11 = (TextView) findViewById(R.id.num_mine11);
+        TextView txt_num_mine12 = (TextView) findViewById(R.id.num_mine12);
+        TextView txt_num_mine13 = (TextView) findViewById(R.id.num_mine13);
+        TextView txt_num_mine14 = (TextView) findViewById(R.id.num_mine14);
+
+
+
+
+
+        TextView txt_num_rival11 = (TextView) findViewById(R.id.num_rival11);
+        TextView txt_num_rival12 = (TextView) findViewById(R.id.num_rival12);
+        TextView txt_num_rival13 = (TextView) findViewById(R.id.num_rival13);
+        TextView txt_num_rival14 = (TextView) findViewById(R.id.num_rival14);
+
+
+        TextView txt_title_mine_r1 = (TextView) findViewById(R.id.txt_mine_title_r1);
+
+
+        TextView txt_title_rival_r1 = (TextView) findViewById(R.id.txt_rival_title_r1);
+
+
+        txt_num_mine11.setTypeface(tf);
+        txt_num_mine11.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_mine12.setTypeface(tf);
+        txt_num_mine12.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_mine13.setTypeface(tf);
+        txt_num_mine13.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_mine14.setTypeface(tf);
+        txt_num_mine14.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+        txt_num_rival11.setTypeface(tf);
+        txt_num_rival11.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_rival12.setTypeface(tf);
+        txt_num_rival12.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_rival13.setTypeface(tf);
+        txt_num_rival13.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_rival14.setTypeface(tf);
+        txt_num_rival14.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+
+
+        txt_title_mine_r1.setTypeface(tf);
+        txt_title_mine_r1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+
+        txt_title_rival_r1.setTypeface(tf);
+        txt_title_rival_r1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+
+        TextView txt_subject_r1_n = (TextView) findViewById(R.id.txt_title_round1);
+        txt_subject_r1_n.setTypeface(tf);
+        txt_subject_r1_n.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+
+
+
+
+
+
+
+        TextView txt_num_mine21 = (TextView) findViewById(R.id.num_mine21);
+        TextView txt_num_mine22 = (TextView) findViewById(R.id.num_mine22);
+        TextView txt_num_mine23 = (TextView) findViewById(R.id.num_mine23);
+        TextView txt_num_mine24 = (TextView) findViewById(R.id.num_mine24);
+
+
+
+        TextView txt_num_rival21 = (TextView) findViewById(R.id.num_rival21);
+        TextView txt_num_rival22 = (TextView) findViewById(R.id.num_rival22);
+        TextView txt_num_rival23 = (TextView) findViewById(R.id.num_rival23);
+        TextView txt_num_rival24 = (TextView) findViewById(R.id.num_rival24);
+
+
+
+
+
+
+
+
+
+        TextView txt_title_mine_r2 = (TextView) findViewById(R.id.txt_mine_title_r2);
+
+
+        TextView txt_title_rival_r2 = (TextView) findViewById(R.id.txt_rival_title_r2);
+
+
+
+
+        txt_num_mine21.setTypeface(tf);
+        txt_num_mine21.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_mine22.setTypeface(tf);
+        txt_num_mine22.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_mine23.setTypeface(tf);
+        txt_num_mine23.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_mine24.setTypeface(tf);
+        txt_num_mine24.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+        txt_num_rival21.setTypeface(tf);
+        txt_num_rival21.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_rival22.setTypeface(tf);
+        txt_num_rival22.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_rival23.setTypeface(tf);
+        txt_num_rival23.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_rival24.setTypeface(tf);
+        txt_num_rival24.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+
+
+        txt_title_mine_r2.setTypeface(tf);
+        txt_title_mine_r2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+
+        txt_title_rival_r2.setTypeface(tf);
+        txt_title_rival_r2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+
+        TextView txt_subject_r2_n = (TextView) findViewById(R.id.txt_title_round2);
+        txt_subject_r2_n.setTypeface(tf);
+        txt_subject_r2_n.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+
+
+        TextView txt_num_mine31 = (TextView) findViewById(R.id.num_mine31);
+        TextView txt_num_mine32 = (TextView) findViewById(R.id.num_mine32);
+        TextView txt_num_mine33 = (TextView) findViewById(R.id.num_mine33);
+        TextView txt_num_mine34 = (TextView) findViewById(R.id.num_mine34);
+
+
+
+        TextView txt_num_rival31 = (TextView) findViewById(R.id.num_rival31);
+        TextView txt_num_rival32 = (TextView) findViewById(R.id.num_rival32);
+        TextView txt_num_rival33 = (TextView) findViewById(R.id.num_rival33);
+        TextView txt_num_rival34 = (TextView) findViewById(R.id.num_rival34);
+
+
+
+
+
+
+
+
+
+        TextView txt_title_mine_r3 = (TextView) findViewById(R.id.txt_mine_title_r3);
+
+
+        TextView txt_title_rival_r3 = (TextView) findViewById(R.id.txt_rival_title_r3);
+
+
+
+
+        txt_num_mine31.setTypeface(tf);
+        txt_num_mine31.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_mine32.setTypeface(tf);
+        txt_num_mine32.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_mine33.setTypeface(tf);
+        txt_num_mine33.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_mine34.setTypeface(tf);
+        txt_num_mine34.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+        txt_num_rival31.setTypeface(tf);
+        txt_num_rival31.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_rival32.setTypeface(tf);
+        txt_num_rival32.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_rival33.setTypeface(tf);
+        txt_num_rival33.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_rival34.setTypeface(tf);
+        txt_num_rival34.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+
+
+        txt_title_mine_r3.setTypeface(tf);
+        txt_title_mine_r3.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+
+        txt_title_rival_r3.setTypeface(tf);
+        txt_title_rival_r3.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+
+        TextView txt_subject_r3_n = (TextView) findViewById(R.id.txt_title_round3);
+        txt_subject_r3_n.setTypeface(tf);
+        txt_subject_r3_n.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+
+
+
+
+
+
+
+
+
+
+
+        TextView txt_start_game = (TextView) findViewById(R.id.txt_start_game);
+        txt_start_game.setTypeface(tf);
+        txt_start_game.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+
+        LinearLayout.LayoutParams lp_lay_btn_start_game = new LinearLayout.LayoutParams((int) (screenWidth * 0.5),(int) (screenHeight * 0.076));
+
+        LinearLayout lay_btn_start_game = (LinearLayout) findViewById(R.id.lay_btn_start_game);
+        lay_btn_start_game.setLayoutParams(lp_lay_btn_start_game);
+
+
+
+    }
     public void set_round1(String ss,int user_turn,int rival_turn)
     {
         r_id="";
@@ -264,11 +497,12 @@ public class BetweenRounds extends AppCompatActivity {
 
 
 
+
+
         TextView txt_num_rival11 = (TextView) findViewById(R.id.num_rival11);
         TextView txt_num_rival12 = (TextView) findViewById(R.id.num_rival12);
         TextView txt_num_rival13 = (TextView) findViewById(R.id.num_rival13);
         TextView txt_num_rival14 = (TextView) findViewById(R.id.num_rival14);
-
 
 
 
@@ -289,6 +523,8 @@ public class BetweenRounds extends AppCompatActivity {
 
 
         TextView txt_title_rival_r1 = (TextView) findViewById(R.id.txt_rival_title_r1);
+
+
         if(rival_round_coun==user_round_count) {
             if ((user_turn) == 0) {
 
@@ -911,6 +1147,40 @@ public class BetweenRounds extends AppCompatActivity {
 
 
         TextView txt_title_rival_r2 = (TextView) findViewById(R.id.txt_rival_title_r2);
+
+
+
+
+        txt_num_mine21.setTypeface(tf);
+        txt_num_mine21.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_mine22.setTypeface(tf);
+        txt_num_mine22.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_mine23.setTypeface(tf);
+        txt_num_mine23.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_mine24.setTypeface(tf);
+        txt_num_mine24.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+        txt_num_rival21.setTypeface(tf);
+        txt_num_rival21.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_rival22.setTypeface(tf);
+        txt_num_rival22.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_rival23.setTypeface(tf);
+        txt_num_rival23.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+        txt_num_rival24.setTypeface(tf);
+        txt_num_rival24.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+
+
+        txt_title_mine_r2.setTypeface(tf);
+        txt_title_mine_r2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+
+        txt_title_rival_r2.setTypeface(tf);
+        txt_title_rival_r2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.042));
+
+        TextView txt_subject_r2_n = (TextView) findViewById(R.id.txt_title_round2);
+        txt_subject_r2_n.setTypeface(tf);
+        txt_subject_r2_n.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
+
         if(rival_round_coun==user_round_count) {
             if ((user_turn) == 0) {
 
@@ -2666,6 +2936,8 @@ public class BetweenRounds extends AppCompatActivity {
                         txt_start_game.setText("شروع بازی");
                         RelativeLayout lay_start_new_game = (RelativeLayout) findViewById(R.id.btn_start_game);
                         lay_start_new_game.setBackground(getResources().getDrawable(R.drawable.green_btn));
+                        LinearLayout lay_btn_start_game = (LinearLayout) findViewById(R.id.lay_btn_start_game);
+                        lay_btn_start_game.setBackground(getResources().getDrawable(R.drawable.dark_green_btn));
 
                     }
                     else
@@ -2674,6 +2946,8 @@ public class BetweenRounds extends AppCompatActivity {
                         txt_start_game.setText("نوبت حریف");
                         RelativeLayout lay_start_new_game = (RelativeLayout) findViewById(R.id.btn_start_game);
                         lay_start_new_game.setBackground(getResources().getDrawable(R.drawable.red_btn));
+                        LinearLayout lay_btn_start_game = (LinearLayout) findViewById(R.id.lay_btn_start_game);
+                        lay_btn_start_game.setBackground(getResources().getDrawable(R.drawable.dark_red_btn));
                     }
                     if(!user_result.equals("none") || !rival_result.equals("none"))
                     {
@@ -2701,6 +2975,8 @@ public class BetweenRounds extends AppCompatActivity {
                         txt_start_game.setTextColor(Color.BLACK);
                         RelativeLayout lay_start_new_game = (RelativeLayout) findViewById(R.id.btn_start_game);
                         lay_start_new_game.setBackground(getResources().getDrawable(R.drawable.light_grey_btn));
+                        LinearLayout lay_btn_start_game = (LinearLayout) findViewById(R.id.lay_btn_start_game);
+                        lay_btn_start_game.setBackground(getResources().getDrawable(R.drawable.btn_dark_grey));
                     }
 
                     final ImageView image = (ImageView) findViewById(R.id.img_user_pic);
