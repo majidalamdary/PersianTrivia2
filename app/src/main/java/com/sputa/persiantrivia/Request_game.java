@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.location.Address;
 import android.location.Geocoder;
@@ -333,17 +334,17 @@ public class Request_game extends AppCompatActivity {
 
     private void set_content()
     {
-        LinearLayout laybtn_login = (LinearLayout) findViewById(R.id.top_lay);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_laybtn_login = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)(screenHeight*0.08));
-        laybtn_login.setLayoutParams(lp_laybtn_login);
-
-
-
-        LinearLayout lay_requested = (LinearLayout) findViewById(R.id.lay_tab);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_lay_requested = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)(screenHeight*0.08));
-        lay_requested.setLayoutParams(lp_lay_requested);
+//        LinearLayout laybtn_login = (LinearLayout) findViewById(R.id.top_lay);
+//        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
+//        LinearLayout.LayoutParams lp_laybtn_login = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)(screenHeight*0.08));
+//        laybtn_login.setLayoutParams(lp_laybtn_login);
+//
+//
+//
+//        LinearLayout lay_requested = (LinearLayout) findViewById(R.id.lay_tab);
+//        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
+//        LinearLayout.LayoutParams lp_lay_requested = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)(screenHeight*0.08));
+//        lay_requested.setLayoutParams(lp_lay_requested);
 
 
         TextView txt_level = (TextView) findViewById(R.id.lbl_start_game);
@@ -352,11 +353,23 @@ public class Request_game extends AppCompatActivity {
 
         TextView txt_requested = (TextView) findViewById(R.id.txt_requested);
         txt_requested.setTypeface(tf);
-        txt_requested.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.07));
+        txt_requested.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.055));
 
         TextView txt_sent = (TextView) findViewById(R.id.txt_sent);
         txt_sent.setTypeface(tf);
-        txt_sent.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.04));
+        txt_sent.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.055));
+
+
+        LinearLayout.LayoutParams lp_img_return = new LinearLayout.LayoutParams((int)(screenWidth*.1),(int)(screenHeight*.05));
+        //lp_img_avatar.setMargins(0, 0, (int)((one_in_three_screen-img_circle_width)/2), 0);
+
+        ImageView img_return = (ImageView) findViewById(R.id.img_return);
+        img_return.setLayoutParams(lp_img_return);
+
+        LinearLayout.LayoutParams lp_img_refresh = new LinearLayout.LayoutParams((int)(screenWidth*.12),(int)(screenHeight*.065));
+
+        ImageView img_refresh = (ImageView) findViewById(R.id.img_refresh);
+        img_refresh.setLayoutParams(lp_img_refresh);
 
 
 
@@ -365,13 +378,11 @@ public class Request_game extends AppCompatActivity {
     public void clk_requested(View v)
     {
         if(!typ.equals("requested")) {
-            TextView txt_requested = (TextView) findViewById(R.id.txt_requested);
-            txt_requested.setTypeface(tf);
-            txt_requested.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.07));
+            LinearLayout lay_under = (LinearLayout) findViewById(R.id.lay_under_requested);
+            lay_under.setBackgroundColor(Color.parseColor("#ffffff"));
+            LinearLayout lay_under_sent = (LinearLayout) findViewById(R.id.lay_under_sent);
+            lay_under_sent.setBackgroundColor(0x00000000);
 
-            TextView txt_sent = (TextView) findViewById(R.id.txt_sent);
-            txt_sent.setTypeface(tf);
-            txt_sent.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.04));
             typ="requested";
             get_request_list(typ);
         }
@@ -379,13 +390,11 @@ public class Request_game extends AppCompatActivity {
     public void clk_sent(View v)
     {
         if(!typ.equals("sent")) {
-            TextView txt_requested = (TextView) findViewById(R.id.txt_requested);
-            txt_requested.setTypeface(tf);
-            txt_requested.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.04));
+            LinearLayout lay_under = (LinearLayout) findViewById(R.id.lay_under_requested);
+            lay_under.setBackgroundColor(0x00000000);
+            LinearLayout lay_under_sent = (LinearLayout) findViewById(R.id.lay_under_sent);
+            lay_under_sent.setBackgroundColor(Color.parseColor("#ffffff"));
 
-            TextView txt_sent = (TextView) findViewById(R.id.txt_sent);
-            txt_sent.setTypeface(tf);
-            txt_sent.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.07));
             typ="sent";
             get_request_list(typ);
         }
@@ -513,6 +522,21 @@ public class Request_game extends AppCompatActivity {
                         if (param_str.length() > 0) {
                             int
                                     record_count = cnt;
+
+                            if(typ.equals("requested")) {
+                                TextView txt_requested = (TextView) findViewById(R.id.txt_requested);
+                                txt_requested.setText("دریافت شده ("+ String.valueOf(cnt)+")");
+                                TextView txt_sent = (TextView) findViewById(R.id.txt_sent);
+                                txt_sent.setText("ارسال شده");
+
+                            }
+                            if(!typ.equals("requested")) {
+                                TextView txt_sent = (TextView) findViewById(R.id.txt_sent);
+                                txt_sent.setText("ارسال شده ("+ String.valueOf(cnt)+")");
+                                TextView txt_requested = (TextView) findViewById(R.id.txt_requested);
+                                txt_requested.setText("دریافت شده");
+
+                            }
 
                             user_name = new String[record_count];
                             user_desc = new String[record_count];

@@ -70,7 +70,7 @@ public class Store extends AppCompatActivity {
             money2="";
     String
             money3="";
-
+    public    LinearLayout lay_main;
     String
         sku="";
 
@@ -231,13 +231,31 @@ public class Store extends AppCompatActivity {
             Log.d(TAG, "onActivityResult handled by IABUtil.");
         }
     }
+    @Override
+    public void onPause()
+    {
+        super.onPause();
 
+        MainActivity.player.pause();
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+        if(MainActivity.music_playing)
+            MainActivity.player.start();
+
+
+
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_store);
 
+
+        lay_main = (LinearLayout) findViewById(R.id.lay_main);
 
 
         ////////////////////////////////////bazar
@@ -300,6 +318,20 @@ public class Store extends AppCompatActivity {
         set_content_size();
 
 
+
+        if(MainActivity.music_playing)
+        {
+
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_on_blue));
+        }
+        else
+        {
+
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_off_blue));
+        }
+
     }
     private void get_store()
     {
@@ -351,7 +383,10 @@ public class Store extends AppCompatActivity {
             finish();
         }
 
-
+        if (btn_all.getText().toString().equals("اوکی"))
+        {
+            remove_message();
+        }
         if(btn_all.getText().toString().equals("تلاش مجدد"))
         {
             if (no_connection)
@@ -420,7 +455,7 @@ public class Store extends AppCompatActivity {
 //        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         TextView lbl_title = (TextView) findViewById(R.id.lbl_title);
         lbl_title.setTypeface(tf);
-        lbl_title.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.092));
+        lbl_title.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.082));
 
 //        LinearLayout laybtn_subject1 = (LinearLayout) findViewById(R.id.btn_subject1);
 //        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
@@ -435,17 +470,65 @@ public class Store extends AppCompatActivity {
 //        laybtn_subject3.setLayoutParams(lp_laybtn_subject1);
 //
 //
-//        TextView txt_coin_count1 = (TextView) findViewById(R.id.txt_coint_count1);
-//        txt_coin_count1.setTypeface(tf);
-//        txt_coin_count1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
-//
-//        TextView txt_coin_count2 = (TextView) findViewById(R.id.txt_coint_count2);
-//        txt_coin_count2.setTypeface(tf);
-//        txt_coin_count2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
-//
-//        TextView txt_coin_count3 = (TextView) findViewById(R.id.txt_coint_count3);
-//        txt_coin_count3.setTypeface(tf);
-//        txt_coin_count3.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
+        TextView txt_coin_count1 = (TextView) findViewById(R.id.txt_coint_count1);
+        txt_coin_count1.setTypeface(tf);
+        txt_coin_count1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+        TextView txt_coin_count2 = (TextView) findViewById(R.id.txt_coint_count2);
+        txt_coin_count2.setTypeface(tf);
+        txt_coin_count2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+        TextView txt_coin_count3 = (TextView) findViewById(R.id.txt_coint_count3);
+        txt_coin_count3.setTypeface(tf);
+        txt_coin_count3.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+        TextView txt_coin_count4 = (TextView) findViewById(R.id.txt_coint_count4);
+        txt_coin_count4.setTypeface(tf);
+        txt_coin_count4.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+        TextView txt_price1 = (TextView) findViewById(R.id.txt_price1);
+        txt_price1.setTypeface(tf);
+        txt_price1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+        TextView txt_price2 = (TextView) findViewById(R.id.txt_price2);
+        txt_price2.setTypeface(tf);
+        txt_price2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+        TextView txt_price3 = (TextView) findViewById(R.id.txt_price3);
+        txt_price3.setTypeface(tf);
+        txt_price3.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+        TextView txt_price4 = (TextView) findViewById(R.id.txt_price4);
+        txt_price4.setTypeface(tf);
+        txt_price4.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
+
+
+            LinearLayout lay_btn1 = (LinearLayout) findViewById(R.id.lay_btn1);
+        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
+        LinearLayout.LayoutParams lp_lay_btn1 = new LinearLayout.LayoutParams((int)(screenWidth*0.25),(int)(screenHeight*0.073));
+        lay_btn1.setLayoutParams(lp_lay_btn1);
+
+        LinearLayout lay_btn2 = (LinearLayout) findViewById(R.id.lay_btn2);
+        lay_btn2.setLayoutParams(lp_lay_btn1);
+        LinearLayout lay_btn3 = (LinearLayout) findViewById(R.id.lay_btn3);
+        lay_btn3.setLayoutParams(lp_lay_btn1);
+        LinearLayout lay_btn4 = (LinearLayout) findViewById(R.id.lay_btn4);
+        lay_btn4.setLayoutParams(lp_lay_btn1);
+
+        ImageView img_price1 = (ImageView) findViewById(R.id.img_price1);
+        LinearLayout.LayoutParams lp_img_price1 = new LinearLayout.LayoutParams((int)(screenWidth*0.17),(int)(screenHeight*0.099));
+        img_price1.setLayoutParams(lp_img_price1);
+
+        ImageView img_price2 = (ImageView) findViewById(R.id.img_price2);
+        img_price2.setLayoutParams(lp_img_price1);
+
+        ImageView img_price3 = (ImageView) findViewById(R.id.img_price3);
+        img_price3.setLayoutParams(lp_img_price1);
+
+        ImageView img_price4 = (ImageView) findViewById(R.id.img_price4);
+        img_price4.setLayoutParams(lp_img_price1);
+
+
 //
 //
 //        TextView txt_money1 = (TextView) findViewById(R.id.txt_money1);
@@ -464,7 +547,30 @@ public class Store extends AppCompatActivity {
 //        txt_your_coin.setTypeface(tf);
 //        txt_your_coin.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
     }
+    public void stop_music(View view) {
+        if(MainActivity.music_playing)
+        {
+            MainActivity.player.pause();
+            MainActivity.music_playing=false;
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_off_blue));
+        }
+        else
+        {
+            MainActivity.player.start();
+            MainActivity.music_playing=true;
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_on_blue));
+        }
 
+    }
+    public void clk_statistics(View view) {
+        Intent i = new Intent(this,Statistics.class);
+        startActivity(i);
+    }
+    public void clk_home(View view) {
+        startActivity(new Intent(this,MainActivity.class));
+    }
     public void clk_subject1(View view) {
 
         sku="500coin";
@@ -513,6 +619,18 @@ public class Store extends AppCompatActivity {
 
             e.printStackTrace();
         }
+    }
+
+    public void clk_get_gift(View view) {
+        lay_wait.setVisibility(View.VISIBLE);
+        x = 1;
+        is_requested = true;
+        mm = new MyAsyncTask();
+        last_requested_query=getResources().getString(R.string.site_url) + "do.php?param=daily_gift&uname="+functions.u_name+"&rnd="+String.valueOf(new Random().nextInt());
+        mm.url = (last_requested_query);
+        mm.execute("");
+        remove_message();
+        fun.enableDisableView(lay_main,false);
     }
 
     private class MyAsyncTask extends AsyncTask<String, Integer, Double> {
@@ -565,6 +683,32 @@ public class Store extends AppCompatActivity {
                     startActivity(i);
 
                 }
+                if (param_str.equals("daily_gift") && is_requested) {
+                    start1 = ss.indexOf("<result>");
+                    end1 = ss.indexOf("</result>");
+                    fun.enableDisableView(lay_main,true);
+
+                    lay_wait.setVisibility(View.GONE);
+                    is_requested = false;
+
+                    String res = ss.substring(start1 + 8, end1);
+
+
+                    if(res.equals("ok"))
+                    {
+
+                        lay_wait.setVisibility(View.GONE);
+                        is_requested = false;
+
+
+
+                        show_msg("","100 سکه به سکه های شما افزوده شد","اوکی");
+                    }
+                    else if(res.equals("repeated"))
+                    {
+                        show_msg("","شما امروز سهمیه خود را دریافت کرده اید","اوکی");
+                    }
+                }
                 if ((param_str.equals("consume_coin") ) && is_requested) {
                     //Toast.makeText(getBaseContext(),ss,Toast.LENGTH_SHORT).show();
                     LinearLayout lay_main = (LinearLayout) findViewById(R.id.lay_main);
@@ -587,52 +731,52 @@ public class Store extends AppCompatActivity {
                     //Toast.makeText(getBaseContext(),ss,Toast.LENGTH_SHORT).show();
 
 
-//                        start1 = ss.indexOf("<coin_count>");
-//                        end1 = ss.indexOf("</coin_count>");
-//                        coint_count= ss.substring(start1 + 12, end1);
-//
-//                    start1 = ss.indexOf("<coin_count1>");
-//                    end1 = ss.indexOf("</coin_count1>");
-//                    coint_count1= ss.substring(start1 + 13, end1);
-//
-//                    start1 = ss.indexOf("<coin_count2>");
-//                    end1 = ss.indexOf("</coin_count2>");
-//                    coint_count2= ss.substring(start1 + 13, end1);
-//
-//                    start1 = ss.indexOf("<coin_count3>");
-//                    end1 = ss.indexOf("</coin_count3>");
-//                    coint_count3= ss.substring(start1 + 13, end1);
-//
-//                    start1 = ss.indexOf("<money1>");
-//                    end1 = ss.indexOf("</money1>");
-//                    money1= ss.substring(start1 + 8, end1);
-//
-//                    start1 = ss.indexOf("<money2>");
-//                    end1 = ss.indexOf("</money2>");
-//                    money2= ss.substring(start1 + 8, end1);
-//
-//                    start1 = ss.indexOf("<money3>");
-//                    end1 = ss.indexOf("</money3>");
-//                    money3= ss.substring(start1 + 8, end1);
-//
-//
+                        start1 = ss.indexOf("<coin_count>");
+                        end1 = ss.indexOf("</coin_count>");
+                        coint_count= ss.substring(start1 + 12, end1);
+
+                    start1 = ss.indexOf("<coin_count1>");
+                    end1 = ss.indexOf("</coin_count1>");
+                    coint_count1= ss.substring(start1 + 13, end1);
+
+                    start1 = ss.indexOf("<coin_count2>");
+                    end1 = ss.indexOf("</coin_count2>");
+                    coint_count2= ss.substring(start1 + 13, end1);
+
+                    start1 = ss.indexOf("<coin_count3>");
+                    end1 = ss.indexOf("</coin_count3>");
+                    coint_count3= ss.substring(start1 + 13, end1);
+
+                    start1 = ss.indexOf("<money1>");
+                    end1 = ss.indexOf("</money1>");
+                    money1= ss.substring(start1 + 8, end1);
+
+                    start1 = ss.indexOf("<money2>");
+                    end1 = ss.indexOf("</money2>");
+                    money2= ss.substring(start1 + 8, end1);
+
+                    start1 = ss.indexOf("<money3>");
+                    end1 = ss.indexOf("</money3>");
+                    money3= ss.substring(start1 + 8, end1);
 //
 //
-//                    TextView txt_coint_count1 = (TextView) findViewById(R.id.txt_coint_count1);
-//                    TextView txt_coint_count2 = (TextView) findViewById(R.id.txt_coint_count2);
-//                    TextView txt_coint_count3 = (TextView) findViewById(R.id.txt_coint_count3);
 //
-//                    TextView txt_money1 = (TextView) findViewById(R.id.txt_money1);
-//                    TextView txt_money2 = (TextView) findViewById(R.id.txt_money2);
-//                    TextView txt_money3 = (TextView) findViewById(R.id.txt_money3);
 //
-//                    txt_coint_count1.setText(coint_count1+"سکه");
-//                    txt_coint_count2.setText(coint_count2+"سکه");
-//                    txt_coint_count3.setText(coint_count3+"سکه");
-//
-//                    txt_money1.setText(money1+"تومان");
-//                    txt_money2.setText(money2+"تومان");
-//                    txt_money3.setText(money3+"تومان");
+                    TextView txt_coint_count1 = (TextView) findViewById(R.id.txt_coint_count2);
+                    TextView txt_coint_count2 = (TextView) findViewById(R.id.txt_coint_count3);
+                    TextView txt_coint_count3 = (TextView) findViewById(R.id.txt_coint_count4);
+
+                    TextView txt_money1 = (TextView) findViewById(R.id.txt_price2);
+                    TextView txt_money2 = (TextView) findViewById(R.id.txt_price3);
+                    TextView txt_money3 = (TextView) findViewById(R.id.txt_price4);
+
+                    txt_coint_count1.setText(coint_count1+"سکه");
+                    txt_coint_count2.setText(coint_count2+"سکه");
+                    txt_coint_count3.setText(coint_count3+"سکه");
+
+                    txt_money1.setText(money1+"تومان");
+                    txt_money2.setText(money2+"تومان");
+                    txt_money3.setText(money3+"تومان");
 //
 //
 //                        TextView txt_your_coin = (TextView) findViewById(R.id.txt_your_coin);

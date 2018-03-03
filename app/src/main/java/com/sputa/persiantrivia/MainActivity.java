@@ -1224,6 +1224,11 @@ public class MainActivity extends AppCompatActivity {
         String
                 level_str = output_str.substring(start_str + 7, end_str);
 
+        start_str = output_str.indexOf("<noti>");
+        end_str = output_str.indexOf("</noti>");
+        Log.d("majid",output_str);
+        String
+                noti = output_str.substring(start_str + 6, end_str);
 
 
         start_str = output_str.indexOf("<my_turn>");
@@ -1321,6 +1326,7 @@ public class MainActivity extends AppCompatActivity {
         TextView txt_nobat = (TextView) findViewById(R.id.lbl_your_turn);
         TextView txt_wait = (TextView) findViewById(R.id.lbl_rival_turn);
         TextView txt_done = (TextView) findViewById(R.id.lbl_done_game);
+
         txt_profile_name.setText(fun.u_name);
 
 
@@ -1334,6 +1340,8 @@ public class MainActivity extends AppCompatActivity {
         txt_done.setText("تمام شده ("+finished_str+")");
 
 
+        TextView txt_notification = (TextView) findViewById(R.id.txt_notification);
+        txt_notification.setText(noti);
     }
     @Override
     public void onResume(){
