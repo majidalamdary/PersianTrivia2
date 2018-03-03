@@ -7,29 +7,18 @@
     tools:context="com.sputa.persiantrivia.Statistics">
 
     <LinearLayout
-        android:background="@drawable/bg"
-        android:orientation="vertical"
+        android:id="@+id/lay_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        android:id="@+id/lay_main"
-        android:weightSum="1">
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/top_lay"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".12"
+            android:layout_weight="1"
             android:background="#0c78a7"
             android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.7"
-                android:orientation="horizontal">
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -52,7 +41,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2.2"
+                android:layout_weight="1.3"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -64,12 +53,13 @@
                     android:clickable="true"
                     android:onClick="clk_return" />
             </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".78"
+            android:layout_weight="7.5"
             android:orientation="horizontal">
 
             <ListView
@@ -87,7 +77,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".12">
+            android:layout_weight="1">
 
             <LinearLayout
                 android:id="@+id/lay_buttom_bar"
@@ -180,8 +170,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/ranking"
-                        android:clickable="true"
-                        android:onClick="clk_statistics" />
+                        android:clickable="true" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -204,11 +193,10 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/home_blue"
                         android:clickable="true"
-                        android:onClick="clk_love" />
+                        android:onClick="clk_home" />
                 </LinearLayout>
             </LinearLayout>
         </RelativeLayout>
-
 
     </LinearLayout>
 

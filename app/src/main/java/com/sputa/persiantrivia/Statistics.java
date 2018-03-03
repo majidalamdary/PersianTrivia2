@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
@@ -51,13 +52,17 @@ public class Statistics extends AppCompatActivity {
     ListView lv;
     Context context;
 
-
+    public static MediaPlayer player;
+    public static  Boolean
+            music_playing = true;
 
     ArrayList prgmName;
 
 
 
     public static String [] user_name;
+    public static String [] row_id;
+
     public static String [] user_desc;
 
     public static String [] user_level;
@@ -131,7 +136,27 @@ public class Statistics extends AppCompatActivity {
         mm.execute("");
 
     }
+    public void clk_stotr(View view) {
+        Intent i = new Intent(this,Store.class);
+        startActivity(i);
+    }
+    public void stop_music(View view) {
+        if(MainActivity.music_playing)
+        {
+            MainActivity.player.pause();
+            MainActivity.music_playing=false;
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_off_blue));
+        }
+        else
+        {
+            MainActivity.player.start();
+            MainActivity.music_playing=true;
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_on_blue));
+        }
 
+    }
     public void clk_btn_msg1(View view) {
 
         Button btn_all = (Button) view;
@@ -281,10 +306,18 @@ public class Statistics extends AppCompatActivity {
 
         get_top_user_list("");
 
-
-
         if(MainActivity.music_playing)
-            MainActivity.player.start();
+        {
+
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_on_blue));
+        }
+        else
+        {
+
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_off_blue));
+        }
     }
     @Override
     public void onPause()
@@ -325,10 +358,10 @@ public class Statistics extends AppCompatActivity {
 
 
 
-        LinearLayout lay_point = (LinearLayout) findViewById(R.id.lay_point);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_lay_point = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)(screenHeight*0.12));
-        lay_point.setLayoutParams(lp_lay_point);
+//        LinearLayout lay_point = (LinearLayout) findViewById(R.id.lay_point);
+//        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
+//        LinearLayout.LayoutParams lp_lay_point = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,(int)(screenHeight*0.12));
+//        lay_point.setLayoutParams(lp_lay_point);
 
 
         TextView txt_level1 = (TextView) findViewById(R.id.lbl_start_game);
@@ -338,30 +371,30 @@ public class Statistics extends AppCompatActivity {
 
 
 
-        TextView lbl_point = (TextView) findViewById(R.id.lbl_point);
-        lbl_point.setTypeface(tf);
-        lbl_point.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
+//        TextView lbl_point = (TextView) findViewById(R.id.lbl_point);
+//        lbl_point.setTypeface(tf);
+//        lbl_point.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
 
 
-        TextView lbl_level = (TextView) findViewById(R.id.lbl_level);
-        lbl_level.setTypeface(tf);
-        lbl_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
+//        TextView lbl_level = (TextView) findViewById(R.id.lbl_level);
+//        lbl_level.setTypeface(tf);
+//        lbl_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
 
 
 
 
-        TextView txt_point = (TextView) findViewById(R.id.txt_point);
-        txt_point.setTypeface(tf);
-        txt_point.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
+//        TextView txt_point = (TextView) findViewById(R.id.txt_point);
+//        txt_point.setTypeface(tf);
+//        txt_point.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
+//
+//        TextView txt_level = (TextView) findViewById(R.id.txt_level);
+//        txt_level.setTypeface(tf);
+//        txt_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
 
-        TextView txt_level = (TextView) findViewById(R.id.txt_level);
-        txt_level.setTypeface(tf);
-        txt_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
 
-
-        TextView lbl_top_person = (TextView) findViewById(R.id.lbl_top_person);
-        lbl_top_person.setTypeface(tf);
-        lbl_top_person.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
+//        TextView lbl_top_person = (TextView) findViewById(R.id.lbl_top_person);
+//        lbl_top_person.setTypeface(tf);
+//        lbl_top_person.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.06));
 
 
 
@@ -385,6 +418,10 @@ public class Statistics extends AppCompatActivity {
 
     public void clk_return(View view) {
         finish();
+    }
+
+    public void clk_home(View view) {
+        startActivity(new Intent(this,MainActivity.class));
     }
 
 
@@ -462,12 +499,12 @@ public class Statistics extends AppCompatActivity {
 
 
 
-                    TextView txt_point = (TextView) findViewById(R.id.txt_point);
-                    txt_point.setText(your_point);
-
-
-                    TextView txt_level = (TextView) findViewById(R.id.txt_level);
-                    txt_level.setText(your_level);
+//                    TextView txt_point = (TextView) findViewById(R.id.txt_point);
+//                    txt_point.setText(your_point);
+//
+//
+//                    TextView txt_level = (TextView) findViewById(R.id.txt_level);
+//                    txt_level.setText(your_level);
 
 
 
@@ -484,6 +521,8 @@ public class Statistics extends AppCompatActivity {
                                     record_count = cnt;
 
                             user_name = new String[record_count];
+                            row_id = new String[record_count];
+
                             user_desc = new String[record_count];
                             user_level = new String[record_count];
                             user_gender = new String[record_count];
@@ -525,7 +564,7 @@ public class Statistics extends AppCompatActivity {
                                         rival_gender = lst_item.substring(start1 + 14, end1);
 
 
-
+                                row_id[i]=String.valueOf(i+1);
                                 user_name[i] = uname;
                                 user_level[i] = ulevel;
                                 user_desc[i]= "امتیاز:" +udesc;
@@ -535,7 +574,7 @@ public class Statistics extends AppCompatActivity {
                             //        resultSet.moveToNext();
                             //    }
                             lv.setVisibility(View.VISIBLE);
-                            lv.setAdapter(new FriendList(Statistics.this, user_name, user_desc, user_level, user_gender, user_avatar_id, mydatabase,"statistics"));
+                            lv.setAdapter(new FriendList_top(Statistics.this,row_id, user_name, user_desc, user_level, user_gender, user_avatar_id, mydatabase,"statistics"));
                         }
                     }
 

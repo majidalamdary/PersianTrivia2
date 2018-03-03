@@ -3,476 +3,715 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context="com.sputa.persiantrivia.Store"
-    android:background="@drawable/bg">
+android:layoutDirection="rtl"
+    android:background="#049ccd"
+    tools:context="com.sputa.persiantrivia.Store">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/lay_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lay_main">
+        android:orientation="vertical">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_weight=".7"
+            android:background="#0c78a7"
             android:gravity="center"
-            android:layout_weight="1">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="فروشگاه"
                 android:id="@+id/lbl_title"
-                android:textColor="#000000" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="فروشگاه"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".4">
+            android:layout_weight=".4"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/txt_your_coin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#000000" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_weight=".8"
             android:gravity="center"
-            android:layout_weight="1">
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="270dp"
-                android:gravity="center"
-                android:layout_height="60dp"
-                android:background="@drawable/white_btn"
                 android:id="@+id/btn_subject1"
-                android:clickable="true">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
                 <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.3"
-                    android:background="@drawable/green_btn"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="1dp"
-                    android:clickable="true"
-                    android:gravity="center"
                     android:id="@+id/relativeLayout"
-                    android:onClick="clk_subject1">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="0.3"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="clk_subject1"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"></LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.7"
                             android:gravity="center"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2" >
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="300 تومان"
-                                android:id="@+id/txt_money1"
-                                android:textColor="#000000"
-                                android:textAlignment="center" />
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.2">
-
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="0dp"
-                            android:gravity="center"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="300 سکه"
-                                android:id="@+id/txt_coint_count1"
-                                android:textColor="#000000"
-                                android:textAlignment="center" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1.2">
+                            android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
                                 android:id="@+id/imageView"
-                                android:background="@drawable/coin_tak" />
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/dollar" />
                         </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txt_coint_count1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="300 سکه"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="80dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/dark_green_btn"
+
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/lay_btn_new_game"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="3dp"
+                                    android:layout_weight="0.3"
+
+                                    android:background="@drawable/green_btn"
+                                    android:clickable="true"
+                                    android:gravity="center"
+                                    android:onClick="clk_new_game"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/ttxt_coint_count1xt_new_game"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:gravity="right"
+                                            android:text="300 سکه"
+                                            android:textColor="#ffffff" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
                     </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginBottom="1dp"
+            android:layout_weight=".8"
             android:gravity="center"
-            android:layout_weight="1">
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="270dp"
+                android:id="@+id/btn_subject2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:clickable="true"
                 android:gravity="center"
-                android:layout_height="60dp"
-                android:background="@drawable/white_btn"
-                android:id="@+id/btn_subject2">
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/relativeLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.3"
-                    android:background="@drawable/green_btn"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginLeft="1dp"
                     android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="0.3"
                     android:clickable="true"
                     android:gravity="center"
-                    android:id="@+id/linearLayout2"
-                    android:onClick="clk_subject2" >
+                    android:onClick="clk_subject1"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1" >
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="0dp"
-                            android:gravity="center"
                             android:layout_height="match_parent"
-                            android:layout_weight="2" >
+                            android:layout_weight="1"
+                            android:orientation="vertical"></LinearLayout>
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="300 تومان"
-                                android:id="@+id/txt_money2"
-                                android:textColor="#000000"
-                                android:textAlignment="center" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.7"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/coins" />
                         </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.2" >
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="0dp"
-                            android:gravity="center"
                             android:layout_height="match_parent"
-                            android:layout_weight="2" >
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="300 سکه"
                                 android:id="@+id/txt_coint_count2"
-                                android:textColor="#000000"
-                                android:textAlignment="center" />
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="300 سکه"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black" />
                         </LinearLayout>
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1.2" >
+                            android:layout_weight="4"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:id="@+id/imageView2"
-                                android:background="@drawable/coin_tak" />
+                            <LinearLayout
+                                android:layout_width="80dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/dark_green_btn"
+
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/lay_btn_new_game"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="3dp"
+                                    android:layout_weight="0.3"
+
+                                    android:background="@drawable/green_btn"
+                                    android:clickable="true"
+                                    android:gravity="center"
+                                    android:onClick="clk_new_game"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/ttxt_coint_count1xt_new_game"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:gravity="right"
+                                            android:text="300 سکه"
+                                            android:textColor="#ffffff" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
                         </LinearLayout>
+
+
                     </LinearLayout>
+
                 </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_marginBottom="1dp"
+            android:layout_weight=".8"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="270dp"
+                android:id="@+id/btn_subject2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:clickable="true"
                 android:gravity="center"
-                android:layout_height="60dp"
-                android:background="@drawable/white_btn"
-                android:id="@+id/btn_subject3">
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/relativeLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.3"
-                    android:background="@drawable/green_btn"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginRight="1dp"
-                    android:layout_marginLeft="1dp"
                     android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="0.3"
                     android:clickable="true"
                     android:gravity="center"
-                    android:id="@+id/linearLayout3"
-                    android:onClick="clk_subject3" >
+                    android:onClick="clk_subject1"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1" >
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"></LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.7"
                             android:gravity="center"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2" >
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="300 تومان"
-                                android:id="@+id/txt_money3"
-                                android:textColor="#000000"
-                                android:textAlignment="center" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.2" >
-
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="0dp"
-                            android:gravity="center"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2" >
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="300 سکه"
-                                android:id="@+id/txt_coint_count3"
-                                android:textColor="#000000"
-                                android:textAlignment="center" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1.2" >
+                            android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:id="@+id/imageView13"
-                                android:background="@drawable/coin_tak" />
+                                android:id="@+id/imageView"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/coins_red" />
                         </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txt_coint_count2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="300 سکه"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="80dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/dark_green_btn"
+
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/lay_btn_new_game"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="3dp"
+                                    android:layout_weight="0.3"
+
+                                    android:background="@drawable/green_btn"
+                                    android:clickable="true"
+                                    android:gravity="center"
+                                    android:onClick="clk_new_game"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/ttxt_coint_count1xt_new_game"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:gravity="right"
+                                            android:text="300 سکه"
+                                            android:textColor="#ffffff" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
                     </LinearLayout>
+
                 </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical">
+            android:layout_weight=".8"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="در صورتی که پس از خرید سکه های شما افزایش نیافت دوباره خرید سکه را انتخاب کنید"
-                android:id="@+id/textView4" />
+            <LinearLayout
+                android:id="@+id/btn_subject4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="0.3"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="clk_subject1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"></LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.7"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/wealth" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txt_coint_count2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="300 سکه"
+                                android:textAlignment="center"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="80dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/dark_green_btn"
+
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/lay_btn_new_game"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="3dp"
+                                    android:layout_weight="0.3"
+
+                                    android:background="@drawable/green_btn"
+                                    android:clickable="true"
+                                    android:gravity="center"
+                                    android:onClick="clk_new_game"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/ttxt_coint_count1xt_new_game"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:gravity="right"
+                                            android:text="300 سکه"
+                                            android:textColor="#ffffff" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight=".8"
+            android:orientation="horizontal">
+
         </LinearLayout>
     </LinearLayout>
 
 
     <RelativeLayout
+        android:id="@+id/lay_wait"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ed000000"
-        android:id="@+id/lay_wait"
         android:visibility="gone">
 
         <ImageView
+            android:id="@+id/circle1"
             android:layout_width="wrap_content"
             android:layout_height="63dp"
-            android:id="@+id/circle1"
-            android:background="@drawable/refresh"
-            android:clickable="false"
-            android:layout_gravity="center_horizontal"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="183dp" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="183dp"
+            android:background="@drawable/refresh"
+            android:clickable="false" />
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="لطفا کمی صبر کنید"
-            android:id="@+id/textView2"
-            android:textColor="#ffffff"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="57dp"
+            android:text="لطفا کمی صبر کنید"
             android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
             android:textSize="28dp" />
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/lay_message"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#e1000000"
-        android:id="@+id/lay_message"
-        android:visibility="gone"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:paddingRight="20dp"
+        android:visibility="gone">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:id="@+id/lay_inner_message"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:background="@drawable/white_btn"
-            android:padding="1dp"
-            android:id="@+id/lay_inner_message">
+            android:orientation="horizontal"
+            android:padding="1dp">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:background="@drawable/green_light_btn"
+                android:orientation="vertical"
                 android:padding="20dp">
 
                 <TextView
+                    android:id="@+id/txt_msg_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="خروج"
                     android:layout_gravity="center"
-                    android:id="@+id/txt_msg_title"
+                    android:text="خروج"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="#000000" />
 
                 <TextView
+                    android:id="@+id/txt_msg_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
                     android:text="آیا می خواهید خارج شوید؟"
-                    android:id="@+id/txt_msg_text"
-                    android:textColor="#000000"
-                    android:layout_marginTop="10dp" />
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000" />
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/lay_msg_btn_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="15dp"
-                    android:id="@+id/lay_msg_btn_container">
+                    android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/btn_msg1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=""
-                        android:id="@+id/btn_msg1"
                         android:layout_alignParentBottom="true"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
+                        android:layout_marginRight="3dp"
                         android:layout_weight="1"
                         android:background="@drawable/message_button"
-                        android:layout_marginRight="3dp"
-                        android:textColor="#ffffff"
+                        android:clickable="true"
                         android:onClick="clk_btn_msg1"
-                        android:clickable="true" />
+                        android:text=""
+                        android:textColor="#ffffff" />
 
                     <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:background="@drawable/message_button"
                         android:id="@+id/btn_msg2"
-                        android:layout_weight="1"
-                        android:layout_marginRight="3dp"
-                        android:textColor="#ffffff"
-                        android:visibility="visible"
-                        android:clickable="true"
-                        android:onClick="clk_btn_msg1" />
-
-                    <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=""
-                        android:background="@drawable/message_button"
-                        android:id="@+id/btn_msg3"
-                        android:layout_weight="1"
                         android:layout_marginRight="3dp"
-                        android:textColor="#ffffff"
+                        android:layout_weight="1"
+                        android:background="@drawable/message_button"
                         android:clickable="true"
-                        android:onClick="clk_btn_msg1" />
+                        android:onClick="clk_btn_msg1"
+                        android:text=""
+                        android:textColor="#ffffff"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/btn_msg3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/message_button"
+                        android:clickable="true"
+                        android:onClick="clk_btn_msg1"
+                        android:text=""
+                        android:textColor="#ffffff" />
                 </LinearLayout>
 
             </LinearLayout>

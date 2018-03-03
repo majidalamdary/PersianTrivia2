@@ -422,47 +422,47 @@ public class Store extends AppCompatActivity {
         lbl_title.setTypeface(tf);
         lbl_title.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.092));
 
-        LinearLayout laybtn_subject1 = (LinearLayout) findViewById(R.id.btn_subject1);
-        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
-        LinearLayout.LayoutParams lp_laybtn_subject1 = new LinearLayout.LayoutParams((int)(screenWidth*0.8),(int)(screenHeight*0.103));
-        laybtn_subject1.setLayoutParams(lp_laybtn_subject1);
-
-
-        LinearLayout laybtn_subject2 = (LinearLayout) findViewById(R.id.btn_subject2);
-        laybtn_subject2.setLayoutParams(lp_laybtn_subject1);
-
-        LinearLayout laybtn_subject3 = (LinearLayout) findViewById(R.id.btn_subject3);
-        laybtn_subject3.setLayoutParams(lp_laybtn_subject1);
-
-
-        TextView txt_coin_count1 = (TextView) findViewById(R.id.txt_coint_count1);
-        txt_coin_count1.setTypeface(tf);
-        txt_coin_count1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
-
-        TextView txt_coin_count2 = (TextView) findViewById(R.id.txt_coint_count2);
-        txt_coin_count2.setTypeface(tf);
-        txt_coin_count2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
-
-        TextView txt_coin_count3 = (TextView) findViewById(R.id.txt_coint_count3);
-        txt_coin_count3.setTypeface(tf);
-        txt_coin_count3.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
-
-
-        TextView txt_money1 = (TextView) findViewById(R.id.txt_money1);
-        txt_money1.setTypeface(tf);
-        txt_money1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
-
-        TextView txt_money2 = (TextView) findViewById(R.id.txt_money2);
-        txt_money2.setTypeface(tf);
-        txt_money2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
-
-        TextView txt_money3 = (TextView) findViewById(R.id.txt_money3);
-        txt_money3.setTypeface(tf);
-        txt_money3.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
-
-        TextView txt_your_coin = (TextView) findViewById(R.id.txt_your_coin);
-        txt_your_coin.setTypeface(tf);
-        txt_your_coin.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
+//        LinearLayout laybtn_subject1 = (LinearLayout) findViewById(R.id.btn_subject1);
+//        //LinearLayout.LayoutParams lp_lay_tabBar = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int)(screenHeight*0.1));
+//        LinearLayout.LayoutParams lp_laybtn_subject1 = new LinearLayout.LayoutParams((int)(screenWidth*0.8),(int)(screenHeight*0.103));
+//        laybtn_subject1.setLayoutParams(lp_laybtn_subject1);
+//
+//
+//        LinearLayout laybtn_subject2 = (LinearLayout) findViewById(R.id.btn_subject2);
+//        laybtn_subject2.setLayoutParams(lp_laybtn_subject1);
+//
+//        LinearLayout laybtn_subject3 = (LinearLayout) findViewById(R.id.btn_subject3);
+//        laybtn_subject3.setLayoutParams(lp_laybtn_subject1);
+//
+//
+//        TextView txt_coin_count1 = (TextView) findViewById(R.id.txt_coint_count1);
+//        txt_coin_count1.setTypeface(tf);
+//        txt_coin_count1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
+//
+//        TextView txt_coin_count2 = (TextView) findViewById(R.id.txt_coint_count2);
+//        txt_coin_count2.setTypeface(tf);
+//        txt_coin_count2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
+//
+//        TextView txt_coin_count3 = (TextView) findViewById(R.id.txt_coint_count3);
+//        txt_coin_count3.setTypeface(tf);
+//        txt_coin_count3.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
+//
+//
+//        TextView txt_money1 = (TextView) findViewById(R.id.txt_money1);
+//        txt_money1.setTypeface(tf);
+//        txt_money1.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
+//
+//        TextView txt_money2 = (TextView) findViewById(R.id.txt_money2);
+//        txt_money2.setTypeface(tf);
+//        txt_money2.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
+//
+//        TextView txt_money3 = (TextView) findViewById(R.id.txt_money3);
+//        txt_money3.setTypeface(tf);
+//        txt_money3.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
+//
+//        TextView txt_your_coin = (TextView) findViewById(R.id.txt_your_coin);
+//        txt_your_coin.setTypeface(tf);
+//        txt_your_coin.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
     }
 
     public void clk_subject1(View view) {
@@ -587,56 +587,56 @@ public class Store extends AppCompatActivity {
                     //Toast.makeText(getBaseContext(),ss,Toast.LENGTH_SHORT).show();
 
 
-                        start1 = ss.indexOf("<coin_count>");
-                        end1 = ss.indexOf("</coin_count>");
-                        coint_count= ss.substring(start1 + 12, end1);
-
-                    start1 = ss.indexOf("<coin_count1>");
-                    end1 = ss.indexOf("</coin_count1>");
-                    coint_count1= ss.substring(start1 + 13, end1);
-
-                    start1 = ss.indexOf("<coin_count2>");
-                    end1 = ss.indexOf("</coin_count2>");
-                    coint_count2= ss.substring(start1 + 13, end1);
-
-                    start1 = ss.indexOf("<coin_count3>");
-                    end1 = ss.indexOf("</coin_count3>");
-                    coint_count3= ss.substring(start1 + 13, end1);
-
-                    start1 = ss.indexOf("<money1>");
-                    end1 = ss.indexOf("</money1>");
-                    money1= ss.substring(start1 + 8, end1);
-
-                    start1 = ss.indexOf("<money2>");
-                    end1 = ss.indexOf("</money2>");
-                    money2= ss.substring(start1 + 8, end1);
-
-                    start1 = ss.indexOf("<money3>");
-                    end1 = ss.indexOf("</money3>");
-                    money3= ss.substring(start1 + 8, end1);
-
-
-
-
-                    TextView txt_coint_count1 = (TextView) findViewById(R.id.txt_coint_count1);
-                    TextView txt_coint_count2 = (TextView) findViewById(R.id.txt_coint_count2);
-                    TextView txt_coint_count3 = (TextView) findViewById(R.id.txt_coint_count3);
-
-                    TextView txt_money1 = (TextView) findViewById(R.id.txt_money1);
-                    TextView txt_money2 = (TextView) findViewById(R.id.txt_money2);
-                    TextView txt_money3 = (TextView) findViewById(R.id.txt_money3);
-
-                    txt_coint_count1.setText(coint_count1+"سکه");
-                    txt_coint_count2.setText(coint_count2+"سکه");
-                    txt_coint_count3.setText(coint_count3+"سکه");
-
-                    txt_money1.setText(money1+"تومان");
-                    txt_money2.setText(money2+"تومان");
-                    txt_money3.setText(money3+"تومان");
-
-
-                        TextView txt_your_coin = (TextView) findViewById(R.id.txt_your_coin);
-                    txt_your_coin.setText("سکه های شما : "+coint_count);
+//                        start1 = ss.indexOf("<coin_count>");
+//                        end1 = ss.indexOf("</coin_count>");
+//                        coint_count= ss.substring(start1 + 12, end1);
+//
+//                    start1 = ss.indexOf("<coin_count1>");
+//                    end1 = ss.indexOf("</coin_count1>");
+//                    coint_count1= ss.substring(start1 + 13, end1);
+//
+//                    start1 = ss.indexOf("<coin_count2>");
+//                    end1 = ss.indexOf("</coin_count2>");
+//                    coint_count2= ss.substring(start1 + 13, end1);
+//
+//                    start1 = ss.indexOf("<coin_count3>");
+//                    end1 = ss.indexOf("</coin_count3>");
+//                    coint_count3= ss.substring(start1 + 13, end1);
+//
+//                    start1 = ss.indexOf("<money1>");
+//                    end1 = ss.indexOf("</money1>");
+//                    money1= ss.substring(start1 + 8, end1);
+//
+//                    start1 = ss.indexOf("<money2>");
+//                    end1 = ss.indexOf("</money2>");
+//                    money2= ss.substring(start1 + 8, end1);
+//
+//                    start1 = ss.indexOf("<money3>");
+//                    end1 = ss.indexOf("</money3>");
+//                    money3= ss.substring(start1 + 8, end1);
+//
+//
+//
+//
+//                    TextView txt_coint_count1 = (TextView) findViewById(R.id.txt_coint_count1);
+//                    TextView txt_coint_count2 = (TextView) findViewById(R.id.txt_coint_count2);
+//                    TextView txt_coint_count3 = (TextView) findViewById(R.id.txt_coint_count3);
+//
+//                    TextView txt_money1 = (TextView) findViewById(R.id.txt_money1);
+//                    TextView txt_money2 = (TextView) findViewById(R.id.txt_money2);
+//                    TextView txt_money3 = (TextView) findViewById(R.id.txt_money3);
+//
+//                    txt_coint_count1.setText(coint_count1+"سکه");
+//                    txt_coint_count2.setText(coint_count2+"سکه");
+//                    txt_coint_count3.setText(coint_count3+"سکه");
+//
+//                    txt_money1.setText(money1+"تومان");
+//                    txt_money2.setText(money2+"تومان");
+//                    txt_money3.setText(money3+"تومان");
+//
+//
+//                        TextView txt_your_coin = (TextView) findViewById(R.id.txt_your_coin);
+//                    txt_your_coin.setText("سکه های شما : "+coint_count);
                     //Toast.makeText(getBaseContext(),param_str,Toast.LENGTH_SHORT).show();
                     LinearLayout lay_main = (LinearLayout) findViewById(R.id.lay_main);
                     fun.enableDisableView(lay_main,true);

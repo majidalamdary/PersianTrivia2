@@ -174,6 +174,8 @@ public class MainActivity extends AppCompatActivity {
         player.setVolume(100,100);
         player.start();
 
+
+
         NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.cancelAll();
 
@@ -1341,8 +1343,19 @@ public class MainActivity extends AppCompatActivity {
         Log.d(tag, "In the onResume() event");
 
 
-        if(MainActivity.music_playing)
+        if(MainActivity.music_playing) {
             MainActivity.player.start();
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_on_blue));
+
+        }
+        else
+        {
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_off_blue));
+        }
 
 
 
