@@ -318,6 +318,8 @@ public class Store extends AppCompatActivity {
         set_content_size();
 
 
+        if(MainActivity.music_playing)
+            MainActivity.player.start();
 
         if(MainActivity.music_playing)
         {
@@ -332,6 +334,10 @@ public class Store extends AppCompatActivity {
             img_music.setBackground(getResources().getDrawable(R.drawable.sound_off_blue));
         }
 
+    }
+    public void clk_more(View view) {
+        startActivity(new Intent(this,Setting.class));
+        finish();
     }
     private void get_store()
     {
@@ -567,9 +573,10 @@ public class Store extends AppCompatActivity {
     public void clk_statistics(View view) {
         Intent i = new Intent(this,Statistics.class);
         startActivity(i);
+        finish();
     }
     public void clk_home(View view) {
-        startActivity(new Intent(this,MainActivity.class));
+        finish();
     }
     public void clk_subject1(View view) {
 
@@ -851,7 +858,7 @@ public class Store extends AppCompatActivity {
                     public void run() {
                         if(typ.equals("circulation")) {
                             if(is_rotation) {
-                                RelativeLayout.LayoutParams lp_coin = new RelativeLayout.LayoutParams((int) (screenWidth * .15), (int) (screenWidth * .15));
+                                RelativeLayout.LayoutParams lp_coin = new RelativeLayout.LayoutParams((int) (screenWidth * .2), (int) (screenWidth * .2));
                                 //lp_coin.setMargins(100,400,0,0);
                                 lp_coin.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
                                 img_circle1.setLayoutParams(lp_coin);

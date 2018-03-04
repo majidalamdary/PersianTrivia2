@@ -1527,22 +1527,22 @@
 
 
     <RelativeLayout
+        android:id="@+id/lay_wait"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#f6000000"
-        android:id="@+id/lay_wait"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageView
+            android:id="@+id/circle1"
             android:layout_width="wrap_content"
             android:layout_height="63dp"
-            android:id="@+id/circle1"
-            android:background="@drawable/refresh"
-            android:clickable="false"
-            android:layout_gravity="center_horizontal"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="183dp" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="183dp"
+            android:background="@drawable/logo_new"
+            android:clickable="false" />
     </RelativeLayout>
 
     <RelativeLayout

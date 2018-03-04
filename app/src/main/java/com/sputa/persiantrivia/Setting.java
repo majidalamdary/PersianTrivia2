@@ -177,6 +177,18 @@ file_uploaded();
         if(MainActivity.music_playing)
             MainActivity.player.start();
 
+        if(MainActivity.music_playing)
+        {
+
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_on_blue));
+        }
+        else
+        {
+
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_off_blue));
+        }
 
 
     }
@@ -308,6 +320,9 @@ file_uploaded();
 //        txt_level.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.05));
 //
 
+
+
+
         TextView lbl_change_pic = (TextView) findViewById(R.id.lbl_change_pic);
         lbl_change_pic.setTypeface(tf);
         lbl_change_pic.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.045));
@@ -320,39 +335,39 @@ file_uploaded();
 
 
 
-        LinearLayout.LayoutParams lp_laybtn_log_out = new LinearLayout.LayoutParams((int)(screenWidth*0.8),(int)(screenHeight*0.103));
-        LinearLayout laybtn_log_out = (LinearLayout) findViewById(R.id.btn_log_out);
-        laybtn_log_out.setLayoutParams(lp_laybtn_log_out);
-
-        LinearLayout laybtn_back = (LinearLayout) findViewById(R.id.btn_return);
-        laybtn_back.setLayoutParams(lp_laybtn_log_out);
-
-        LinearLayout btn_question_factory = (LinearLayout) findViewById(R.id.btn_question_factory);
-        btn_question_factory.setLayoutParams(lp_laybtn_log_out);
-
-
+//        LinearLayout.LayoutParams lp_laybtn_log_out = new LinearLayout.LayoutParams((int)(screenWidth*0.8),(int)(screenHeight*0.103));
+//        LinearLayout laybtn_log_out = (LinearLayout) findViewById(R.id.btn_log_out);
+//        laybtn_log_out.setLayoutParams(lp_laybtn_log_out);
+//
+//        LinearLayout laybtn_back = (LinearLayout) findViewById(R.id.btn_return);
+//        laybtn_back.setLayoutParams(lp_laybtn_log_out);
+//
+//        LinearLayout btn_question_factory = (LinearLayout) findViewById(R.id.btn_question_factory);
+//        btn_question_factory.setLayoutParams(lp_laybtn_log_out);
 
 
 
 
 
 
-        TextView lbl_setting = (TextView) findViewById(R.id.lbl_setting);
-        lbl_setting.setTypeface(tf);
-        lbl_setting.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.065));
 
 
-        TextView lbl_log_out = (TextView) findViewById(R.id.lbl_log_out);
-        lbl_log_out.setTypeface(tf);
-        lbl_log_out.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.045));
+        TextView lbl_title = (TextView) findViewById(R.id.lbl_title);
+        lbl_title.setTypeface(tf);
+        lbl_title.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.065));
 
-        TextView lbl_return = (TextView) findViewById(R.id.lbl_return);
-        lbl_return.setTypeface(tf);
-        lbl_return.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.045));
 
-        TextView lbl_question_factory = (TextView) findViewById(R.id.lbl_question_factory);
-        lbl_question_factory.setTypeface(tf);
-        lbl_question_factory.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.045));
+//        TextView lbl_rules = (TextView) findViewById(R.id.lbl_rules);
+//        lbl_rules.setTypeface(tf);
+//        lbl_rules.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.045));
+//
+//        TextView lbl_contact_us = (TextView) findViewById(R.id.lbl_contact_us);
+//        lbl_contact_us.setTypeface(tf);
+//        lbl_contact_us.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.045));
+//
+//        TextView lbl_exit = (TextView) findViewById(R.id.lbl_exit);
+//        lbl_exit.setTypeface(tf);
+//        lbl_exit.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.045));
     }
 
 
@@ -487,7 +502,36 @@ file_uploaded();
 
 
     }
+    public void clk_home(View view) {
+finish();
+    }
+    public void clk_statistics(View view) {
+        Intent i = new Intent(this,Statistics.class);
+        startActivity(i);
+        finish();
+    }
+    public void clk_stotr(View view) {
+        Intent i = new Intent(this,Store.class);
+        startActivity(i);
+        finish();
+    }
+    public void stop_music(View view) {
+        if(MainActivity.music_playing)
+        {
+            MainActivity.player.pause();
+            MainActivity.music_playing=false;
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_off_blue));
+        }
+        else
+        {
+            MainActivity.player.start();
+            MainActivity.music_playing=true;
+            ImageView img_music = (ImageView) findViewById(R.id.img_music);
+            img_music.setBackground(getResources().getDrawable(R.drawable.sound_on_blue));
+        }
 
+    }
     public void clk_logout(View view) {
 //        SharedPreferences settings = getApplicationContext().getSharedPreferences("homeScore", 0);
 //        SharedPreferences.Editor editor = settings.edit();
@@ -815,7 +859,7 @@ file_uploaded();
 
                         if(typ.equals("circulation")) {
                             if(is_rotation) {
-                                RelativeLayout.LayoutParams lp_coin = new RelativeLayout.LayoutParams((int) (screenWidth * .15), (int) (screenWidth * .15));
+                                RelativeLayout.LayoutParams lp_coin = new RelativeLayout.LayoutParams((int) (screenWidth * .2), (int) (screenWidth * .2));
                                 //lp_coin.setMargins(100,400,0,0);
                                 lp_coin.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
                                 img_circle1.setLayoutParams(lp_coin);

@@ -1118,6 +1118,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this,Question_factory.class));
     }
 
+    public void clk_more(View view) {
+        startActivity(new Intent(this,Setting.class));
+
+    }
+
 
     public class Timer1 extends Thread {
 
@@ -1146,7 +1151,7 @@ public class MainActivity extends AppCompatActivity {
 
                         if(typ.equals("circulation")) {
                             if(is_rotation) {
-                                RelativeLayout.LayoutParams lp_coin = new RelativeLayout.LayoutParams((int) (screenWidth * .15), (int) (screenWidth * .15));
+                                RelativeLayout.LayoutParams lp_coin = new RelativeLayout.LayoutParams((int) (screenWidth * .2), (int) (screenWidth * .2));
                                 //lp_coin.setMargins(100,400,0,0);
                                 lp_coin.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
                                 img_circle1.setLayoutParams(lp_coin);

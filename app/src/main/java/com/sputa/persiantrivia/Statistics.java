@@ -139,6 +139,7 @@ public class Statistics extends AppCompatActivity {
     public void clk_stotr(View view) {
         Intent i = new Intent(this,Store.class);
         startActivity(i);
+        finish();
     }
     public void stop_music(View view) {
         if(MainActivity.music_playing)
@@ -303,7 +304,8 @@ public class Statistics extends AppCompatActivity {
 
 
 
-
+        if(MainActivity.music_playing)
+            MainActivity.player.start();
         get_top_user_list("");
 
         if(MainActivity.music_playing)
@@ -311,6 +313,7 @@ public class Statistics extends AppCompatActivity {
 
             ImageView img_music = (ImageView) findViewById(R.id.img_music);
             img_music.setBackground(getResources().getDrawable(R.drawable.sound_on_blue));
+
         }
         else
         {
@@ -318,6 +321,11 @@ public class Statistics extends AppCompatActivity {
             ImageView img_music = (ImageView) findViewById(R.id.img_music);
             img_music.setBackground(getResources().getDrawable(R.drawable.sound_off_blue));
         }
+    }
+
+    public void clk_more(View view) {
+        startActivity(new Intent(this,Setting.class));
+        finish();
     }
     @Override
     public void onPause()
@@ -421,7 +429,7 @@ public class Statistics extends AppCompatActivity {
     }
 
     public void clk_home(View view) {
-        startActivity(new Intent(this,MainActivity.class));
+finish();
     }
 
 
@@ -640,7 +648,7 @@ public class Statistics extends AppCompatActivity {
 
                         if(typ.equals("circulation")) {
                             if(is_rotation) {
-                                RelativeLayout.LayoutParams lp_coin = new RelativeLayout.LayoutParams((int) (screenWidth * .15), (int) (screenWidth * .15));
+                                RelativeLayout.LayoutParams lp_coin = new RelativeLayout.LayoutParams((int) (screenWidth * .2), (int) (screenWidth * .2));
                                 //lp_coin.setMargins(100,400,0,0);
                                 lp_coin.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
                                 img_circle1.setLayoutParams(lp_coin);

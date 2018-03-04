@@ -412,7 +412,7 @@ public class SelectRival extends AppCompatActivity {
 
                         if(typ.equals("circulation")) {
                             if(is_rotation) {
-                                RelativeLayout.LayoutParams lp_coin = new RelativeLayout.LayoutParams((int) (screenWidth * .15), (int) (screenWidth * .15));
+                                RelativeLayout.LayoutParams lp_coin = new RelativeLayout.LayoutParams((int) (screenWidth * .2), (int) (screenWidth * .2));
                                 //lp_coin.setMargins(100,400,0,0);
                                 lp_coin.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
                                 img_circle1.setLayoutParams(lp_coin);
