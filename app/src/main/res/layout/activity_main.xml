@@ -86,6 +86,9 @@
                             android:id="@+id/img_add_coin"
                             android:layout_width="25dp"
                             android:layout_height="29dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/txt_coin"
                             android:src="@drawable/add"
                             app:layout_constraintBottom_toBottomOf="@id/lay_top_menu_right"
                             app:layout_constraintEnd_toStartOf="@+id/lay_top_menu_right"
@@ -468,14 +471,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".1"
+            android:layout_weight=".2"
             android:background="#0c78a7"
             android:orientation="vertical"></LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.2">
+            android:layout_weight="1">
 
             <LinearLayout
                 android:id="@+id/lay_buttom_bar"
@@ -487,6 +490,12 @@
                 android:background="#0c78a7"
                 android:orientation="horizontal"
                 android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:orientation="vertical"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -507,7 +516,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".5"
+                    android:layout_weight=".7"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -530,7 +539,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".5"
+                    android:layout_weight=".7"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -553,7 +562,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".5"
+                    android:layout_weight=".7"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -576,7 +585,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".5"
+                    android:layout_weight=".7"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -595,13 +604,20 @@
                         android:clickable="true"
                         android:onClick="clk_love" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:orientation="vertical"></LinearLayout>
+
             </LinearLayout>
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".1"
+            android:layout_weight=".2"
             android:background="#0c78a7"
             android:orientation="vertical"></LinearLayout>
 

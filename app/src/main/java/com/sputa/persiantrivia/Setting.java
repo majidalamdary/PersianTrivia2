@@ -357,16 +357,16 @@ file_uploaded();
         lbl_title.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.065));
 
 
-//        TextView lbl_rules = (TextView) findViewById(R.id.lbl_rules);
-//        lbl_rules.setTypeface(tf);
+        TextView lbl_rules = (TextView) findViewById(R.id.lbl_rules);
+        lbl_rules.setTypeface(tf);
 //        lbl_rules.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.045));
 //
-//        TextView lbl_contact_us = (TextView) findViewById(R.id.lbl_contact_us);
-//        lbl_contact_us.setTypeface(tf);
+        TextView lbl_contact_us = (TextView) findViewById(R.id.lbl_contact_us);
+        lbl_contact_us.setTypeface(tf);
 //        lbl_contact_us.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.045));
 //
-//        TextView lbl_exit = (TextView) findViewById(R.id.lbl_exit);
-//        lbl_exit.setTypeface(tf);
+        TextView lbl_exit = (TextView) findViewById(R.id.lbl_exit);
+        lbl_exit.setTypeface(tf);
 //        lbl_exit.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.045));
     }
 
@@ -538,9 +538,13 @@ finish();
         editor.putString("homeScore", "");
         editor.apply();
 
-        Intent intent = this.getIntent();
-        this.setResult(RESULT_OK, intent);
+//        Intent intent = this.getIntent();
+//        this.setResult(RESULT_OK, intent);
+        startActivity(new Intent(this,Register.class));
         finish();
+        MainActivity.fa.finish();
+
+
     }
 
     public void clk_back(View view) {

@@ -8,89 +8,93 @@
 
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/lay_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/lay_wait"
+        android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/lay_wait"
-        android:id="@+id/lay_main">
+        android:background="#0c78a7"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2">
+            android:layout_weight="2"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:gravity="center"
                 android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <ImageButton
 
+                    android:id="@+id/img_shake"
                     android:layout_width="300dp"
                     android:layout_height="300dp"
-                    android:id="@+id/img_shake"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
                     android:layout_gravity="center"
                     android:background="@drawable/shakeit"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
                     android:clickable="true"
                     android:onClick="shooken" />
 
                 <TextView
+                    android:id="@+id/txt_welldone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="آفرین، خوب بود!!"
                     android:layout_gravity="center_horizontal"
-                    android:id="@+id/txt_welldone"
-                    android:visibility="gone"
-                    android:textColor="#f42424" />
+                    android:text="آفرین، خوب بود!!"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#f42424"
+                    android:visibility="gone" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_weight="1">
+                android:orientation="horizontal">
+
                 <ImageView
+                    android:id="@+id/img_please_wait"
                     android:layout_width="wrap_content"
                     android:layout_height="63dp"
-                    android:id="@+id/img_please_wait"
-                    android:background="@drawable/refresh"
-                    android:clickable="false"
-                    android:layout_gravity="center_horizontal"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="183dp"
+                    android:background="@drawable/refresh"
+                    android:clickable="false"
                     android:visibility="gone" />
+
                 <TextView
-                    android:layout_gravity="center"
+                    android:id="@+id/txt_message"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_gravity="center"
                     android:text="حالا تکون بده"
-                    android:id="@+id/txt_message" />
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
 
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2"></LinearLayout>
+                android:layout_weight="2"
+                android:orientation="horizontal"></LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

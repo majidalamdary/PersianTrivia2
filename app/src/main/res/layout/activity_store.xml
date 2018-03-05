@@ -592,14 +592,14 @@ android:layoutDirection="rtl"
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".05"
+            android:layout_weight=".07"
             android:background="#0c78a7"
             android:orientation="vertical"></LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".49">
+            android:layout_weight=".36">
 
             <LinearLayout
                 android:id="@+id/lay_buttom_bar"
@@ -611,6 +611,12 @@ android:layoutDirection="rtl"
                 android:background="#0c78a7"
                 android:orientation="horizontal"
                 android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".2"
+                    android:orientation="vertical"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -631,7 +637,7 @@ android:layoutDirection="rtl"
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".5"
+                    android:layout_weight=".85"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -654,7 +660,7 @@ android:layoutDirection="rtl"
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".5"
+                    android:layout_weight=".85"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -676,7 +682,7 @@ android:layoutDirection="rtl"
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".5"
+                    android:layout_weight=".85"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -699,7 +705,7 @@ android:layoutDirection="rtl"
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".5"
+                    android:layout_weight=".85"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -718,13 +724,20 @@ android:layoutDirection="rtl"
                         android:clickable="true"
                         android:onClick="clk_home" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".2"
+                    android:orientation="vertical"></LinearLayout>
+
             </LinearLayout>
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".05"
+            android:layout_weight=".07"
             android:background="#0c78a7"
             android:orientation="vertical"></LinearLayout>
 

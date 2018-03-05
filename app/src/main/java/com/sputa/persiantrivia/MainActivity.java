@@ -112,13 +112,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     TextView txt_request_noti;
+    public static Activity fa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-//am broadcast -a android.intent.action.BOOT_COMPLETED
+//am broadcast -a android.intent.action.BOOT_COMPLETEDf
 
+
+        fa=this;
         //list_type="turn";
         lv=(ListView) findViewById(R.id.listView4);
 
@@ -346,16 +349,16 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout lay_top_menu_right= (RelativeLayout) findViewById(R.id.lay_top_menu_right);
 
         ConstraintLayout.LayoutParams lp_lay_top_menu_right = (ConstraintLayout.LayoutParams) lay_top_menu_right.getLayoutParams();
-        lp_lay_top_menu_right.width = (int)(screenWidth*0.24);
-        lp_lay_top_menu_right.height = (int)(screenHeight*0.05);
+        lp_lay_top_menu_right.width = (int)(screenWidth*0.23);
+        lp_lay_top_menu_right.height = (int)(screenHeight*0.045);
 
         //new ConstraintLayout.LayoutParams((int)(screenWidth*0.1),(int)(screenHeight*0.1));
         lay_top_menu_right.setLayoutParams(lp_lay_top_menu_right);
 
         ImageView img_coin = (ImageView) findViewById(R.id.img_coin);
         ConstraintLayout.LayoutParams lp_default = (ConstraintLayout.LayoutParams) img_coin.getLayoutParams();
-        lp_default.width = (int)(screenWidth*0.08);
-        lp_default.height = (int)(screenHeight*0.09);
+        lp_default.width = (int)(screenWidth*0.067);
+        lp_default.height = (int)(screenHeight*0.07);
         img_coin.setLayoutParams(lp_default);
 
         ImageView img_add_coin = (ImageView) findViewById(R.id.img_add_coin);
@@ -367,27 +370,27 @@ public class MainActivity extends AppCompatActivity {
 
         TextView txt_coin = (TextView) findViewById(R.id.txt_coin);
         txt_coin.setTypeface(tf);
-        txt_coin.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.05));
+        txt_coin.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
 
 
         RelativeLayout lay_top_menu_left1= (RelativeLayout) findViewById(R.id.lay_top_menu_left);
 
         ConstraintLayout.LayoutParams lp_lay_top_menu_left1 = (ConstraintLayout.LayoutParams) lay_top_menu_left1.getLayoutParams();
-        lp_lay_top_menu_left1.width = (int)(screenWidth*0.24);
-        lp_lay_top_menu_left1.height = (int)(screenHeight*0.05);
+        lp_lay_top_menu_left1.width = (int)(screenWidth*0.23);
+        lp_lay_top_menu_left1.height = (int)(screenHeight*0.045);
         lay_top_menu_left1.setLayoutParams(lp_lay_top_menu_left1);
 
         ImageView img_bell = (ImageView) findViewById(R.id.img_bell);
         ConstraintLayout.LayoutParams lp_default3 = (ConstraintLayout.LayoutParams) img_bell.getLayoutParams();
-        lp_default3.width = (int)(screenWidth*0.08);
-        lp_default3.height = (int)(screenHeight*0.09);
+        lp_default3.width = (int)(screenWidth*0.07);
+        lp_default3.height = (int)(screenHeight*0.08);
         img_bell.setLayoutParams(lp_default3);
 
 
 
         TextView txt_notification = (TextView) findViewById(R.id.txt_notification);
         txt_notification.setTypeface(tf);
-        txt_notification.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.05));
+        txt_notification.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.046));
 
 
 

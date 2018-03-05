@@ -77,14 +77,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".1"
+            android:layout_weight=".12"
             android:background="#0c78a7"
             android:orientation="vertical"></LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".8">
+            android:layout_weight=".7">
 
             <LinearLayout
                 android:id="@+id/lay_buttom_bar"
@@ -96,6 +96,12 @@
                 android:background="#0c78a7"
                 android:orientation="horizontal"
                 android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:orientation="vertical"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -116,7 +122,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".5"
+                    android:layout_weight=".7"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -139,7 +145,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".5"
+                    android:layout_weight=".7"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -162,7 +168,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".5"
+                    android:layout_weight=".7"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -184,7 +190,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".5"
+                    android:layout_weight=".7"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -203,13 +209,20 @@
                         android:clickable="true"
                         android:onClick="clk_home" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:orientation="vertical"></LinearLayout>
+
             </LinearLayout>
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".1"
+            android:layout_weight=".2"
             android:background="#0c78a7"
             android:orientation="vertical"></LinearLayout>
 
