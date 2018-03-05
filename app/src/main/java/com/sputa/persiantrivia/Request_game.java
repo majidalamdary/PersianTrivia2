@@ -359,14 +359,17 @@ public class Request_game extends AppCompatActivity {
         txt_sent.setTypeface(tf);
         txt_sent.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.055));
 
+        TextView txt_default = (TextView) findViewById(R.id.txt_default);
+        txt_default.setTypeface(tf);
+        txt_default.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.045));
 
-        LinearLayout.LayoutParams lp_img_return = new LinearLayout.LayoutParams((int)(screenWidth*.1),(int)(screenHeight*.05));
+        LinearLayout.LayoutParams lp_img_return = new LinearLayout.LayoutParams((int)(screenWidth*.075),(int)(screenHeight*.045));
         //lp_img_avatar.setMargins(0, 0, (int)((one_in_three_screen-img_circle_width)/2), 0);
 
         ImageView img_return = (ImageView) findViewById(R.id.img_return);
         img_return.setLayoutParams(lp_img_return);
 
-        LinearLayout.LayoutParams lp_img_refresh = new LinearLayout.LayoutParams((int)(screenWidth*.12),(int)(screenHeight*.065));
+        LinearLayout.LayoutParams lp_img_refresh = new LinearLayout.LayoutParams((int)(screenWidth*.11),(int)(screenHeight*.06));
 
         ImageView img_refresh = (ImageView) findViewById(R.id.img_refresh);
         img_refresh.setLayoutParams(lp_img_refresh);

@@ -119,7 +119,7 @@ public class SelectRival extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Adad.prepareInterstitialAd(mInterstitialAdListener);
+        //Adad.prepareInterstitialAd(mInterstitialAdListener);
 
         setContentView(R.layout.activity_select_rival);
 

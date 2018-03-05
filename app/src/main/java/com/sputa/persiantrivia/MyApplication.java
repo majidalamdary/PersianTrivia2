@@ -35,7 +35,7 @@ public class MyApplication extends Application
 
 
         Configuration config = getBaseContext().getResources().getConfiguration();
-        Toast.makeText(this,config.locale.getLanguage().toString(), Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this,config.locale.getLanguage().toString(), Toast.LENGTH_SHORT).show();
         String lang = "fa";
         if (! "".equals(lang) && ! config.locale.getLanguage().equals(lang))
         {

@@ -465,10 +465,17 @@
             </LinearLayout>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:background="#0c78a7"
+            android:orientation="vertical"></LinearLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.4">
+            android:layout_weight="1.2">
 
             <LinearLayout
                 android:id="@+id/lay_buttom_bar"
@@ -500,7 +507,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.4"
+                    android:layout_weight=".5"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -523,7 +530,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.4"
+                    android:layout_weight=".5"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -546,7 +553,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.4"
+                    android:layout_weight=".5"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -569,7 +576,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.4"
+                    android:layout_weight=".5"
                     android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
@@ -590,6 +597,13 @@
                 </LinearLayout>
             </LinearLayout>
         </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:background="#0c78a7"
+            android:orientation="vertical"></LinearLayout>
 
     </LinearLayout>
 

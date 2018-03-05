@@ -33,7 +33,7 @@
                     android:id="@+id/img_refresh"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/new_refresh"
+                    android:background="@drawable/reload"
                     android:clickable="true"
                     android:onClick="clk_refresh" />
             </LinearLayout>
@@ -155,7 +155,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="7"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:paddingTop="3dp">
 
             <TextView

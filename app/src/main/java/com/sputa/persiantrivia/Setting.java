@@ -533,10 +533,10 @@ finish();
 
     }
     public void clk_logout(View view) {
-//        SharedPreferences settings = getApplicationContext().getSharedPreferences("homeScore", 0);
-//        SharedPreferences.Editor editor = settings.edit();
-//        editor.putString("homeScore", "");
-//        editor.apply();
+        SharedPreferences settings = getApplicationContext().getSharedPreferences("homeScore", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("homeScore", "");
+        editor.apply();
 
         Intent intent = this.getIntent();
         this.setResult(RESULT_OK, intent);

@@ -19,6 +19,7 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
@@ -175,6 +176,10 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
         TextView lbl_register = (TextView) findViewById(R.id.lbl_register);
         TextView lbl_already_register = (TextView) findViewById(R.id.lbl_already_registered);
         TextView lbl_login = (TextView) findViewById(R.id.lbl_login);
+        TextView lbl_title = (TextView) findViewById(R.id.lbl_title);
+        EditText txt_uname = (EditText) findViewById(R.id.txt_uname);
+        EditText txt_pass = (EditText) findViewById(R.id.txt_pass);
+
         LinearLayout lay_uname_pic = (LinearLayout) findViewById(R.id.lay_uname_pic);
         LinearLayout lay_pass_pic = (LinearLayout) findViewById(R.id.lay_pass_pic);
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -191,7 +196,12 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
             lbl_register.setText("از اینجا وارد شوید");
             lbl_already_register.setText("آیا قبلا عضو شده اید؟");
             lbl_login.setText("برو بریم");
+            lbl_title.setText("ثبت نام");
             is_registering = true;
+            LinearLayout.LayoutParams lp_params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
+            txt_uname.setLayoutParams(lp_params);
+            txt_pass.setLayoutParams(lp_params);
+
         }
         else
         {
@@ -203,6 +213,16 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
             lbl_register.setText("از اینجا ثبت نام کنید");
             lbl_already_register.setText("آیا قبلا عضو نشده اید؟");
             lbl_login.setText("برو بریم");
+
+            LinearLayout.LayoutParams lp_params = (LinearLayout.LayoutParams) txt_uname.getLayoutParams();
+            lp_params.height = (int)(screenHeight*.09);
+            txt_uname.setLayoutParams(lp_params);
+            txt_pass.setLayoutParams(lp_params);
+
+
+            lbl_title.setText("ورود به بازی");
+
+
             is_registering = false;
         }
     }
@@ -226,7 +246,21 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
                 allow_send= true;
         if(is_registering) {
             //Toast.makeText(getBaseContext(),String.valueOf(txt_mobile.getText().subSequence(0,2)),Toast.LENGTH_SHORT).show();
-            if(txt_uname.getText().length()<3)
+            int
+            flag=0;
+            for(int i=0;i<txt_uname.getText().toString().length();i++)
+            {
+                if(txt_uname.getText().toString().charAt(i)== ' ')
+                {
+                    flag=1;
+                }
+            }
+            if(flag==1)
+            {
+                lbl_msg.setText("از خط فاصله در نام کاربری استفاده نکنید");
+                allow_send = false;
+            }
+            else if(txt_uname.getText().length()<3)
             {
                 lbl_msg.setText("نام کاربری باید حداقل 3 کاراکتر باشد");
                 allow_send = false;
@@ -250,7 +284,21 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
         }
         if(!is_registering) {
             //Toast.makeText(getBaseContext(),String.valueOf(txt_mobile.getText().subSequence(0,2)),Toast.LENGTH_SHORT).show();
-            if(txt_uname.getText().length()<3)
+            int
+                    flag=0;
+            for(int i=0;i<txt_uname.getText().toString().length();i++)
+            {
+                if(txt_uname.getText().toString().charAt(i)== ' ')
+                {
+                    flag=1;
+                }
+            }
+            if(flag==1)
+            {
+                lbl_msg.setText("از خط فاصله در نام کاربری استفاده نکنید");
+                allow_send = false;
+            }
+            else if(txt_uname.getText().length()<3)
             {
                 lbl_msg.setText("نام کاربری باید حداقل 3 کاراکتر باشد");
                 allow_send = false;
@@ -371,11 +419,11 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
 
         RadioButton rdb_boy = (RadioButton) findViewById(R.id.rdb_boy);
         rdb_boy.setTypeface(tf);
-        rdb_boy.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
+        rdb_boy.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
 
         RadioButton rdb_girl = (RadioButton) findViewById(R.id.rdb_girl);
         rdb_girl.setTypeface(tf);
-        rdb_girl.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.062));
+        rdb_girl.setTextSize(TypedValue.COMPLEX_UNIT_PX, (int) (screenWidth * 0.052));
 
 
         TextView lbl_login = (TextView) findViewById(R.id.lbl_login);

@@ -241,10 +241,22 @@ public class BetweenRounds extends AppCompatActivity {
 
                 if (r_id.equals("")) {
                 //    Toast.makeText(getBaseContext(),"rrr"+ r_id, Toast.LENGTH_SHORT).show();
-                    Intent j = getIntent();
-                    Intent i = new Intent(getBaseContext(), select_subject.class);
-                    i.putExtra("g_id", g_id);
-                    startActivity(i);
+//                    Intent j = getIntent();
+//                    Intent i = new Intent(getBaseContext(), select_subject.class);
+//                    i.putExtra("g_id", g_id);
+//                    startActivity(i);
+                    lay_wait.setVisibility(View.VISIBLE);
+                    x = 1;
+                    is_requested = true;
+                    mm = new MyAsyncTask();
+
+                    last_requested_query=getResources().getString(R.string.site_url) + "do.php?param=get_subject1&uname="+fun.u_name+"&g_id="+g_id+"&rnd="+String.valueOf(new Random().nextInt());
+                    //  Toast.makeText(getBaseContext(),last_requested_query,Toast.LENGTH_LONG).show();
+                    mm.url = (last_requested_query);
+                    mm.execute("");
+                    LinearLayout lay_main = (LinearLayout) findViewById(R.id.lay_main);
+                    fun.enableDisableView(lay_main,false);
+
                 } else {
                     Intent i = new Intent(getBaseContext(), GameBoard.class);
                  //   Toast.makeText(getBaseContext(), r_id, Toast.LENGTH_SHORT).show();
@@ -2554,6 +2566,51 @@ public class BetweenRounds extends AppCompatActivity {
 
                 param_str = ss.substring(start1 + 7, end1);
 
+
+
+                if ((param_str.equals("get_subject1") ) && is_requested) {
+
+
+
+                    start1 = ss.indexOf("<r_id>");
+                    end1 = ss.indexOf("</r_id>");
+                    String
+                            r_id = ss.substring(start1 + 6, end1);
+                    Intent i = new Intent(getBaseContext(),GameBoard.class);
+                    i.putExtra("r_id",r_id);
+                    finish();
+                    startActivity(i);
+
+//                    lay_wait.setVisibility(View.VISIBLE);
+//                    x = 1;
+//                    is_requested = true;
+//                    mm = new MyAsyncTask();
+//
+//                    last_requested_query=getResources().getString(R.string.site_url) + "do.php?param=go_exam_board&uname="+fun.u_name+"&g_id="+g_id+"&subject="+subject_asli+"&rnd="+String.valueOf(new Random().nextInt());
+//                    //  Toast.makeText(getBaseContext(),last_requested_query,Toast.LENGTH_LONG).show();
+//                    mm.url = (last_requested_query);
+//                    mm.execute("");
+//                    LinearLayout lay_main = (LinearLayout) findViewById(R.id.lay_main);
+//                    fun.enableDisableView(lay_main,false);
+
+
+
+
+
+                }
+                if ((param_str.equals("go_exam_board") ) && is_requested) {
+
+                    // Toast.makeText(getBaseContext(),ss,Toast.LENGTH_SHORT).show();
+                    start1 = ss.indexOf("<r_id>");
+                    end1 = ss.indexOf("</r_id>");
+                    String
+                            r_id = ss.substring(start1 + 6, end1);
+                    Intent i = new Intent(getBaseContext(),GameBoard.class);
+                    i.putExtra("r_id",r_id);
+                    finish();
+                    startActivity(i);
+
+                }
                 if ((param_str.equals("get_game_brief") ) && is_requested) {
 
 
