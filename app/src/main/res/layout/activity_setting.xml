@@ -131,9 +131,8 @@ android:layoutDirection="rtl"
             <LinearLayout
                 android:id="@+id/lay_rules"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="5dp"
-                android:layout_weight="1"
                 android:background="#d7d6d6"
                 android:clickable="true"
                 android:gravity="center"
@@ -149,7 +148,7 @@ android:layoutDirection="rtl"
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight=".7"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -174,9 +173,10 @@ android:layoutDirection="rtl"
                             android:id="@+id/lbl_rules"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
                             android:text="قوانین  و مقررات"
                             android:textColor="@android:color/black"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -198,9 +198,8 @@ android:layoutDirection="rtl"
             <LinearLayout
                 android:id="@+id/lay_contact_us"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="5dp"
-                android:layout_weight="1"
                 android:background="#d7d6d6"
                 android:clickable="true"
                 android:gravity="center"
@@ -216,7 +215,7 @@ android:layoutDirection="rtl"
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight=".7"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -241,9 +240,10 @@ android:layoutDirection="rtl"
                             android:id="@+id/lbl_contact_us"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
                             android:text="تماس با ما"
                             android:textColor="@android:color/black"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -265,8 +265,7 @@ android:layoutDirection="rtl"
             <LinearLayout
                 android:id="@+id/lay_exit"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="60dp"
                 android:background="#d7d6d6"
                 android:clickable="true"
                 android:gravity="center"
@@ -283,7 +282,7 @@ android:layoutDirection="rtl"
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight=".7"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -291,7 +290,7 @@ android:layoutDirection="rtl"
                             android:id="@+id/imageView17"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight=".7"
                             android:src="@drawable/power_button_off" />
 
                     </LinearLayout>
@@ -308,9 +307,10 @@ android:layoutDirection="rtl"
                             android:id="@+id/lbl_exit"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
                             android:text="خروج"
                             android:textColor="@android:color/black"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -331,21 +331,31 @@ android:layoutDirection="rtl"
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1.8"
-                android:orientation="horizontal"></LinearLayout>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".5"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight=".15"
+                android:layout_weight=".07"
                 android:background="#0c78a7"
                 android:orientation="vertical"></LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight=".7">
+                android:layout_weight=".6">
 
                 <LinearLayout
                     android:id="@+id/lay_buttom_bar"
@@ -483,12 +493,11 @@ android:layoutDirection="rtl"
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight=".15"
+                android:layout_weight=".12"
                 android:background="#0c78a7"
                 android:orientation="vertical"></LinearLayout>
-
-
         </LinearLayout>
+
     </LinearLayout>
 
 
