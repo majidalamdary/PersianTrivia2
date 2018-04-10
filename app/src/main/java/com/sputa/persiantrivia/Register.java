@@ -27,6 +27,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -65,7 +66,7 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
 
     public   ImageView img_circle1;
     public   MyAsyncTask mm;
-
+    LinearLayout lay_main;
     int      x=1;
     Boolean
              is_requested = false;
@@ -107,6 +108,7 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
         String homeScore = settings1.getString("homeScore", "");
        // Toast.makeText(getBaseContext(),homeScore,Toast.LENGTH_SHORT).show();
 
+        lay_main = (LinearLayout) findViewById(R.id.lay_main);
 
 
         if(!homeScore.equals(""))
@@ -313,6 +315,7 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
                 allow_send = false;
             }
         }
+
         if(allow_send) {
             mm = new MyAsyncTask();
             {
@@ -331,12 +334,16 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
                         uname = "";
                 LinearLayout lay_main = (LinearLayout) findViewById(R.id.lay_main);
                 fun.enableDisableView(lay_main,false);
-                mm.url = (getResources().getString(R.string.site_url) + "register.php?param=" + param + "&uname=" + URLEncoder.encode(txt_uname.getText().toString()) + "&pass=" + URLEncoder.encode(txt_pass.getText().toString()) + "&mobile=" + URLEncoder.encode(txt_mobile.getText().toString()) + "&gender=" + String.valueOf(gender)+"&rnd="+String.valueOf(new Random().nextInt()));
+                mm.url = (getResources().getString(R.string.site_url) + "register.php?param=" + param + "&uname=" + URLEncoder.encode(txt_uname.getText().toString()) + "&pass=" + URLEncoder.encode(txt_pass.getText().toString()) + "&mobile=" + URLEncoder.encode(txt_mobile.getText().toString()) + "&gender=" + String.valueOf(gender)+"&rnd="+String.valueOf(new Random().nextInt())+"&t=1");
                // Toast.makeText(this,getResources().getString(R.string.site_url) + "register.php?param=" + param + "&uname=" + URLEncoder.encode(txt_uname.getText().toString()) + "&pass=" + URLEncoder.encode(txt_pass.getText().toString()) + "&mobile=" + URLEncoder.encode(txt_mobile.getText().toString()) + "&gender=" + String.valueOf(gender),Toast.LENGTH_LONG).show();
                 mm.execute("");
                 is_requested = true;
                 lbl_msg.setText("");
             }
+
+
+
+
         }
     }
     public void clk_exit(View view)
@@ -486,45 +493,112 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
         }
     };
 
+    String
+        btn1_type ="sms_request";
     public void clk_btn_msg1(View view) {
-        if (ActivityCompat.checkSelfPermission(this,android.Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED)
-        {
-        try {
-            SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage("09388045343", null, "sghl", null, null);
-            Toast.makeText(getApplicationContext(), "Message Sent",
-                    Toast.LENGTH_LONG).show();
-        } catch (Exception ex) {
-            Toast.makeText(getApplicationContext(),ex.getMessage().toString(),
-                    Toast.LENGTH_LONG).show();
-            ex.printStackTrace();
-        }
+        if(btn1_type.equals("sms_request")) {
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
+                send_sms("request");
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(new String[]{android.Manifest.permission.SEND_SMS}, 1);
+                }
+            }
         }
         else
         {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            {
-                requestPermissions(new String[]{android.Manifest.permission.SEND_SMS}, 1);
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
+                send_sms("confirm");
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    requestPermissions(new String[]{android.Manifest.permission.SEND_SMS}, 2);
+                }
             }
+
         }
 
     }
+
+    private void send_sms(String type) {
+        if(type.equals("request")) {
+            try {
+                SmsManager smsManager = SmsManager.getDefault();
+                smsManager.sendTextMessage("405591", null, "1", null, null);
+
+                Button btn_msg1 = (Button) findViewById(R.id.btn_msg1);
+                btn_msg1.setText("تائید");
+                TextView txt_msg_text = (TextView) findViewById(R.id.txt_msg_text);
+                txt_msg_text.setText("لطفا کد دریافت شده از پیامک را وارد کنید");
+                LinearLayout lay_already = (LinearLayout) findViewById(R.id.lay_already_received);
+                lay_already.setVisibility(View.GONE);
+                LinearLayout lay_code = (LinearLayout) findViewById(R.id.lay_code);
+                lay_code.setVisibility(View.VISIBLE);
+                btn1_type ="confirm";
+
+
+            } catch (Exception ex) {
+                 Toast.makeText(getApplicationContext(), ex.getMessage().toString(),Toast.LENGTH_LONG).show();
+                ex.printStackTrace();
+            }
+        }
+        else
+
+        {
+            EditText txt_confirm= (EditText) findViewById(R.id.txt_confirm_code);
+            String
+                    confirm_code = txt_confirm.getText().toString();
+            if(confirm_code.length()>0)
+            {
+                try {
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage("405591", null, confirm_code, null, null);
+                    Button btn_msg1 = (Button) findViewById(R.id.btn_msg1);
+                    btn_msg1.setText("بله");
+                    TextView txt_msg_text = (TextView) findViewById(R.id.txt_msg_text);
+                    txt_msg_text.setText("آیا می خواهید جهت استفاده از بازی چالش عدد 1 را به 405591 ارسال کنید؟");
+                    LinearLayout lay_already = (LinearLayout) findViewById(R.id.lay_already_received);
+                    lay_already.setVisibility(View.VISIBLE);
+                    LinearLayout lay_code = (LinearLayout) findViewById(R.id.lay_code);
+                    lay_code.setVisibility(View.GONE);
+                    btn1_type ="sms_request";
+                    RelativeLayout lay_subscrib = (RelativeLayout) findViewById(R.id.lay_subscrib);
+                    lay_subscrib.setVisibility(View.GONE);
+                    fun.enableDisableView(lay_main,true);
+                       Toast.makeText(getApplicationContext(), "Message Sent", Toast.LENGTH_LONG).show();
+                } catch (Exception ex) {
+                    // Toast.makeText(getApplicationContext(), ex.getMessage().toString(),Toast.LENGTH_LONG).show();
+                    ex.printStackTrace();
+                }
+            }
+            else
+            {
+                Toast.makeText(this, "عدد وارد شده صحیح نمی باشد", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case 1: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    try {
-                        SmsManager smsManager = SmsManager.getDefault();
-                        smsManager.sendTextMessage("09388045343", null, "sghl", null, null);
-                        Toast.makeText(getApplicationContext(), "Message Sent",
-                                Toast.LENGTH_LONG).show();
-                    } catch (Exception ex) {
-                        Toast.makeText(getApplicationContext(),ex.getMessage().toString(),
-                                Toast.LENGTH_LONG).show();
-                        ex.printStackTrace();
-                    }
+                    send_sms("request");
+
+
+                } else {
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(this,"مجوز داده نشد",Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+            case 2: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    send_sms("confirm");
+
 
                 } else {
                     // permission denied, boo! Disable the
@@ -539,6 +613,30 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
     }
 
     public void clk_btn_msg2(View view) {
+        RelativeLayout lay_subscrib = (RelativeLayout) findViewById(R.id.lay_subscrib);
+        lay_subscrib.setVisibility(View.GONE);
+        fun.enableDisableView(lay_main,true);
+        Button btn_msg1 = (Button) findViewById(R.id.btn_msg1);
+        btn_msg1.setText("بله");
+        TextView txt_msg_text = (TextView) findViewById(R.id.txt_msg_text);
+        txt_msg_text.setText("آیا می خواهید جهت استفاده از بازی چالش عدد 1 را به 405591 ارسال کنید؟");
+        LinearLayout lay_already = (LinearLayout) findViewById(R.id.lay_already_received);
+        lay_already.setVisibility(View.VISIBLE);
+        LinearLayout lay_code = (LinearLayout) findViewById(R.id.lay_code);
+        lay_code.setVisibility(View.GONE);
+        btn1_type ="sms_request";
+    }
+
+    public void clk_already_received(View view) {
+        Button btn_msg1 = (Button) findViewById(R.id.btn_msg1);
+        btn_msg1.setText("تائید");
+        TextView txt_msg_text = (TextView) findViewById(R.id.txt_msg_text);
+        txt_msg_text.setText("لطفا کد دریافت شده از پیامک را وارد کنید");
+        LinearLayout lay_already = (LinearLayout) findViewById(R.id.lay_already_received);
+        lay_already.setVisibility(View.GONE);
+        LinearLayout lay_code = (LinearLayout) findViewById(R.id.lay_code);
+        lay_code.setVisibility(View.VISIBLE);
+        btn1_type ="confirm";
     }
 
     public class Timer extends Thread {
@@ -660,7 +758,7 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
                         end1 = ss.indexOf("</param>");
 
                 param_str = ss.substring(start1 + 7, end1);
-
+              Toast.makeText(Register.this, output_str, Toast.LENGTH_SHORT).show();
                 if(is_requested) {
                     if (param_str.equals("register")) {
                         LinearLayout lay_main = (LinearLayout) findViewById(R.id.lay_main);
@@ -668,6 +766,11 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
                         if (output_str.equals("tekrari")) {
                             TextView lbl_message = (TextView) findViewById(R.id.lbl_message);
                             lbl_message.setText("این کاربر قبلا ثبت نام کرده است");
+                        }
+                        if (output_str.equals("unsub")) {
+                            RelativeLayout lay_subscrib = (RelativeLayout) findViewById(R.id.lay_subscrib);
+                            lay_subscrib.setVisibility(View.VISIBLE);
+                            fun.enableDisableView(lay_main,false);
                         }
                         if (output_str.equals("registered")) {
 
@@ -693,6 +796,11 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
                     if (param_str.equals("login")) {
                         LinearLayout lay_main = (LinearLayout) findViewById(R.id.lay_main);
                         fun.enableDisableView(lay_main,true);
+                        if (output_str.equals("unsub")) {
+                            RelativeLayout lay_subscrib = (RelativeLayout) findViewById(R.id.lay_subscrib);
+                            lay_subscrib.setVisibility(View.VISIBLE);
+                            fun.enableDisableView(lay_main,false);
+                        }
                         if (output_str.substring(0,5).equals("exist")) {
                             int
                                     k = output_str.indexOf(",");

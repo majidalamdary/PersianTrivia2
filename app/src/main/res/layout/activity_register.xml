@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="#049ccd"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -579,8 +579,8 @@
         android:id="@+id/lay_subscrib"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#4f000000"
-        android:visibility="visible">
+        android:background="#86000000"
+        android:visibility="gone">
 
 
         <LinearLayout
@@ -617,6 +617,7 @@
                     android:padding="10dp">
 
                     <LinearLayout
+                        android:id="@+id/lay_send_msg"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1.8"
@@ -634,6 +635,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/lay_already_received"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
@@ -645,6 +647,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1"
+                            android:onClick="clk_already_received"
                             android:text="قبلا کد تائید دریافت کرده ام"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="#0000ff" />
@@ -655,7 +658,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="gone">
 
                         <TextView
                             android:id="@+id/textView4"
@@ -667,7 +671,7 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/editText"
+                            android:id="@+id/txt_confirm_code"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="9"
@@ -677,6 +681,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/lay_msg_btn_container"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
@@ -684,7 +689,6 @@
                         android:orientation="horizontal">
 
                         <LinearLayout
-                            android:id="@+id/lay_msg_btn_container"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
