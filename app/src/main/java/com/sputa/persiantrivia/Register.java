@@ -767,6 +767,7 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
                             TextView lbl_message = (TextView) findViewById(R.id.lbl_message);
                             lbl_message.setText("این کاربر قبلا ثبت نام کرده است");
                         }
+
                         if (output_str.equals("unsub")) {
                             RelativeLayout lay_subscrib = (RelativeLayout) findViewById(R.id.lay_subscrib);
                             lay_subscrib.setVisibility(View.VISIBLE);
