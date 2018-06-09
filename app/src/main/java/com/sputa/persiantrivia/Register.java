@@ -497,23 +497,15 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
         btn1_type ="sms_request";
     public void clk_btn_msg1(View view) {
         if(btn1_type.equals("sms_request")) {
-            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
-                send_sms("request");
-            } else {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    requestPermissions(new String[]{android.Manifest.permission.SEND_SMS}, 1);
-                }
-            }
         }
         else
         {
-            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
-                send_sms("confirm");
-            } else {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    requestPermissions(new String[]{android.Manifest.permission.SEND_SMS}, 2);
-                }
-            }
+            LinearLayout lay_main = (LinearLayout) findViewById(R.id.lay_main);
+            fun.enableDisableView(lay_main,false);
+           // mm.url = (getResources().getString(R.string.site_url) + "register.php?param=confirm_code&mobile=" + URLEncoder.encode(txt_mobile.getText().toString()) + "&gender=" + String.valueOf(gender)+"&rnd="+String.valueOf(new Random().nextInt())+"&t=1");
+            // Toast.makeText(this,getResources().getString(R.string.site_url) + "register.php?param=" + param + "&uname=" + URLEncoder.encode(txt_uname.getText().toString()) + "&pass=" + URLEncoder.encode(txt_pass.getText().toString()) + "&mobile=" + URLEncoder.encode(txt_mobile.getText().toString()) + "&gender=" + String.valueOf(gender),Toast.LENGTH_LONG).show();
+            mm.execute("");
+            is_requested = true;
 
         }
 
@@ -615,16 +607,7 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
     public void clk_btn_msg2(View view) {
         RelativeLayout lay_subscrib = (RelativeLayout) findViewById(R.id.lay_subscrib);
         lay_subscrib.setVisibility(View.GONE);
-        fun.enableDisableView(lay_main,true);
-        Button btn_msg1 = (Button) findViewById(R.id.btn_msg1);
-        btn_msg1.setText("بله");
-        TextView txt_msg_text = (TextView) findViewById(R.id.txt_msg_text);
-        txt_msg_text.setText("آیا می خواهید جهت استفاده از بازی چالش عدد 1 را به 405591 ارسال کنید؟");
-        LinearLayout lay_already = (LinearLayout) findViewById(R.id.lay_already_received);
-        lay_already.setVisibility(View.VISIBLE);
-        LinearLayout lay_code = (LinearLayout) findViewById(R.id.lay_code);
-        lay_code.setVisibility(View.GONE);
-        btn1_type ="sms_request";
+
     }
 
     public void clk_already_received(View view) {
@@ -758,7 +741,7 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
                         end1 = ss.indexOf("</param>");
 
                 param_str = ss.substring(start1 + 7, end1);
-              Toast.makeText(Register.this, output_str, Toast.LENGTH_SHORT).show();
+              Toast.makeText(Register.this, output_str+"===", Toast.LENGTH_SHORT).show();
                 if(is_requested) {
                     if (param_str.equals("register")) {
                         LinearLayout lay_main = (LinearLayout) findViewById(R.id.lay_main);
@@ -771,9 +754,19 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
                         if (output_str.equals("unsub")) {
                             RelativeLayout lay_subscrib = (RelativeLayout) findViewById(R.id.lay_subscrib);
                             lay_subscrib.setVisibility(View.VISIBLE);
+                            Button btn_msg1 = (Button) findViewById(R.id.btn_msg1);
+
+                            btn_msg1.setText("تائید");
+                            TextView txt_msg_text = (TextView) findViewById(R.id.txt_msg_text);
+                            txt_msg_text.setText("لطفا کدی را که تا حداکثر یک دقیقه برای شما ارسال  خواهد شد را وارد کنید");
+                            LinearLayout lay_already = (LinearLayout) findViewById(R.id.lay_already_received);
+                            lay_already.setVisibility(View.GONE);
+                            LinearLayout lay_code = (LinearLayout) findViewById(R.id.lay_code);
+                            lay_code.setVisibility(View.VISIBLE);
+                            btn1_type ="confirm";
                             fun.enableDisableView(lay_main,false);
                         }
-                        if (output_str.equals("registered")) {
+                        if (output_str.equals("registered" )) {
 
                             TextView lbl_message = (TextView) findViewById(R.id.lbl_message);
                             lbl_message.setText("ثبت نام انجام شد");
@@ -800,6 +793,15 @@ public class Register extends AppCompatActivity  implements OnFocusChangeListene
                         if (output_str.equals("unsub")) {
                             RelativeLayout lay_subscrib = (RelativeLayout) findViewById(R.id.lay_subscrib);
                             lay_subscrib.setVisibility(View.VISIBLE);
+                            Button btn_msg1 = (Button) findViewById(R.id.btn_msg1);
+                            btn_msg1.setText("تائید");
+                            TextView txt_msg_text = (TextView) findViewById(R.id.txt_msg_text);
+                            txt_msg_text.setText("لطفا کدی را که تا حداکثر یک دقیقه برای شما ارسال  خواهد شد را وارد کنید");
+                            LinearLayout lay_already = (LinearLayout) findViewById(R.id.lay_already_received);
+                            lay_already.setVisibility(View.GONE);
+                            LinearLayout lay_code = (LinearLayout) findViewById(R.id.lay_code);
+                            lay_code.setVisibility(View.VISIBLE);
+                            btn1_type ="confirm";
                             fun.enableDisableView(lay_main,false);
                         }
                         if (output_str.substring(0,5).equals("exist")) {

@@ -653,8 +653,6 @@ public class GameBoard extends AppCompatActivity {
             ImageView img_speaker1 = (ImageView) findViewById(R.id.img_speaker1);
             img_speaker1.setBackground(getResources().getDrawable(R.drawable.sound_off));
 
-
-
         }
         else
         {
